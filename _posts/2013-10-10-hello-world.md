@@ -25,12 +25,12 @@ tags: [简介]
 4. 博客园：<http://www.cnblogs.com/luowei010101>
 5. 新浪博客：<http://blog.sina.com.cn/u/1745746500>
 6. 优酷主页：<http://i.youku.com/rootls>
-7. 土豆主页：<htudou.com/tp://www.thome/rootls>
-8. 腾讯微博：<http://t.qq.com/luowei010101>
+7. 土豆主页：<http://www.tudou.com/home/rootls>
+8. 腾讯微博：<http://t.qq.com/rootls>
 9. My邮箱：<a href="mailto:luowei@rootls.com" cursor="pointer">luowei@rootls.com</a>
-10. My邮箱：<a href="mailto:luowei010101@gmail.com">luowei010101@gmail.com</a>
+10. 我的论坛：<http://rootls.com>
 
 
 
 作者：[@维唯为为](http://weibo.com/luowei010101)
-2014-01-30 星期三 15:34:17
+2013-10-10 星期四 15:35:20

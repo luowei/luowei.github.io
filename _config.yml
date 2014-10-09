@@ -1,21 +1,24 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:year/:month/:day/:title
+#permalink: /post/:title.html
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+pygments: true
+
+paginate: 5
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : 维唯为为
+tagline: 对酒当歌，人生几何
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
-  feedburner : feedname
+  name : luowei
+  email : luowei@rootls.com
+  github : luowei
+  twitter : luowei010101
+  feedburner : luowei
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -25,7 +28,12 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.io
+production_url : http://luowei.github.com
+#production_url : http://localhost:4000
+
+safe: false
+cdn_url : http://luowei.github.com
+
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -55,7 +63,6 @@ JB :
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
   BASE_PATH : false
-
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
   #
@@ -65,6 +72,7 @@ JB :
   #   /assets
   #
   ASSET_PATH : false
+  IMAGE_PATH : false
 
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
@@ -72,6 +80,13 @@ JB :
   archive_path: /archive.html
   categories_path : /categories.html
   tags_path : /tags.html
+  messages_path : /messages.html
+  about_path : /about.html
+  photo_path : /photo.html
+  music_path : /music.html
+  video_path : /video.html
+  links_path : /links.html
+  weiboxiu_path : /weiboxiu.html
   atom_path : /atom.xml
   rss_path : /rss.xml
 
@@ -80,9 +95,11 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    provider : duoshuo
+    duoshuo :
+      short_name : rootls
     disqus :
-      short_name : jekyllbootstrap
+      short_name : rootls
     livefyre :
       site_id : 123
     intensedebate :
@@ -98,7 +115,9 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google 
+    provider : baidu
+    baidu : 
+        tracking_id : 'aaaaaa'
     google : 
         tracking_id : 'UA-123-12'
     getclicky :

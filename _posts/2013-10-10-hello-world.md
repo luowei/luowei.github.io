@@ -30,6 +30,7 @@ tags: ["作者简介"]
 9. My邮箱：<a href="mailto:luowei@rootls.com" cursor="pointer">luowei@rootls.com</a>
 10. 我的论坛：<http://rootls.com>
 
+<a target="__blank" href="http://rootls.com"><img src="{{ IMAGE_PATH }}/wechat.jpg"></a>
 
 
 作者：[@维唯为为](http://weibo.com/luowei010101)

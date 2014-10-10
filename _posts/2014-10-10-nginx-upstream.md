@@ -132,3 +132,5 @@ http {
 
 }
 ```
+
+相应配置源代码:<a href="https://github.com/luowei/nginx-rtmp-sample" target="__blank">nginx-rtmp-sample</a>

@@ -3,7 +3,7 @@ layout: post
 title: "从笔迹看性格"
 description: "人的笔迹会如实地暴露出其潜意识"
 category: life
-tags: [life]
+tags: ["人性心理"]
 ---
 {% include JB/setup %}
 

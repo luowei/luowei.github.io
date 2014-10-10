@@ -4,7 +4,7 @@ title: "我做的一些视频"
 keywords: ["维唯为为","Intellij", "视频教程"]
 description: "一些讲解技术的视频教程"
 category: "tutorials"
-tags: ["life"]
+tags: ["视频教程"]
 ---
 {% include JB/setup %}
 

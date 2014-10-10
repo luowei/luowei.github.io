@@ -94,26 +94,6 @@ http {
 				root   html;
 			}
 			
-			# rtmp stat
-			location /stat {
-				rtmp_stat all;
-				rtmp_stat_stylesheet stat.xsl;
-			}
-			location /stat.xsl {
-				root html;
-			}
-			# rtmp control
-			location /control {
-				rtmp_control all;
-			}
-			
-			location ~ \.php$ {
-				root           html;
-				fastcgi_pass   127.0.0.1:9000;
-				fastcgi_index  index.php;
-				fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-				include        fastcgi_params;
-			}
 	}
 
 	#监听6060的服务器

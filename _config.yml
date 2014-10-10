@@ -5,6 +5,14 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
+safe: false
+auto: true
+paginate: 10
+encoding: utf-8
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
+
 
 paginate: 5
 
@@ -31,7 +39,6 @@ author :
 production_url : http://luowei.github.com
 #production_url : http://localhost:4000
 
-safe: false
 cdn_url : http://luowei.github.com
 
 

@@ -4,7 +4,7 @@ title: "nginx的负载均衡配置"
 keywords: ["维唯为为","nginx","负载均衡"]
 description: "nginx的负载均衡配置"
 category: "tutorials"
-tags: ["负载均衡","教程"]
+tags: ["负载均衡","教程","nginx"]
 ---
 
 {% include JB/setup %}

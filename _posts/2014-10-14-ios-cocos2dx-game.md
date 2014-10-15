@@ -111,3 +111,11 @@ http://www.tudou.com/listplay/xs8jxgy4XvQ/7edd74gPLzI.html
 使用sqlite3.h提供的api直接操作sqlite数据库
 http://www.tudou.com/listplay/xs8jxgy4XvQ/cLxcU_5tAcA.html
 
+UIButton的动态添加和UIAlertView的监听
+http://www.tudou.com/listplay/xs8jxgy4XvQ/4WOHDJiuswg.html
+
+TabBar的使用
+http://www.tudou.com/listplay/xs8jxgy4XvQ/aDbSOgIhDA4.html
+
+级联选择器及偏好设置的读取与保存
+http://www.tudou.com/listplay/xs8jxgy4XvQ/Q036BbFLTpg.html

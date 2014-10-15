@@ -29,7 +29,7 @@ tags: ["负载均衡","教程","nginx"]
       按后端服务器的响应时间来分配请求，响应时间短的优先分配。  
  5. url_hash（第三方）
  
-**配置conf.d(上代码)：**
+**配置nginx.conf(上代码)：**
 
 ```
 worker_processes  1;

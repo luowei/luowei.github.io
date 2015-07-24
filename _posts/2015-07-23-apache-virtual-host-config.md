@@ -14,11 +14,11 @@ tags: ["apache","linux","服务器"]
 CREATE DATABASE IF NOT EXISTS rootls DEFAULT CHARSET utf8 COLLATE utf8_general_ci
 
 # 创建用户并授权
-CREATE USER 'rootls'@'localhost' IDENTIFIED BY 'luowei123456'; 
+CREATE USER 'rootls'@'localhost' IDENTIFIED BY 'xxxxxx'; 
 GRANT ALL ON rootls.* TO 'rootls'@'localhost' ;
 
 # 设置密码
-# Set PASSWORD for rootls@localhost = password('luowei123456') ;
+# Set PASSWORD for rootls@localhost = password('xxxxxx') ;
 
 # 登录rootls
 mysql -h localhost -u rootls -p
@@ -31,7 +31,7 @@ source /var/www/zips/rootls.sql
 
 # 搭建CMS
 # 创建wodedata用户
-CREATE USER 'wodedata'@'localhost' IDENTIFIED BY 'wodedata123456'; 
+CREATE USER 'wodedata'@'localhost' IDENTIFIED BY 'xxxxxx'; 
 
 # 给用户wodedata授予wodedata数据库的权限
 GRANT ALL ON wodedata.* TO 'wodedata'@'localhost' ;

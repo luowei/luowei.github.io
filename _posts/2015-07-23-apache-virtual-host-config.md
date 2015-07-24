@@ -29,6 +29,25 @@ set names utf8;
 source /var/www/zips/rootls.sql
 
 
+# 搭建CMS
+# 创建wodedata用户
+CREATE USER 'wodedata'@'localhost' IDENTIFIED BY 'wodedata123456'; 
+
+# 给用户wodedata授予wodedata数据库的权限
+GRANT ALL ON wodedata.* TO 'wodedata'@'localhost' ;
+
+# 取消息在rootls数据库上的授权
+# revoke all on rootls.* from wodedata@localhost ;
+
+
+# 下载gpEasy CMS
+# wget http://www.gpeasy.com/Special_gpEasy?cmd=download
+
+
+# 下载e107 CMS
+# wget http://jaist.dl.sourceforge.net/project/e107/e107/e107%20v2.0%20beta1/e107_2.0_full_beta1.zip
+
+
 
 # 备份host文件
 cp /etc/hosts /etc/host.bak

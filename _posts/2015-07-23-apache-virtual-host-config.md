@@ -105,10 +105,10 @@ sudo vi /etc/httpd/conf.d/tomcat.conf
     ProxyPass / http://wodedata.com:8080/ smax=5 max=20 ttl=120 retry=300   
 </VirtualHost>  
 
-#Apache + Tomcat 负载均衡配置参见:
-[Apache+tomcat均衡负载配置新小结](http://liangzhijian.iteye.com/blog/1462668)
-[Apache + Tomcat 配置多个应用](http://www.blogjava.net/sealyu/archive/2008/08/25/224326.html)
-[实战Apache+Tomcat集群和负载均衡](http://www.cnblogs.com/qqzy168/archive/2013/08/03/3199237.html)
+# Apache + Tomcat 负载均衡配置参见以下
+Apache+tomcat均衡负载配置新小结:http://liangzhijian.iteye.com/blog/1462668
+Apache + Tomcat 配置多个应用:http://www.blogjava.net/sealyu/archive/2008/08/25/224326.html
+实战Apache+Tomcat集群和负载均衡:http://www.cnblogs.com/qqzy168/archive/2013/08/03/3199237.html
 
 
 ```

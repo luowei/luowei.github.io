@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+  <title>维唯为为</title>
+  <link href="https://luowei.github.io/atom.xml" rel="self"/>
+  <link href="https://luowei.github.io"/>
+  <updated>2019-09-23T00:22:00+08:00</updated>
+  <id>https://luowei.github.io</id>
+  <author>
+    <name>luowei</name>
+    <email>luowei010101@gmail.com</email>
+  </author>
+
+
+  <entry>
+    <title>广告配置脚本及分析配置脚本</title>
+    <link href="https://luowei.github.io/seo/website-ad-analytics-config.html"/>
+    <updated>2019-05-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/seo/website-ad-analytics-config</id>
+    <content type="html">
+网站SEO优化常用的方法与技巧
+
+Adsense
+
+自动广告
+&amp;lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script&amp;gt;
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: &quot;ca-pub-8760692904992206&quot;,
+          enable_page_level_ads: true
+     ...</content>
+  </entry>
+
+  <entry>
+    <title>网站SEO优化常用的方法与技巧</title>
+    <link href="https://luowei.github.io/seo/website-seo.html"/>
+    <updated>2019-04-30T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/seo/website-seo</id>
+    <content type="html">
+网站SEO优化常用的方法与技巧
+
+Google
+Google SearchConsole
+https://search.google.com/search-console
+Google Adsense
+https://www.google.com/adsense
+Google Analytics
+https://analytics.google.com
+
+Bing
+Bing Search
+https://www.bing.com/webmaster/configure
+
+百度
+百度站点管理
+https://ziyuan.baidu.com/site/index
+百度链接收录
+https...</content>
+  </entry>
+
+  <entry>
+    <title>Github Pages 之 Jekyll 与 Liquid 模板的应用</title>
+    <link href="https://luowei.github.io/jekyll/github-pages-jekyll-liquid.html"/>
+    <updated>2019-01-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/jekyll/github-pages-jekyll-liquid</id>
+    <content type="html">
+Github Pages 之 Jekyll 与 Liquid 模板的应用
+
+参考文章
+
+不使用套件直接產生 Jekyll 的 sitemap.xml
+
+安全且面向用户定制的WebApp模板语言
+
+Jekyll Tags on Github Pages
+
+Jekyll Liquid Filters
+
+参考代码
+
+
+&amp;lt;p id=&quot;items&quot;&amp;gt;
+    &amp;lt;ul class=&quot;posts&quot;&amp;gt;
+        {% assign list = site.pages | reverse %}
+        {% for page in list %}
+        {...</content>
+  </entry>
+
+  <entry>
+    <title>绝妙的声音</title>
+    <link href="https://luowei.github.io/audio/wonderful-audio.html"/>
+    <updated>2019-01-26T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/audio/wonderful-audio</id>
+    <content type="html">
+绝妙的音乐播放
+
+music
+
+精彩的英文演讲
+
+TED英文演讲
+
+国学
+
+抖音热曲
+
+</content>
+  </entry>
+
+  <entry>
+    <title>常用的sql命令</title>
+    <link href="https://luowei.github.io/%E5%B7%A5%E5%85%B7/useful-sql-command.html"/>
+    <updated>2019-01-25T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%B7%A5%E5%85%B7/useful-sql-command</id>
+    <content type="html">
+MySQL命令
+替数据表中某个字段中的部份内容
+UPDATE `topic`
+SET `preImage` = REPLACE (`preImage`, '7xstyo.com2.z0.glb.clouddn.com', 'wdyzj.wodedata.com')
+WHERE id IN (
+  select id from (
+      SELECT id FROM `topic` WHERE `preImage` LIKE '%7xstyo.com2.z0.glb.clouddn.com%' 
+  ) tempC
+)
+
+
+</content>
+  </entry>
+
+  <entry>
+    <title>技术研究课题参考点</title>
+    <link href="https://luowei.github.io/%E8%AF%BE%E9%A2%98/technology-research-topic.html"/>
+    <updated>2018-09-16T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E8%AF%BE%E9%A2%98/technology-research-topic</id>
+    <content type="html">
+技术研究课题参考点
+
+在线视频及图片处理方案
+该方案基于Nginx的RTMP模块与FFMpeg结全的视频编解码处理，以及与ImageMagick结合的图片处理系统。
+
+普通PC上视视频录制直播的方案
+该方案是利用OpenBroadcaster、XSplit视频录制直播工具及 Auto-Duck in Real Time 实现声音闪避效果。
+
+流行的音视频App的音视频资源文件抓取方案
+在越狱的机器上，喜玛拉雅FM、蜻蜓FM、抖音、火山小视频App等可通过iMazing导出音视频文件和sqlite数据库文件件，再通过简单的python脚本处理抓取到的资源文件与外链。
+
+浏览器内的广告拦截...</content>
+  </entry>
+
+  <entry>
+    <title>常用的软件工具</title>
+    <link href="https://luowei.github.io/%E5%B7%A5%E5%85%B7/useful-recommand-tools.html"/>
+    <updated>2018-08-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%B7%A5%E5%85%B7/useful-recommand-tools</id>
+    <content type="html">
+Mathematica : http://www.wolfram.com/mathematica/
+
+Gephi : https://gephi.org/
+
+NetLogo : http://ccl.northwestern.edu/netlogo/
+
+</content>
+  </entry>
+
+  <entry>
+    <title>工作生活中常碰到的问题的总结与思考</title>
+    <link href="https://luowei.github.io/life/work-sumary.html"/>
+    <updated>2018-07-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/life/work-sumary</id>
+    <content type="html">
+每个人在工作与生活中难免都会碰到各种各样的烦恼，这里来总结一下我在工作生活中碰到的问题作一下思考和分析。
+
+1. 问题：执行人负责人不明确的问题。
+解决方案：安排事情或任务时，事情本身和事情执行人的安排要具体明确；
+
+事情本身不明确导致：做错返工，影响工期，造成人力浪费…
+执行人不明确导致：各种相互推卸责任的事发生，造成团队不和谐。可能出现做的人若是做的做好，则功劳可能是别人或大家的，要是做不好，则做事的人就背锅，反而不做事的人轻巧了。
+
+例如：如果有领导把一个项目同时分配给两个或多个团队去实行，如果没有具体指明主负责人或实际推动人，那么这个项目也就很难有所进展。
+
+2. 问题：任务拆...</content>
+  </entry>
+
+  <entry>
+    <title>常用的终端命令</title>
+    <link href="https://luowei.github.io/linux/general-command.html"/>
+    <updated>2018-07-10T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/general-command</id>
+    <content type="html">
+常用的终端命令
+
+文件重命名
+
+批量改文件： for i in *; do mv $i $i.mp3; done;
+去掉多余的mp3后缀： for i in *; do mv $i ${i/.mp3.mp3/.mp3}; done;
+*文件名全改成小写: for i in *; do mv $i ` echo &quot;print '$i'.lower()&quot; | python `; done; 
+或   for i in *; do mv $i ` echo &quot;print '$i'.downcase()&quot; | ruby `; done;
+或   for i in *; do mv $i ` p...</content>
+  </entry>
+
+  <entry>
+    <title>常用的特殊符号</title>
+    <link href="https://luowei.github.io/linux/math-symbols.html"/>
+    <updated>2018-06-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/math-symbols</id>
+    <content type="html">
+常用的特殊符号
+
+常用的数学符号
+＋－×÷﹢﹣±／＝≈≡≠∧∨∑∏∪∩∈⊙⌒⊥∥∠∽≌＜＞≤≥≮≯∧∨√﹙﹚[]﹛﹜∫∮∝∞⊙∏º¹²³⁴ⁿ₁₂₃₄·∶½⅓⅔¼¾⅛⅜⅝⅞∴∵∷αβγδεζηθικλμνξοπρστυφχψω％‰℅°℃℉′″￠〒¤○㎎㎏㎜㎝㎞㎡㎥㏄㏎mlmol㏕Pa＄￡￥㏒㏑壹贰叁肆伍陆柒捌玖拾微毫厘分百千万亿兆吉
+
+＋ ± － × ‧÷ ±  ＝ ≠ ≒ ≡   ≦ ≧
+≌ ∞ ∝   Σ  π ㎡  ％  ℃ ℉  √
+∴ ∵ ∈ ∉∩ ∪ ⊂ ⊆ ∅   ㏒   ㏑
+⊥ ∠  ° △  □  ⊙∫ ∮∂ ∇
+¼ , ½ , ¾ , ⅓ , ⅔ ,⅛, ⅜,⅝, ⅞...</content>
+  </entry>
+
+  <entry>
+    <title>ssh隧道实现代理上网</title>
+    <link href="https://luowei.github.io/linux/ssh-tunnel.html"/>
+    <updated>2018-06-07T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/ssh-tunnel</id>
+    <content type="html">
+ssh隧道实现代理上网
+
+本地代理
+
+ssh -N -D 127.0.0.1:端口 用户名@服务器
+
+比如：
+ssh -N -D 127.0.0.1:3128 admin@xxxxxx.com
+
+chrome配置
+
+
+
+Terminer设置代理
+参考： https://gist.github.com/fearblackcat/850c6e027d5a03017c44daaa6a7ffc30 
+
+export http_proxy=&quot;username:password@ip address:port number&quot;  to your ~/.bash_profile file
+
+expor...</content>
+  </entry>
+
+  <entry>
+    <title>做独立开发的一些感想</title>
+    <link href="https://luowei.github.io/ios/Indie-Developer-Thoughts.html"/>
+    <updated>2018-02-07T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/Indie-Developer-Thoughts</id>
+    <content type="html">
+做独立开发的一些感想
+
+  想想自己独立开发也有好多年了，从刚毕业做的在线销售系统，再到spring boot做写的my-finances，再后来转iOS做的万能输入法、我的浏览器、照片DIY、斗图王。一路走来，还是写一点感想吧，后面有时间会持续更新的。
+
+  要说起做独立开发，要从我刚学会编程时，我想那时候就应该有这种想法了，总想着除了正常的学习或工作之外，要自己独立做点什么东西，以突显出我与别人的不一样，我需要比别人更坚韧不拔，更能吃苦耐劳。
+
+  其实作为独立开发者，最难的是需要孤独的去面对问题和挑战困难，因为没人与你同行，而且也可能会要没日没夜的加班加点，有可能是1年，也有可能...</content>
+  </entry>
+
+  <entry>
+    <title>开发者个人App作品展示</title>
+    <link href="https://luowei.github.io/ios/developer-app.html"/>
+    <updated>2018-02-06T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/developer-app</id>
+    <content type="html">
+开发者App下载
+
+开发者App
+https://itunes.apple.com/cn/developer/wei-luo/id990121194
+
+万能输入法
+https://itunes.apple.com/cn/app/id1227288468
+https://itunes.apple.com/us/app/id1227288468
+
+中文描述
+＝＝＝万能输入法宿主App功能介绍＝＝＝
+万能输入法宿主App界面简法、动画淡雅；
+万能输入法宿主App内置简版Web浏览器支持关键词搜索；
+万能输入法宿主App内置软笔画板支持自定义笔触大小及颜色，并笔锋效果；
+万能输入法宿主App内...</content>
+  </entry>
+
+  <entry>
+    <title>UTI详解</title>
+    <link href="https://luowei.github.io/ios/UTI-type.html"/>
+    <updated>2018-01-26T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/UTI-type</id>
+    <content type="html">
+UTI Overview
+
+参考：
+
+Fun with UTI
+
+Apple UTI Overview
+
+
+
+mdls
+
+You can use the mdls tool to inspect the UTIs currently attached to any item in your file system. This is also quite useful to see if your UTI definitions for your custom type are correct.
+
+LuoWeideMacBook-Pro:Movies luowei$ mdls MyInp...</content>
+  </entry>
+
+  <entry>
+    <title>Mime Type 列表全集</title>
+    <link href="https://luowei.github.io/tutorials/mime-type-list.html"/>
+    <updated>2018-01-25T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/tutorials/mime-type-list</id>
+    <content type="html">
+MIME Types List
+
+
+  
+    
+      Suffixes applicable
+      Media type and subtype(s)
+    
+  
+  
+    
+      .3dm
+      x-world/x-3dmf
+    
+    
+      .3dmf
+      x-world/x-3dmf
+    
+    
+      .a
+      application/octet-stream
+    
+    
+      .aab
+      application/x-authorware-bin
+    
+    
+     ...</content>
+  </entry>
+
+  <entry>
+    <title>手机连接Mac共享的WiFi的hosts配置问题</title>
+    <link href="https://luowei.github.io/ios/mac-share-wifi-host-config.html"/>
+    <updated>2017-08-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/mac-share-wifi-host-config</id>
+    <content type="html">
+手机连接Mac共享的WiFi的hosts配置问题
+
+安装Homebrew
+
+
+  Get Xcode;
+  Get Command Line Tools. xcode-select --install;
+  Install Homebrew. ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;;
+  其他辅助命令:
+
+
+
+  check install issue : brew doctor;
+
+  To search for an application:b...</content>
+  </entry>
+
+  <entry>
+    <title>在阿里云ECS上使用Docker快速搭建Gitlab</title>
+    <link href="https://luowei.github.io/docker/docker-gitlab-config.html"/>
+    <updated>2017-07-12T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/docker/docker-gitlab-config</id>
+    <content type="html">
+在阿里云ECS上使用Docker快速搭建Gitlab
+
+安装Docker
+
+安装命令：
+apt-get install docker.io
+
+检查版本：
+docker -v
+
+添加Docker加速器
+
+可以自己配置加速器：https://dashboard.daocloud.io/mirror
+
+或者使用阿里去的加速器，登录阿里云，进入容器Hub服务控制台,初始化加速器后，阿里云会为我们创建一个专属加速器地址，复制这个地址。
+
+在/etc/docker/daemon.json中添加一段配置，如果没有该文件则创建。
+
+{
+    &quot;registry-mirrors&quot;: [&quot;&amp;lt;you...</content>
+  </entry>
+
+  <entry>
+    <title>macOS下Tomcat项目的布署及8080端口转发</title>
+    <link href="https://luowei.github.io/lamp/tomcat-deploy-and-port-proxy.html"/>
+    <updated>2017-06-12T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/lamp/tomcat-deploy-and-port-proxy</id>
+    <content type="html">
+macOS下Java Web项目的布署及8080端口转发的配置
+
+下载安装JDK 与 Tomcat
+
+下载JDK8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+下载Tomcat8: http://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.zip
+
+配置 JAVA_HOME 与 Tomcat
+
+
+  编辑：vi ~/.bash_profile
+  添加以下命...</content>
+  </entry>
+
+  <entry>
+    <title>万能输入法实现原理及代码结构</title>
+    <link href="https://luowei.github.io/life/myinputmethod-structure.html"/>
+    <updated>2017-05-28T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/life/myinputmethod-structure</id>
+    <content type="html">
+万能输入法实现原理及代码结构
+
+
+
+</content>
+  </entry>
+
+  <entry>
+    <title>为iOS App子模块创建桌面快捷方式</title>
+    <link href="https://luowei.github.io/ios/iOS-config-webclip.html"/>
+    <updated>2017-05-19T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/iOS-config-webclip</id>
+    <content type="html">
+为iOS App 子模块创建桌面快捷方式
+
+
+  前提是App配置了自己的URLSchem,并且通过url可以打开App的相应的子模块；
+  安装Apple Configurator,选择”文件-&amp;gt;新建描述文件”；
+  
+    填写描述文件通用信息，和添加一个Webclip并配置好相应的信息；
+
+
+  
+  然后将描述文件存储到磁盘，我这里文件名为：Drawboard_Webclip_sign;
+  再给这个iOS 的 mobileconfig文件进行签名，命令如下，其中双引号中的为钥匙串里证书的常用名称；
+/usr/bin/security cms -S -N &quot;iPhone...</content>
+  </entry>
+
+  <entry>
+    <title>使用 sqlcipher 加密解密 sqlite3 数据库</title>
+    <link href="https://luowei.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/sqlite-encrypt-with-sqlcipher.html"/>
+    <updated>2017-04-25T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93/sqlite-encrypt-with-sqlcipher</id>
+    <content type="html">
+使用 sqlcipher 加密解密 sqlite3 数据库
+
+下载sqlcipher
+https://github.com/sqlcipher/sqlcipher
+
+编译sqlcipher
+$ ./configure --enable-tempstore=yes CFLAGS=&quot;-DSQLITE_HAS_CODEC&quot; LDFLAGS=&quot;-lcrypto -L/usr/local/opt/openssl/lib&quot; CPPFLAGS=&quot;-I/usr/local/opt/openssl/include&quot;
+$ make
+
+
+安装sqlcipher
+
+  创建一个sqlcipher新的目录；
+ ...</content>
+  </entry>
+
+  <entry>
+    <title>机器学习/数据挖掘/神经网络相关资料</title>
+    <link href="https://luowei.github.io/ai/machine-learning-data-mining-neural-network.html"/>
+    <updated>2017-03-18T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ai/machine-learning-data-mining-neural network</id>
+    <content type="html">
+机器学习/数据挖掘/神经网络相关资料
+
+##学习入口链接
+
+解读AlphaGo论文
+
+ 机器学习系列(8)_读《Nature》论文，看AlphaGo养成
+
+龙心尘的CSDN博客
+
+寒小阳的CSDN博客
+
+用Python开始机器学习（1：配置windows平台）
+
+Feng某人迟到的技术专栏
+
+AlphaGo论文的译文，用深度神经网络和树搜索征服围棋：Mastering the game of Go with deep neural networks and tree search
+
+持续更新中。。。
+
+</content>
+  </entry>
+
+  <entry>
+    <title>正则表达式所有元字符及其使用方法一览表</title>
+    <link href="https://luowei.github.io/regex/regex-tutorial.html"/>
+    <updated>2017-02-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/regex/regex-tutorial</id>
+    <content type="html">
+正则表达式所有元字符及其使用方法一览表
+
+参考：
+
+正则表达式所有元字符及其使用方法一览表
+
+正则表达式30分钟入门教程
+
+在线正则表达式测试
+
+9 Regular Expressions to strip HTML tags
+
+7 URL regular expressions to retrieve all parts of URL
+
+Mark一下方便日常使用查询
+
+元字符列表
+
+
+  
+    
+      字符
+      描述
+    
+  
+  
+    
+      \
+      将下一个字符标记为一个特殊字符、或一个原义字符、或一个 后向引用、或一个八进制转义符。例如...</content>
+  </entry>
+
+  <entry>
+    <title>CallKit使用实现总结</title>
+    <link href="https://luowei.github.io/ios/ios-callkit-guide.html"/>
+    <updated>2017-01-14T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/ios-callkit-guide</id>
+    <content type="html">
+CallKit使用实现总结
+
+CallKit不仅让VoIP应用具有系统电话一样的功能，还能帮助系统实现来电识别等功能；但本身并不具备voip功能。
+
+
+  
+    引入库PushKit.framework、CallKit.framework；
+  
+  
+    AppDelegate.h添加
+  
+
+
+#import &amp;lt;PushKit/PushKit.h&amp;gt;
+
+@class ProviderDelegate;
+@class SpeakerboxCallManager;
+
+@property (nonatomic, strong) ProviderDelegate *pro...</content>
+  </entry>
+
+  <entry>
+    <title>使用自建证书配置HTTPS服务器</title>
+    <link href="https://luowei.github.io/lamp/https-config.html"/>
+    <updated>2016-12-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/lamp/https-config</id>
+    <content type="html">
+使用自建证书配置HTTPS服务器
+
+安装升级openssl
+
+
+  
+    首先，查看下当前设备的openssl版本，如果版本在openssl1.0.1g以上，请略过。查看命令：openssl version -a。
+  
+  
+    下载：wget https://www.openssl.org/source/openssl-1.0.2j.tar.gz。
+  
+  
+    下载完之后，解压并进行安装：
+  
+
+
+tar -zxvf openssl-1.0.2j.tar.gz
+cd  openssl-1.0.1g         
+./config shared zlib    ...</content>
+  </entry>
+
+  <entry>
+    <title>iOS安防及越狱开发相关知识总结</title>
+    <link href="https://luowei.github.io/ios/ios-security-reverse-jailbreak-skills-summary.html"/>
+    <updated>2016-10-21T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/ios-security-reverse-jailbreak-skills-summary</id>
+    <content type="html">
+iOS安防及越狱开发相关知识总结
+
+首先要有一个越狱设备，没得说的。
+
+脱壳
+因为从AppStore下载的ipa都是加了壳的(苹果把开发者上传的ipa进行了加壳后财放到AppStore的)，所以加壳的ipa要先去壳。因为通过xcode打的包是没有加壳的，所以在第三方渠道如PP助手、itools等应用市场有很多ipa是开发者直接分发没有加壳的。
+
+脱壳可以用clutch、dumpdecrypted或者使用gdb調試等解密去壳
+
+Clutch脱壳破解：iOS逆向之ipa破解
+
+iOS逆向之App脱壳:http://www.jianshu.com/p/47836c78eb0a
+
+App脱壳及...</content>
+  </entry>
+
+  <entry>
+    <title>iOS中图形的绘制基础</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-graphic-draw.html"/>
+    <updated>2016-09-10T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-graphic-draw</id>
+    <content type="html">
+iOS中图形的绘制基础
+
+UIView的drawRect方法
+override func drawRect(rect: CGRect) {
+        //绘制代码
+}
+
+
+Bézier Curve（贝赛尔曲线）
+
+1.1962年法国工程师Pierre Bézier发表;
+2.计算机图形图像造形基本工具,运用最多的基本线条之一;
+
+
+
+画一根线段
+let linePath = UIBezierPath()
+linePath.move(to: CGPoint(x: 30, y: 50))
+linePath.addLine(to: CGPoint(x: 190, y: 50))
+UIC...</content>
+  </entry>
+
+  <entry>
+    <title>iOS面试相关基础问题点</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-basic-interview-question.html"/>
+    <updated>2016-08-23T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-basic-interview-question</id>
+    <content type="html">
+iOS面试相关基础问题点
+
+iOS程序的执行顺序
+
+
+  AppDelegate执行顺序
+
+
+1 进入程序的入口，进入main函数, 设置AppDelegate称为函数的代理
+2  程序完成加载：-[AppDelegate application:didFinishLaunchingWithOptions:]
+3 创建window窗口
+4 程序被激活：-[AppDelegate applicationDidBecomeActive:]
+5 当点击command+H时：
+    程序取消激活状态：-[AppDelegate applicationWillResignActive:]
+  ...</content>
+  </entry>
+
+  <entry>
+    <title>C/S系统通信相关解决方案</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/client-server-communication-solution.html"/>
+    <updated>2016-06-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/client-server-communication-solution</id>
+    <content type="html">
+C/S系统通信相关解决方案
+
+即时消息IM
+
+
+  
+    目前主流的四种IM（IM：instant messaging,即时消息）协议：XMPP（Extensible Messageing and Presence Protocol：可扩展消息与表示协议）、即时信息和空间协议(IMPP)、空间和即时信息协议(PRIM)、针对即时通讯和空间平衡扩充的进程开始协议SIP(SIMPLE)。在这四种协议中，XMPP是最灵活的。XMPP是一种基于XML的协议，它继承了在XML环境中灵活的发展性。
+  
+  XMPP官网：https://xmpp.org
+    
+      客户端：http...</content>
+  </entry>
+
+  <entry>
+    <title>JsonServer,lowdb,hotel为开发者打造轻服务器</title>
+    <link href="https://luowei.github.io/linux/JsonServer-lowdb-hotel-for-mock-api-server.html"/>
+    <updated>2016-06-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/JsonServer-lowdb-hotel-for-mock-api-server</id>
+    <content type="html">
+JsonServer,lowdb,hotel为开发者打造轻服务器
+
+JsonServer模拟Api服务端
+
+JsonServer:https://github.com/typicode/json-server
+
+本文示例：http://wodedata.com:3000
+
+为api生成模拟数据
+
+
+
+js写的轻量级数据库lowdb
+
+lowdb:https://github.com/typicode/lowdb
+
+hotel一个非常好用的Server管理器
+
+hotel:https://github.com/typicode/hotel
+
+安装全局作用域的module
+
+添加json-...</content>
+  </entry>
+
+  <entry>
+    <title>NSURLConnection 与 NSURLSession 区别</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-nsurlconnection-and-nsurlsession.html"/>
+    <updated>2016-06-20T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-nsurlconnection-and-nsurlsession</id>
+    <content type="html">
+NSURLConnection 与 NSURLSession 区别
+
+NSURLSession 官方说法
+
+
+  NSURLSession 是iOS7后出来的替代 NSURLConnection 的API;
+  NSURLSession 通过绑定一个 delegate 在一个网络会话的生命周期里调用某些事件；
+  NSURLSession 对象是线程安全的；
+  NSURLSession 默认使用系统提供的delegate，并适当的使用现有的代码使用；
+  NSURLSession 通过创建 NSURLSessionTask 代表资源被加载的任务，类似 NSURLConnection对...</content>
+  </entry>
+
+  <entry>
+    <title>常见的基础原理相关的面试问题</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-base-principle-qa.html"/>
+    <updated>2016-06-19T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-base-principle-qa</id>
+    <content type="html">
+常见的基础原理相关的问题
+
+数组：
+数组存储区间是连续的，二分查找时间复杂度小，为O(1)，寻址容易，插入和删除困难；
+
+链表：
+链表存储区间离散，时间复杂度很大，达O（N），寻址困难，插入和删除容易；
+
+哈希表：
+哈希表是一种寻址容易，插入删除也容易的数据结构，既满足了数据的查找方便，同时不占用太多的内容空间，使用也十分方便。
+Hash表实现原理：使用哈希函数将被查找的Key转换为数组的索引，如果发生hash索引值碰撞冲突，则拉链法(开放定址法)和线性探测法等方法解决冲突，直到找出一个不冲突的哈希地址。
+
+解决hash冲突的常见办法
+开放定址法（线性探测再散列，二次探测再散列，伪随机...</content>
+  </entry>
+
+  <entry>
+    <title>iOS 中 UIView 的 Layout 相关概念</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-view-layout-circle.html"/>
+    <updated>2016-06-18T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-view-layout-circle</id>
+    <content type="html">
+iOS 中 UIView 的 Layout 相关概念
+
+Autolayout机制相关方法
+
+
+  - (CGSize)sizeThatFits:(CGSize)size
+  - (void)sizeToFit
+  - (void)layoutSubviews
+  - (void)layoutIfNeeded
+  - (void)setNeedsLayout
+  - (void)setNeedsDisplay
+  - (void)drawRect
+
+
+layoutSubviews在以下情况下会被调用：
+
+
+  init初始化不会触发layoutSubviews,但是是用initWithF...</content>
+  </entry>
+
+  <entry>
+    <title>OC中的运行时及Swift中的结构体及值类型</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-referencetype-swift-struct-difference.html"/>
+    <updated>2016-06-17T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-referencetype-swift-struct-difference</id>
+    <content type="html">
+OC中的运行时及Swift中的结构体及值类型
+
+OC中的运行时
+
+
+  
+    OC本身是一种强类型语言，但其运行时功能让它又有了动态语言的特点。OC中对象的类型和对象所执行的方法都是在运行时阶段进行查找并确认的，这种机制被称为动态绑定。
+  
+  
+    在很多语言，比如 C ，调用一个方法其实就是跳到内存中的某一点并开始执行一段代码。没有任何动态的特性，因为这在编译时就决定好了。而在 Objective-C 中，[object foo] 语法并不会立即执行 foo 这个方法的代码。它是在运行时给 object 发送一条叫 foo 的消息。这个消息，也许会由 object 来处理...</content>
+  </entry>
+
+  <entry>
+    <title>iOS中的MVC、MVVM 研究</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-mvc-mvvm-research.html"/>
+    <updated>2016-06-17T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-mvc-mvvm-research</id>
+    <content type="html">
+iOS中的MVC、MVVM 研究
+
+一个标准的MVC架构
+
+
+  
+    Model
+
+     @interface Person : NSObject
+       
+ - (instancetype)initwithSalutation:(NSString *)salutation firstName:(NSString *)firstName lastName:(NSString *)lastName birthdate:(NSDate *)birthdate;
+       
+ @property (nonatomic, readonly) NSString *saluta...</content>
+  </entry>
+
+  <entry>
+    <title>iOS性能内存优化</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-perfermance-optimization.html"/>
+    <updated>2015-12-13T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/ios-perfermance-optimization</id>
+    <content type="html">
+iOS性能内存优化
+
+几个优化总体思路：
+
+  避免过多的CPU计算
+    
+      简化复杂频繁的布局计算
+      文本计算、格式转换、图像绘制、对象的创建调整等尽可能放到后台线程进行
+    
+  
+  避免图层混合
+    
+      确保控件的opaque属性设置为true，确保backgroundColor和父视图颜色一致且不透明
+      如无特殊需要，不要设置低于1的alpha值
+      确保UIImage没有alpha通道
+    
+  
+  避免临时转换
+    
+      确保图片大小和frame一致，不要在滑动时缩放图片
+      确保图片颜...</content>
+  </entry>
+
+  <entry>
+    <title>WebView、网络操作相关及键盘相关的几个关键类</title>
+    <link href="https://luowei.github.io/ios/ios-webview-custom-urlprotocol-keyboard.html"/>
+    <updated>2015-10-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/ios-webview-custom-urlprotocol-keyboard</id>
+    <content type="html">
+WebView、网络操作相关及键盘相关的几个关键类
+
+UIWebview的本地调用
+
+  注入js:[webview stringByEvaluatingJavaScriptFromString:]
+  本地调用，使用WebViewJavascriptBridge：- (void)registerHandler:(NSString *)handlerName handler:(WVJBHandler)handler
+
+
+WKWebView的本地调用
+
+  注入js:[wkwebview evaluateJavaScript:]
+  首先通过WKUserContentController...</content>
+  </entry>
+
+  <entry>
+    <title>iOS内存管理机制</title>
+    <link href="https://luowei.github.io/ios/ios-memery-management.html"/>
+    <updated>2015-10-19T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/ios-memery-management</id>
+    <content type="html">
+iOS内存管理机制
+
+Objective-C内存管理的对象
+
+  主要有两类，一类是值类型，比如int、float、struct等基本数据类型；
+  另一类是引用类型，也就是继承自NSObject类的所有的OC对象；
+  前一种值类型不需要我们管理，后一种引用类型是需要我们管理内存的；
+  值类型会被放入栈中，他们依次紧密排列，在内存中占有一块连续的内存空间，遵循先进后出的原则；
+  引用类型会被放到堆中，当给对象分配内存空间时，会随机的从内存当中开辟空间，对象与对象之间可能会留有不确定大小的空白空间，因此会产生很多内存碎片，需要我们管理；
+  栈内存与堆内存从性能上比较，栈内存要优于...</content>
+  </entry>
+
+  <entry>
+    <title>Tomcat多域名绑定及集群配置</title>
+    <link href="https://luowei.github.io/tomcat%E9%85%8D%E7%BD%AE/tomcat-multiple-domain-bind-and-cluster-config.html"/>
+    <updated>2015-08-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/tomcat%E9%85%8D%E7%BD%AE/tomcat-multiple-domain-bind-and-cluster-config</id>
+    <content type="html">
+# - 配置Apache虚拟目录
+
+1. 在 /etc/httpd/conf.d 目录中创建 tomcat.conf 文件；
+2. 添加以下内容：
+## 配置tomcat的常规应用,这里使用 my.wodedata.com 域名
+&amp;lt;VirtualHost *:80&amp;gt;   
+    ServerName my.wodedata.com 
+    ProxyIOBufferSize 8192  
+    ProxyRequests Off   
+    ProxyVia Full   
+    # 把 my.wodedata.com 指向 http://wodedata.com...</content>
+  </entry>
+
+  <entry>
+    <title>CentOS环境下Apache虚拟目录及负载均衡配置</title>
+    <link href="https://luowei.github.io/lamp/apache-virtual-host-config.html"/>
+    <updated>2015-07-23T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/lamp/apache-virtual-host-config</id>
+    <content type="html">
+# 创建数据库
+CREATE DATABASE IF NOT EXISTS rootls DEFAULT CHARSET utf8 COLLATE utf8_general_ci
+
+# 创建用户并授权
+CREATE USER 'rootls'@'localhost' IDENTIFIED BY 'xxxxxx'; 
+GRANT ALL ON rootls.* TO 'rootls'@'localhost' ;
+
+# 设置密码
+# Set PASSWORD for rootls@localhost = password('xxxxxx') ;
+
+# 登录rootls
+mysql -h l...</content>
+  </entry>
+
+  <entry>
+    <title>一些比较有用的iOS开发者博客</title>
+    <link href="https://luowei.github.io/ios/some-useful-iOS-developer-blog.html"/>
+    <updated>2015-07-14T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/some-useful-iOS-developer-blog</id>
+    <content type="html">
+一些比较有用的iOS开发者博客
+        objc中国
+            NSHipster 中文版 - NSHipster
+            Ray Wenderlich | Tutorials for iPhone / iOS Developers and Gamers
+            我爱自然语言处理 | I Love Natural Language Processing
+            Glow 技术团队博客
+            OneV's Den
+            sunnyxx的技术博客
+            Chun Ti...</content>
+  </entry>
+
+  <entry>
+    <title>HTTPS的深入理解</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/https-insight.html"/>
+    <updated>2015-07-06T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/https-insight</id>
+    <content type="html">
+HTTPS的深入理解
+HTTPS的工作原理
+
+  HTTPS在传输数据之前需要客户端（浏览器）与服务端（网站）之间进行一次握手，在握手过程中将确立双方加密传输数据的密码信息。TLS/SSL协议不仅仅是一套加密传输的协议，更是一件经过艺术家精心设计的艺术品，TLS/SSL中使用了非对称加密，对称加密以及HASH算法。握手过程的具体描述如下：
+
+
+1. 浏览器将自己支持的一套加密规则发送给网站。 
+2. 网站从中选出一组加密算法与HASH算法，并将自己的身份信息以证书的形式发回给浏览器。证书里面包含了网站地址，加密公钥，以及证书的颁发机构等信息。 
+3. 浏览器获得网站证书之后浏览器要做以...</content>
+  </entry>
+
+  <entry>
+    <title>OAuth2.0深入理解</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/OAuth2.0-insight.html"/>
+    <updated>2015-07-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/OAuth2.0-insight</id>
+    <content type="html">
+OAuth2.0深入理解
+OAuth简介
+
+  OAuth（开放授权）是一个开放标准，允许用户让第三方应用访问该用户在某一网站上存储的私密的资源（如照片，视频，联系人列表），而无需将用户名和密码提供给第三方应用。
+  OAuth允许用户提供一个令牌，而不是用户名和密码来访问他们存放在特定服务提供者的数据。每一个令牌授权一个特定的网站（例如，视频编辑网站)在特定的时段（例如，接下来的2小时内）内访问特定的资源（例如仅仅是某一相册中的视频）。这样，OAuth让用户可以授权第三方网站访问他们存储在另外服务提供者的某些特定信息，而非所有内容。
+  OAuth(俗称1.0)是OpenID的一个补...</content>
+  </entry>
+
+  <entry>
+    <title>CentOS上LAMP环境搭建及配置</title>
+    <link href="https://luowei.github.io/lamp/centOS-install-apache-java-tomcat-php-phpmyadmin.html"/>
+    <updated>2015-06-15T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/lamp/centOS-install-apache-java-tomcat-php-phpmyadmin</id>
+    <content type="html">
+将以下脚本保存为 lamp.sh , 执行 sh lamp.sh 安装。
+
+
+#!/bin/sh
+
+# 参考:
+# Shell脚本编程30分钟入门:https://github.com/qinjx/30min_guides/blob/master/shell.md
+# nstall JAVA 8 (JDK 8u45) on CentOS/RHEL 7/6/5 and Fedora:http://tecadmin.net/install-java-8-on-centos-rhel-and-fedora/
+# CentOS开机自动运行程序的脚本:http://blog.csdn.net/j...</content>
+  </entry>
+
+  <entry>
+    <title>浅谈将兵之才与将将之才</title>
+    <link href="https://luowei.github.io/life/general-and-marshal-talent.html"/>
+    <updated>2015-06-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/life/general-and-marshal-talent</id>
+    <content type="html">
+    帅和将，在古书里经常出现在军队和战场上，一场战争是否能取得胜利，往往得益于帅和将的密切配合。其区别在于：“能领兵者，谓之将也”；“能将将者，谓之帅也”，即帅才比将才高一个层次，偏重于战略思维；而将才是在一定局部范围内能掌控局势，能带领所属出色或顺利完成统帅分派的任务的人，他偏重于战术或方式方法的研究。
+
+
+
+　　在现代的企业管理中，经营一个企业也好比持续打一场战争，也需要各类的帅才和将才。往往总经理的职位更需要一个帅才，而下面的各部门负责人更需要一些将才，至于董事长其实更多的是相才。
+　　管理上的将才一般能够独挡一面，为企业的骨干，在自己所管辖的范围内能够干出非常不错的业绩。而...</content>
+  </entry>
+
+  <entry>
+    <title>CentOS上安装ShadowSocks脚本</title>
+    <link href="https://luowei.github.io/linux/centOS-install-shadowsocks-shell-script.html"/>
+    <updated>2015-05-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/centOS-install-shadowsocks-shell-script</id>
+    <content type="html">
+将以下脚本保存为 shadowsocks.sh , 执行 sh shadowsocks.sh 安装。
+
+
+#!/bin/sh
+
+# 参考：
+# Pip和Shadowsocks的安装配置教程:http://www.guance.com/611.html
+# CentOS6零基础配置shadowsocks服务端完整教程:http://hazelzhu.com/archives/1568
+# Linux的简单shell脚本中修改文件操作:http://jsczxy2.iteye.com/blog/673910
+# Linux Shell编程入门:http://www.cnblogs.com/...</content>
+  </entry>
+
+  <entry>
+    <title>决策、目标、计划</title>
+    <link href="https://luowei.github.io/life/decisions-goals-plans.html"/>
+    <updated>2015-02-15T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/life/decisions-goals-plans</id>
+    <content type="html">
+其实随着年龄的增长，自身积累的增长，自己对自己的人生，在大方向与决策方面能做的选择空间也会越来越小。
+
+人生的确定性与不确定性的比例也就越来越高。
+
+人生的目标可以就有很多，不同的时间段都可能给自己设定不能的目标；好的人生，决策只能一次，总体的方向只能一个方向，就像生命只有一次一样；这一次要说明一个人是做政治的？做文学的？做艺术的？务农的？做工的？做管理的？做科研的？到处跑的？乐享人生什么都没做的？等等总规会有一个定位。
+
+自己必须做出选择，必须定位自己；不对自己人生做出选择，那这个选择权就自然交给别人，或者是你所处在的组织或是环境。
+
+当然通常很少有人能脱离自身环境而自己做出人生选择...</content>
+  </entry>
+
+  <entry>
+    <title>如果你做的事情毫不费力，就是在浪费时间</title>
+    <link href="https://luowei.github.io/life/it's-a-waste-of-time-do-effortlessly.html"/>
+    <updated>2014-10-15T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/life/it's-a-waste-of-time-do-effortlessly</id>
+    <content type="html">
+原文出处： 钛媒体
+曾担任苹果副总裁的Roizen女士提出了八条职业原则，其中关于创业她说：很多怀有雄心壮志的人力求消除工作中的困难，顺利到达梦想彼岸，这是不对的。现实情况是，即使你真的轻松成功，你也会感到无聊。所以，找点困难的事情做吧。创业的美妙之处正在于其艰难。没有安全可言，没有稳定的收入，你必须完全靠自己。
+
+注：本文作者Heidi Roizen系DFJ Venture合伙人，曾任苹果公司主管开发者关系的高级副总裁，女性创业者。
+
+以下是 Roizen 提出的八条原则，她正是利用这些原则来指导自己的工作、建立起广泛的人际网络并不断推动创新。这些过来人的经验对于新入行者弥足珍贵，可...</content>
+  </entry>
+
+  <entry>
+    <title>一些简单的iOS应用视频教程</title>
+    <link href="https://luowei.github.io/ios/ios-game-samples.html"/>
+    <updated>2014-10-13T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/ios-game-samples</id>
+    <content type="html">
+FMDB操作SQLite示例QuizSQLite
+
+&amp;lt;/embed&amp;gt;
+
+直升机越障碍小游戏示例HeliGame
+
+&amp;lt;/embed&amp;gt;
+
+iOS下计算器应用的开发
+
+
+&amp;lt;/embed&amp;gt;
+
+乒乓球小游戏示例PingPongGame
+
+&amp;lt;/embed&amp;gt;
+
+太空入侵者示例SpaceInvaders
+
+&amp;lt;/embed&amp;gt;
+
+问答示例(智商测试)QuizSample
+
+&amp;lt;/embed&amp;gt;
+
+简单的塔防小游戏TowerDefense
+
+&amp;lt;/embed&amp;gt;
+
+小球跳云梯小游戏DoodleJump
+
+&amp;lt;/embed&amp;gt;...</content>
+  </entry>
+
+  <entry>
+    <title>学习积累之iOS示例</title>
+    <link href="https://luowei.github.io/ios/ios-cocos2dx-game.html"/>
+    <updated>2014-10-13T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/ios-cocos2dx-game</id>
+    <content type="html">
+屏幕背景切换Flashlight
+http://www.tudou.com/listplay/xs8jxgy4XvQ/59M24Wo-tdU.html
+
+UITableView,UINavigationView的使用
+http://www.tudou.com/listplay/xs8jxgy4XvQ/YFYNXET3kRs.html
+
+UIAlertView的使用
+http://www.tudou.com/listplay/xs8jxgy4XvQ/YwGeImwTjNA.html
+
+发送Email之EmailDemo
+http://www.tudou.com/listplay/xs8j...</content>
+  </entry>
+
+  <entry>
+    <title>nginx的负载均衡配置</title>
+    <link href="https://luowei.github.io/tutorials/nginx-upstream.html"/>
+    <updated>2014-10-10T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/tutorials/nginx-upstream</id>
+    <content type="html">
+Nginx负载均衡通过upstream实现,同时Nginx还支持多组的负载均衡,可以配置多个upstream来服务于不同的Server.
+
+
+
+  down 表示单前的server暂时不参与负载
+  weight  默认为1.weight越大，负载的权重就越大。
+  max_fails ：允许请求失败的次数默认为1.当超过最大次数时，返回— proxy_next_upstream 模块定义的错误
+  fail_timeout:max_fails 次失败后，暂停的时间。
+  backup： 其它所有的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。
+...</content>
+  </entry>
+
+  <entry>
+    <title>我做的一些视频</title>
+    <link href="https://luowei.github.io/tutorials/video-tutorials.html"/>
+    <updated>2014-09-28T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/tutorials/video-tutorials</id>
+    <content type="html">
+Intellij之JavaEE开发教程
+http://www.tudou.com/plcover/4maF4_tJ9uw/
+
+Spring教程
+http://www.tudou.com/plcover/w30DGqKxUyY/
+
+从项目实例学习开发
+http://www.tudou.com/plcover/SZ6ASAjPlYw/
+
+Intellij开发系列教程
+intellij开发系列.01.开发环境的搭建
+http://v.youku.com/v_show/id_XNjQ1MjMyMjY0.html?f=21186166
+
+intellij开发系列.02.git版本管理及pom配置...</content>
+  </entry>
+
+  <entry>
+    <title>Apache虚拟目录、域名关联、端口转发以及防盗链配置</title>
+    <link href="https://luowei.github.io/lamp/apache-mutile-virturehost-domains-anti-leech.html"/>
+    <updated>2014-09-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/lamp/apache-mutile-virturehost-domains-anti-leech</id>
+    <content type="html">
+Apache虚拟目录、域名关联、端口转发以及防盗链配置
+
+在上网，或在浏览器输入网址时，细心的就会发现，这个网址有很大的学问。一般网站都是通过域来访问的，一些相关的站点就配置了相应的子域名，如本站主域名为：wodedata.com ,其他相关的站点就配置了子域名进行访问，如：my.wodedata.com,life.wodedata.com,fdm.wodedata.com等等。 
+   在购买了域名之后，就可以设置无数个子域名了。当然还有一种方式是在域名后面以/分隔，设置不路径指向不同的网站内容。
+   当然还有一种情况就是，java写的web项目布署在tomcat当中，百tomca...</content>
+  </entry>
+
+  <entry>
+    <title>从笔迹看性格</title>
+    <link href="https://luowei.github.io/life/character-by-handwriting.html"/>
+    <updated>2013-12-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/life/character-by-handwriting</id>
+    <content type="html">
+即使是因为意外事故，不能用手而学会用脚趾头那笔写字的人，也会表现出和用手写字时一样的习惯。因为与其说人是用手写字，不如说是用脑写子。也就是说，人的笔迹会如实地暴露出你的潜意识。
+
+从笔迹看性格1
+
+写的字左边略微往上，亦即稍微往右倾斜的人，属于“感情型”。而且往右倾斜的幅度越大者，感情越丰富。称为“We 型人”。
+
+反之，写的字右边往上，亦即稍微往左倾斜的人，属于“理论型”。可判断为有抑制感情的倾向，称为“Me 型人”。
+
+写的字既不偏左，也不偏右，完全像方正铅字般的人，是超乎必要的谨慎而过度压抑自己的人，几乎不会对别人敞开心胸。
+
+从笔迹看性格2
+
+给你一张全新的纸，请对方在上面随意...</content>
+  </entry>
+
+  <entry>
+    <title>ssh隧道、端口转发及内网穿透</title>
+    <link href="https://luowei.github.io/tutorials/ssh-tunnel-forward-intranet-strike.html"/>
+    <updated>2013-11-08T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/tutorials/ssh-tunnel-forward-intranet-strike</id>
+    <content type="html">
+ssh隧道、端口转发及内网穿透
+
+ssh相关知识点概要
+
+  SSH是一种安全的传输协议，目前最多的主要是用于连接服务器，除了这个之外它的隧道转发功能也是非常强大有用的。
+  
+    下面介绍一下三个非常强大的命令：
+
+     ssh -C -f -N -g -L listen_port:DST_Host:DST_port user@Tunnel_Host 
+ ssh -C -f -N -g -R listen_port:DST_Host:DST_port user@Tunnel_Host 
+ ssh -C -f -N -g -D listen_port user@Tunnel_H...</content>
+  </entry>
+
+  <entry>
+    <title>macOS下安装配置Jekyll</title>
+    <link href="https://luowei.github.io/tutorials/macOS-install-jekyll.html"/>
+    <updated>2013-05-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/tutorials/macOS-install-jekyll</id>
+    <content type="html">
+在macOS 10.11+下安装配置Jekyll
+
+
+  确保系统已经有环境：Ruby(v1.9.3+),RubyGems,NodeJS,Python 2.7 ;
+  安装Xcode Command-Line Tools：xcode-select --install；
+  安装Jekyll:sudo gem install -n /usr/local/bin jekyll，检查版本：jekll -v；
+  安装Github Pages插件：sudo gem install -n /usr/local/bin github-pages；
+  查看Gems列表：gem list；
+  启动...</content>
+  </entry>
+
+  <entry>
+    <title>作者简介</title>
+    <link href="https://luowei.github.io/author/hello-world.html"/>
+    <updated>2013-01-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/author/hello-world</id>
+    <content type="html">
+个人简介
+
+
+  维唯为为是wodedata.com背后的男人；
+  是一个有激情干劲、个性随和的年轻小伙；
+  是一个热爱编程并有着多年开发工作经验的工作狂；
+  是一个喜欢学习新知识、研究新技术、热爱分享的IT达人；
+  是一个业余爱好各种技术DIY、技术分享、交流技术的技术人；
+  是一个喜欢和知心的朋友畅言社会生活工作而无所顾虑的喝酒聊天客；
+  是一个技术路上踏实不畏艰难，虽智商平平但内心却向往图灵、冯诺依曼的程序员；
+
+
+个人资料汇总
+
+  MyGitHub：https://github.com/luowei
+  网易博客：http://blog.163.com/luowe...</content>
+  </entry>
+
+  <entry>
+    <title>链表相关面试题</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/linked-list-interview-question.html"/>
+    <updated>2012-10-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/linked-list-interview-question</id>
+    <content type="html">
+链表相关面试题
+判断单链表是否存在环
+
+  设置两个指针(fast, slow)，初始值都指向头，slow每次前进一步，fast每次前进二步，如果链表存在环，则fast必定先进入环，而slow后进入环，两个指针必定相遇。(当然，fast先行头到尾部为NULL，则为无环链表)程序如下：
+
+
+bool IsExitsLoop(List *head){
+   List *slow = head, *fast = head;
+    
+   while ( fast &amp;amp;&amp;amp; fast-&amp;gt;next ){
+       slow = slow-&amp;gt;next;
+       ...</content>
+  </entry>
+
+  <entry>
+    <title>排序及二分查找</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/sorting-and-binary-search.html"/>
+    <updated>2012-10-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/sorting-and-binary-search</id>
+    <content type="html">
+
+  
+    冒泡排序:是对所有相邻记录的关键字值进行比效，如果是逆顺（a[j]&amp;gt;a[j+1]），则将其交换，最终达到有序化;
+  
+
+
+
+  
+    选择排序:第一次从R[0]-R[n-1]中选取最小值，与R[0]交换，第二次从R[1]-R[n-1]中选取最小值，与R[1]交换，第三次从R[2]-R[n-1]中选取最小值，与R[2]交换，…，第i次从R[i-1]-R[n-1]中选取最小值，与R[i-1]交换，…第n-1次从R[n-2]-R[n-1]中选取最小值，与R[n-2]交换，总共通过n-1次，得到一个按排序码从小到大排列的有序序列。
+  
+
+
+
+  
+    插入排序...</content>
+  </entry>
+
+  <entry>
+    <title>两数相乘小数位无限制</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/high-precision-algorithm.html"/>
+    <updated>2012-10-02T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/high-precision-algorithm</id>
+    <content type="html">
+两个数相乘，小数点后位数没有限制，请写一个高精度算法
+
+
+  解题思路：将两组小数用数组存储，计算机两组小数点位数的总和，将小数点剔除，将小数点后面的位数向前移动一位。即开始求两个大整数的乘积。用递归的思路输出，得到的乘积，同时通过计算的小数点的位数，来判定什么时候输出小数点。
+
+
+
+  求两个大整数的乘积的思路：用结点来存储乘积的每一位，可以是数值不受限制。
+
+
+关键函数：
+
+istream&amp;amp;getline(char *pch,int nCount,char delime='\n')
+ 	extern char * strchr(char *str,char characte...</content>
+  </entry>
+
+  <entry>
+    <title>用宏比较两数大小</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/macro-comparing-two-numbers-size.html"/>
+    <updated>2012-10-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/macro-comparing-two-numbers-size</id>
+    <content type="html">
+请定义一个宏，比较两个数a、b的大小，不能使用大于、小于、if语句 .
+
+方法一：
+#define max(a,b) ((((long)((a)-(b)))&amp;amp;0x80000000)?(b):(a))  
+若a&amp;gt;b，则a-b的二进制最高位为0，与上任何数还是0，所以大数为a；
+否则，a-b为负数，最高位为1，与上0x80000000（最高位为1其他为0）之后为1，所以此时最大数为b。
+
+方法二：
+#define max(a,b) ((((a)-(b))&amp;amp;(1&amp;lt;&amp;lt;31))?(b):(a)) 
+ 
+方法三：
+#define max(a,b) (((abs((...</content>
+  </entry>
+
+  <entry>
+    <title>Linux下常见文件解压及压缩命令</title>
+    <link href="https://luowei.github.io/linux/linux-compress-decompress-comand.html"/>
+    <updated>2011-09-23T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/linux-compress-decompress-comand</id>
+    <content type="html">
+Linux下常见文件解压及压缩命令
+
+  解压及压缩命令大全
+
+
+.tar 
+解包：tar xvf FileName.tar 
+打包：tar cvf FileName.tar DirName 
+（注：tar是打包，不是压缩！） 
+——————————————— 
+.gz 
+解压 1：gunzip FileName.gz 
+解压2：gzip -d FileName.gz 
+压缩：gzip FileName 
+.tar.gz 和 .tgz 
+解压：tar zxvf FileName.tar.gz 
+压缩：tar zcvf FileName.tar.gz DirName 
+—————————...</content>
+  </entry>
+
+  <entry>
+    <title>Linux下常用的系统相关信息查看命令</title>
+    <link href="https://luowei.github.io/linux/linux-useful-info-comand.html"/>
+    <updated>2011-09-22T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/linux-useful-info-comand</id>
+    <content type="html">
+Linux下常用的系统相关信息查看命令
+
+  查看文本的常命令：cat 及 tail -f。
+
+
+日志文件说明
+
+/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一 
+/var/log/secure 与安全相关的日志信息 
+/var/log/maillog 与邮件相关的日志信息 
+/var/log/cron 与定时任务相关的日志信息 
+/var/log/spooler 与UUCP和news设备相关的日志信息 
+/var/log/boot.log 守护进程启动和停止相关的日志消息
+
+
+系统信息
+
+# uname -a   # 查看...</content>
+  </entry>
+
+  <entry>
+    <title>CentOS常用的操作命令</title>
+    <link href="https://luowei.github.io/linux/centOS-useful-comand.html"/>
+    <updated>2011-09-21T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/centOS-useful-comand</id>
+    <content type="html">
+CentOS常用的操作命令
+
+用户相关
+
+  创建新用户，使用useradd命令完成一个新用户的初始化设置工作,命令:useradd luowei &amp;lt;回车&amp;gt;。
+    
+      useradd所做的初始化操作包括在/home目录下为luowei帐号建立一个名为luowei的主目录。
+      useradd的初始化操作还包括为用户单独建立一个与用户名同名的组(luoweii组)。这叫用户私有组的机制，与默认组机制相对应。对用户分组一是方便管理，二是可以明确权限。
+    
+  
+  为新用户设置密码，使用passwd为这个新用户设置密码，命令:passwd luowe...</content>
+  </entry>
+
+  <entry>
+    <title>CentOS最常用命令及快捷键整理</title>
+    <link href="https://luowei.github.io/linux/centOS-common-comand-and-shutkeys.html"/>
+    <updated>2011-09-21T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/centOS-common-comand-and-shutkeys</id>
+    <content type="html">
+CentOS最常用命令及快捷键整理
+常用命令:
+
+  文件和目录:
+
+
+# cd /home                        进入 '/home' 目录
+# cd ..                                返回上一级目录
+# cd ../..                             返回上两级目录
+# cd -                                 返回上次所在目录
+# cp file1 file2                    将file1复制为file2
+# cp -a dir1 dir2  ...</content>
+  </entry>
+
+
+</feed>

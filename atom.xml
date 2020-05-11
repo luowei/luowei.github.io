@@ -3,13 +3,31 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2019-12-01T15:01:16+08:00</updated>
+  <updated>2020-05-11T12:44:56+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>FFMPeg常用转码命令</title>
+    <link href="https://luowei.github.io/ffmpeg/ffmpeg-useful-command.html"/>
+    <updated>2020-05-10T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ffmpeg/ffmpeg-useful-command</id>
+    <content type="html">
+FFMPeg常用转码命令
+
+设置变量
+filename=xxx.mov
+
+导出元数据文件
+ffmpeg -i &quot;$filename&quot; -y -c copy -map_metadata 0 -map_metadata:s:v 0:s:v -map_metadata:s:a 0:s:a -f ffmetadata &quot;${filename}.metadata&quot;
+
+转换成mp4
+ffmpeg -i &quot;$filename&quot; -y -f ffmetadata -i &quot;${filename}.metadata&quot; -map_metadata 1 -vcodec libx264 -preset fast...</content>
+  </entry>
 
   <entry>
     <title>东革阿里的食用方法以及主要功效</title>

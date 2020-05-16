@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-05-11T12:48:55+08:00</updated>
+  <updated>2020-05-17T01:07:41+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>终端代理命令</title>
+    <link href="https://luowei.github.io/linux/terminal-proxy-command.html"/>
+    <updated>2020-05-17T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/terminal-proxy-command</id>
+    <content type="html">
+常用终端命令
+
+ClashX终端代理命令
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+
+Shadow2Ray终端代理命令
+export https_proxy=http://127.0.0.1:1087 http_proxy=http://127.0.0.1:1087 all_proxy=socks5://127.0.0.1:1080
+</content>
+  </entry>
 
   <entry>
     <title>FFMPeg常用转码命令</title>

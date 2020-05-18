@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-05-17T01:07:41+08:00</updated>
+  <updated>2020-05-18T17:37:01+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>macOS下生成icns图标命令</title>
+    <link href="https://luowei.github.io/linux/macOS-icns-command.html"/>
+    <updated>2020-05-18T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/macOS-icns-command</id>
+    <content type="html">
+macOS下生成icns图标命令
+
+mkdir me.iconset
+sips -z 16 16     icon1024.png --out me.iconset/icon_16x16.png
+sips -z 32 32     icon1024.png --out me.iconset/icon_16x16@2x.png
+sips -z 32 32     icon1024.png --out me.iconset/icon_32x32.png
+sips -z 64 64     icon1024.png --out me.iconset/icon_32x32@2x.png
+sip...</content>
+  </entry>
 
   <entry>
     <title>终端代理命令</title>

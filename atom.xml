@@ -3,13 +3,39 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-05-18T17:37:01+08:00</updated>
+  <updated>2020-05-26T01:26:09+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>生成iOS App Preview的几种方案</title>
+    <link href="https://luowei.github.io/ios/make-ios-app-preview.html"/>
+    <updated>2020-05-26T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/make-ios-app-preview</id>
+    <content type="html">
+生成iOS App Preview的几种方案
+
+参考：Capture iOS Simulator video for App Preview
+
+
+xcode自带的command tools
+
+For Xcode 8.2 or later
+
+  You can take videos and screenshots of Simulator using the xcrun Xcode command-line utility.
+
+
+
+  Run your app on the simulator.
+  Open Terminal.app
+  Run the command
+    
+  ...</content>
+  </entry>
 
   <entry>
     <title>macOS下生成icns图标命令</title>

@@ -3,13 +3,97 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-06-21T03:58:35+08:00</updated>
+  <updated>2020-06-22T22:13:37+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>FFmpeg常用命令</title>
+    <link href="https://luowei.github.io/ffmpeg/15905889001131.html"/>
+    <updated>2020-06-22T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ffmpeg/15905889001131</id>
+    <content type="html">
+FFmpeg常用命令
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+参考：
+《FFmpeg Basics》中文版-04-调整和伸缩视频
+音视频专辑
+ffmpeg缩放视频尺寸
+ffprobe,ffplay ffmpeg常用的命令行命令
+每天学习一个命令：ffprobe 查看多媒体信息
+ffmpeg常用命令
+</content>
+  </entry>
 
   <entry>
     <title>最美色卡</title>

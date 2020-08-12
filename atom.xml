@@ -3,13 +3,317 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-06-23T01:08:58+08:00</updated>
+  <updated>2020-08-12T20:49:41+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>如何下载AppStore上的ip</title>
+    <link href="https://luowei.github.io/ios/15969015206167.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/15969015206167</id>
+    <content type="html">
+如何下载AppStore上的ipa文件
+
+方法一：
+
+  mac上安装并打开Apple Configurator 2(AC2)；
+  在AC2上使用Apple Id登录登录后，连接iOS设备；
+  
+    在iOS设置视图上右键 -&amp;gt; 添加 -&amp;gt; 应用，并在打开的界面中选择要下载的应用,点添加；
+
+  
+  然后会开始下载，下载完成后会弹出对话框、不要急着安装替换或停止，先去文件夹(/Users/luowei/Library/Group\ Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/A...</content>
+  </entry>
+
+  <entry>
+    <title>iOS 越狱知识大全</title>
+    <link href="https://luowei.github.io/%E8%B6%8A%E7%8B%B1/15968848422904.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E8%B6%8A%E7%8B%B1/15968848422904</id>
+    <content type="html">
+iOS 越狱知识大全
+
+Taig iOS 越狱 QA 大全：https://taig9.com/apps-and-tweaks
+
+Cydia and Sileo 软件源 https://taig9.com/apps-and-tweaks
+
+15个最好的 Cydia 替代者：https://taig9.com/apps-and-tweaks
+
+AppValley 安装：https://taig9.com/apps-and-tweaks
+
+TopStore App：https://taig9.com/apps-and-tweaks
+</content>
+  </entry>
+
+  <entry>
+    <title>APP运营投稿社区</title>
+    <link href="https://luowei.github.io/app/15967419148255.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/app/15967419148255</id>
+    <content type="html">
+APP运营投稿社区
+
+应用社区
+
+小众软件：www.appinn.com
+
+创造者日报：creatorsdaily.com
+
+最美应用：zuimeia.com
+
+少数派：sspai.com
+
+知乎iOS应用推荐话题：www.zhihu.com/topic/19769897/top-answers
+
+APP不释手-优质应用推荐：微信小程序
+
+
+
+运营社区(不收软文)
+
+运营喵：https://www.yymiao.cn/
+
+运营派：https://www.yunyingpai.com/
+</content>
+  </entry>
+
+  <entry>
+    <title>Makefile使用指南</title>
+    <link href="https://luowei.github.io/shell/15967351089829.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/shell/15967351089829</id>
+    <content type="html">
+Makefile使用指南
+
+
+
+
+
+
+
+</content>
+  </entry>
+
+  <entry>
+    <title>iMac一体机配置单</title>
+    <link href="https://luowei.github.io/%E5%85%B6%E4%BB%96/15949971307203.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%85%B6%E4%BB%96/15949971307203</id>
+    <content type="html">
+iMac一体机配置单
+
+电脑配置清单
+
+
+  
+    
+      名称
+      型号
+    
+  
+  
+    
+      处理器(CPU)
+      英特尔 第四代酷睿 i7-4790 @ 3.60GHz 四核
+    
+    
+      主 板
+      英特尔 TH87G-P Series
+    
+    
+      内 存
+      8 GB ( 金士顿 DDR3L 1600MHz )
+    
+    
+      硬 盘
+      希捷 ST500LM000-1EJ162 ( 500 GB / 10000 转/分 )
+    
+    
+   ...</content>
+  </entry>
+
+  <entry>
+    <title>离散数学与组合数学考试复习大纲</title>
+    <link href="https://luowei.github.io/15928371864265.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/15928371864265</id>
+    <content type="html">
+离散数学与组合数学考试复习大纲
+
+一、考试大纲
+
+离散数学与组合数学是现代数学的重要分支,是计算机科学的基础理论课程数理逻辑、集合论、图论与代数结构是离散数学的重要组成部分。要求考生对它们的基本概念有较深入的了解,能够系统地掌握命题演算、谓词演算及朴素集合论的经典内容,掌握演绎推理的基本方法。掌握图论的基本定理和应用,熟悉代数系统的基本概念及定理。组合数学部分要求考生掌握各种基本的计数方法,线性常系数递推关系的解法,Burnside引理和Polya定理的应用,容斥原理和鸽巢原理的应用等。
+
+主要内容包括:
+
+(一)命题逻辑的等值演算与推理演算
+1.命题逻辑的基本概念、命题逻辑联结词与真...</content>
+  </entry>
+
+  <entry>
+    <title>有用也常用的Shell小点</title>
+    <link href="https://luowei.github.io/15927749381601.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/15927749381601</id>
+    <content type="html">
+有用也常用的Shell小点
+
+
+</content>
+  </entry>
+
+  <entry>
+    <title>面试自我介绍方法</title>
+    <link href="https://luowei.github.io/%E5%85%B6%E4%BB%96/15905932382572.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%85%B6%E4%BB%96/15905932382572</id>
+    <content type="html">
+面试自我介绍方法
+
+
+  首先介绍自己的姓名、年龄、爱好、工作经历、家庭概况理想与报负；
+  自己优点特长的介绍：首先了解自己的特长与优点，便可以开始预备自我介绍的内容∶包括工作模式、优点、技能，突出成就、专业知识、学术背景等。
+  身体的语言的表达，适当的加入一些才艺作品展现。
+  自我介绍的结束语。
+
+
+面试如何提问题
+从几个角度提问
+
+
+  哪些事是你最关心重视的，而这些会影响到你对工作的投入、对公司的奉献;
+  公司的价值观、文化与发展理念，以及人才理念；
+
+
+案例：
+
+  我习惯准时上班，所以想了解贵公司的上下班时间?”
+  对这项职务的工作内容和期望目标 ？
+  公司组织架...</content>
+  </entry>
+
+  <entry>
+    <title>使用 sqlcipher 加密解密 sqlite3 数据库</title>
+    <link href="https://luowei.github.io/sqlite/15905909302229.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/sqlite/15905909302229</id>
+    <content type="html">
+使用 sqlcipher 加密解密 sqlite3 数据库
+
+下载sqlcipher
+https://github.com/sqlcipher/sqlcipher
+
+编译sqlcipher
+$ ./configure --enable-tempstore=yes CFLAGS=&quot;-DSQLITE_HAS_CODEC&quot; LDFLAGS=&quot;-lcrypto -L/usr/local/opt/openssl/lib&quot; CPPFLAGS=&quot;-I/usr/local/opt/openssl/include&quot;
+$ make
+
+
+安装sqlcipher
+
+  创建一个sqlcipher新的目录；
+ ...</content>
+  </entry>
+
+  <entry>
+    <title>去腾讯面试iOS的几个基础问题回顾</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/15905890897817.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/15905890897817</id>
+    <content type="html">
+去腾讯面试iOS的几个基础问题回顾
+
+数组：存储区间是连续的，二分查找时间复杂度小，为O(1)，寻址容易，插入和删除困难；
+
+链表：存储区间离散，时间复杂度很大，达O（N），寻址困难，插入和删除容易；
+
+哈希表：是一种寻址容易，插入删除也容易的数据结构，既满足了数据的查找方便，同时不占用太多的内容空间，使用也十分方便。
+Hash表实现原理：使用哈希函数将被查找的Key转换为数组的索引，如果发生hash索引值碰撞冲突，则拉链法(开放定址法)和线性探测法等方法解决冲突，直到找出一个不冲突的哈希地址。
+
+解决hash冲突的常见办法
+开放定址法（线性探测再散列，二次探测再散列，伪随机探测再散列...</content>
+  </entry>
+
+  <entry>
+    <title>《用简单的方式打破坏习惯》英文演讲稿字幕</title>
+    <link href="https://luowei.github.io/%E8%8B%B1%E8%AF%AD/15905890897443.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E8%8B%B1%E8%AF%AD/15905890897443</id>
+    <content type="html">
+《用简单的方式打破坏习惯》英文演讲稿字幕
+
+A simple way to break a bad habit
+
+00:00
+When I was first learning to meditate, the instruction was to simply pay attention to my breath, and when my mind wandered, to bring it back.
+
+00:08
+Sounded simple enough. Yet I’d sit on these silent retreats, sweating through T-shir...</content>
+  </entry>
+
+  <entry>
+    <title>我的几个APP 1.0版本上架的文案及描述</title>
+    <link href="https://luowei.github.io/app/15905890897401.html"/>
+    <updated>2020-08-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/app/15905890897401</id>
+    <content type="html">
+我的几个APP 1.0版本上架的文案及描述
+
+开发者App
+https://itunes.apple.com/cn/developer/wei-luo/id990121194
+
+万能输入法
+https://itunes.apple.com/cn/app/id1227288468
+https://itunes.apple.com/us/app/id1227288468
+
+中文描述
+＝＝＝万能输入法宿主App功能介绍＝＝＝
+万能输入法宿主App界面简法、动画淡雅；
+万能输入法宿主App内置简版Web浏览器支持关键词搜索；
+万能输入法宿主App内置软笔画板支持自定义笔触大小及颜色，并笔锋效果...</content>
+  </entry>
+
+  <entry>
+    <title>SQLite 常用查询语句</title>
+    <link href="https://luowei.github.io/%E5%85%B6%E4%BB%96/15945414403299.html"/>
+    <updated>2020-08-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%85%B6%E4%BB%96/15945414403299</id>
+    <content type="html">
+SQLite 常用查询语句
+
+创建表
+
+DROP TABLE IF EXISTS &quot;tb_chizhu&quot;;
+CREATE TABLE &quot;tb_chizhu&quot; (
+  &quot;id&quot; integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  &quot;hanZi&quot; text(20),
+  &quot;pingYin&quot; text(30),
+  &quot;wuBiBianMa&quot; text(5),
+  &quot;leiXing&quot; integer(11),
+  &quot;wuBiQuanMa&quot; text(5),
+  &quot;wuBiBianMa98&quot; text(5),
+  &quot;frequency&quot; integer(1...</content>
+  </entry>
+
+  <entry>
+    <title>添加万能输入法</title>
+    <link href="https://luowei.github.io/%E4%B8%87%E8%83%BD%E8%BE%93%E5%85%A5%E6%B3%95/15928631429512.html"/>
+    <updated>2020-07-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E4%B8%87%E8%83%BD%E8%BE%93%E5%85%A5%E6%B3%95/15928631429512</id>
+    <content type="html">
+添加万能输入法
+
+
+  去AppStore安装好万能输入法后，打开 设置-&amp;gt;通用-&amp;gt;键盘-&amp;gt;键盘-&amp;gt;添加键盘，然后再选择万能输入法即可。
+
+
+
+</content>
+  </entry>
 
   <entry>
     <title>FFmpeg常用命令</title>
@@ -152,6 +456,9 @@ ffmpeg常用命令
 
 
 
+
+
+^_^,谢谢支持！
 </content>
   </entry>
 

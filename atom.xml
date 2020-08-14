@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-08-13T03:17:39+08:00</updated>
+  <updated>2020-08-14T22:58:44+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>macOS的say命令使用详解</title>
+    <link href="https://luowei.github.io/macos/15974170272446.html"/>
+    <updated>2020-08-14T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/macos/15974170272446</id>
+    <content type="html">
+macOS的say命令使用详解
+
+voice列表
+(base) ➜  ~ say -v '?'      
+Alex                en_US    # Most people recognize me by my voice.
+Alice               it_IT    # Salve, mi chiamo Alice e sono una voce italiana.
+Alva                sv_SE    # Hej, jag heter Alva. Jag är en svensk röst.
+Amelie            ...</content>
+  </entry>
 
   <entry>
     <title>黄道二十八宿</title>

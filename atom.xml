@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-08-16T01:14:33+08:00</updated>
+  <updated>2020-09-08T02:09:29+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS问题汇总之iOS应用 - 浏览器及WKWebView关键点</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/15994965110931.html"/>
+    <updated>2020-09-08T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/15994965110931</id>
+    <content type="html">
+iOS问题汇总之iOS应用 - 浏览器及WKWebView关键点
+
+WKWebView
+
+关键代码
+self.wkWebView.allowsBackForwardNavigationGestures = YES;
+[self.wkWebView addObserver:self forKeyPath:@&quot;estimatedProgress&quot; options:NSKeyValueObservingOptionNew context:nil];
+[self.wkWebView addObserver:self forKeyPath:@&quot;title&quot; options:NSKeyValueO...</content>
+  </entry>
 
   <entry>
     <title>驾考科目三灯光表(附长沙市天心大托考场线路图)</title>

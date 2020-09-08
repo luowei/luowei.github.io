@@ -3,13 +3,36 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-09-08T18:19:13+08:00</updated>
+  <updated>2020-09-09T00:12:44+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS问题汇总之iOS应用 - Flutter混合开发关键点</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/15995553733648.html"/>
+    <updated>2020-09-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/15995553733648</id>
+    <content type="html">
+iOS问题汇总之iOS应用 - Flutter混合开发关键点
+
+Flutter 要点
+
+**Flutter常用依赖 **
+environment:
+  sdk: &quot;&amp;gt;=2.1.0 &amp;lt;3.0.0&quot;
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^...</content>
+  </entry>
 
   <entry>
     <title>把多张图片快速合并成一个pdf文件</title>

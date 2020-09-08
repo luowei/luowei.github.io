@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-09-09T02:26:46+08:00</updated>
+  <updated>2020-09-09T04:13:16+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -47,6 +47,26 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2...</content>
+  </entry>
+
+  <entry>
+    <title>iOS问题汇总之iOS应用 - Swift常见问题与技术</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/15995030718262.html"/>
+    <updated>2020-09-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/15995030718262</id>
+    <content type="html">
+iOS问题汇总之iOS应用 - Swift常见问题与技术
+
+Swift常见原则与问题
+常见问题
+参考：https://swifter.tips/
+
+map与flatmap的区别：map不能将元素映射成可选类型,flatmap可以；
+
+map、filter、reduce 的作用
+map: 映射,将一个元素根据某个函数 映射 成另一个元素（可以是同类型，也可以是不同类型）
+filter: 过滤,将一个元素传入闭包中，如果返回的是false ， 就过滤掉
+reduce : reduce函数接收两个参数，一个初始值和一个组合闭包(combine closure)，期间通过一个累加器（Accum...</content>
   </entry>
 
   <entry>

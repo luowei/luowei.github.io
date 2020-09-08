@@ -3,13 +3,28 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-09-09T00:59:45+08:00</updated>
+  <updated>2020-09-09T02:26:46+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>静态链接与动态链接的原理与区别</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/15995892950324.html"/>
+    <updated>2020-09-09T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/15995892950324</id>
+    <content type="html">
+静态链接与动态链接的原理与区别
+
+源文件先是被编译成一个个目标文件, 再由链接器把这些目标文件组合成一个可执行文件或库。链接的过程，其核心工作是解决模块间各种符号(变量，函数)相互引用的问题，对符号的引用本质是对其在内存中具体地址的引用，因此确定符号地址是编译，链接，加载过程中一项不可缺少的工作，这就是所谓的符号重定位。
+对于可执行文件或静态库来说，符号重定位是在链接时完成的。对于动态链接库来说，因为动态库的加载是在运行时，且加载的地址不固定，因此动态库的符号重定位是推迟进行的，主要有两种方式：加载时符号重定位及地址无关代码。
+
+加载时符号重定位
+加载时重定位，其原理很简单，它与链接时...</content>
+  </entry>
 
   <entry>
     <title>iOS问题汇总之iOS应用 - Flutter混合开发关键点</title>

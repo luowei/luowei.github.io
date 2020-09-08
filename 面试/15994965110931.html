@@ -7,6 +7,15 @@
 </code></pre></div></div> <p>//处理js端消息</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message;
 </code></pre></div></div> <p>//处理当接收到验证窗口时</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\- (void)  webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 </code></pre></div></div> <p>//切换用户代理模式<br /> <code class="highlighter-rouge">//私有方法：- (void)_setCustomUserAgent:(id)arg1;</code></p> <p>WKNavigationDelegate<br /> <code class="highlighter-rouge">decidePolicyForNavigationAction：</code></p> <p>WKScriptMessageHandler</p> <p>WKUIDelegate<br /> //处理页面的promt弹窗</p> <p>//此方法可以让我们得知点击了哪个buttin,回传button index值<br /> UIActionSheetDelegate <br /> <code class="highlighter-rouge">\- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex</code></p> <p>WKWebViewConfiguration WKProcessPool 单例</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>configuration.processPool = [WKProcessPool new]; 
+</code></pre></div></div> <p>//判断跳转类型,在做容器内外跳转可借用</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation 
+
+if(navigationAction.navigationType == WKNavigationTypeReload ||
+            navigationAction.navigationType == WKNavigationTypeBackForward ||
+            navigationAction.navigationType == WKNavigationTypeFormSubmitted ||
+            navigationAction.navigationType == WKNavigationTypeFormResubmitted ){
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
+    }
 </code></pre></div></div> <h2 id="adblockrules">AdblockRules</h2> <h3 id="基本过滤规则">基本过滤规则</h3> <p><strong>参考：</strong><a href="https://luowei.github.io/https://blog.csdn.net/qq_36450004/article/details/105660153">AdblockPlus拦截规则简单教程</a></p> <ol> <li> <ul> <li>通配符；</li> </ul> </li> <li>@@表示例外规则符；</li> <li> <table> <tbody> <tr> <td>管道符</td> <td>表示过滤规则终止；</td> </tr> </tbody> </table> </li> <li> <table> <tbody> <tr> <td>双管道符</td> <td> </td> <td>表示域名前匹配；</td> </tr> </tbody> </table> </li> <li>标记分隔符^表示单个分隔符的占位符。有时，您可能需要在过滤器中接受任何分隔符。分隔符可以是任何东西，除了一个字母，一个数字或以下情况之一：_，-，.，%。地址的末尾也可被视作一个分隔符。</li> <li>感叹号!表示注释。!开头的行会被默认为注释行，不被执行。</li> <li>$表示过滤器选项；</li> </ol> <p><strong>规则库：</strong><a href="https://luowei.github.io/https://easylist.to/">EasyList</a></p> <p><strong>ad request 拦截原理</strong><br /> 关键方法：<code class="highlighter-rouge">e.preventDefault();</code></p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var filter = AdBlocker.checkFilterMatch(e.url, tagType, documentHost);
 if(filter instanceof BlockingFilter) {
     e.preventDefault();

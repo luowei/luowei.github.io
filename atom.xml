@@ -3,13 +3,36 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-09-08T17:01:20+08:00</updated>
+  <updated>2020-09-08T18:19:13+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>把多张图片快速合并成一个pdf文件</title>
+    <link href="https://luowei.github.io/shell/15995586002980.html"/>
+    <updated>2020-09-08T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/shell/15995586002980</id>
+    <content type="html">
+把多张图片快速合并成一个pdf文件
+
+img2pdf方案
+
+安装img2pdf,参考：https://gitlab.mister-muffin.de/josch/img2pdf；
+建意把源码下下来，在源码目录下直接使用pip3 install .安装，安装好后使用以下命令即可把多张图片转成一个pdf。
+img2pdf *.png *.jpg -o out.pdf
+
+
+使用万能的 imagemagick
+使用brew安装好 imagemagick
+brew install imagemagick
+
+
+如果安装失败，使用sudo chown -R $(whoami) $(brew --pr...</content>
+  </entry>
 
   <entry>
     <title>iOS问题汇总之iOS应用 - Web Hybrid混合页面开发关键点</title>

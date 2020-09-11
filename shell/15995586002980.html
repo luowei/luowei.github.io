@@ -2,7 +2,7 @@
 </code></pre></div></div> <h2 id="使用万能的-imagemagick">使用万能的 imagemagick</h2> <p>使用brew安装好 imagemagick</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install imagemagick
 </code></pre></div></div> <p>如果安装失败，使用<code class="highlighter-rouge">sudo chown -R $(whoami) $(brew --prefix)/*</code>，或者：</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mkdir /usr/local/Frameworks
 sudo chown $USER /usr/local/Frameworks
-</code></pre></div></div> <p>**转成pdf **</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert *.jpg output.pdf
+</code></pre></div></div> <p><strong>转成pdf</strong></p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert *.jpg output.pdf
 convert -quality 60 *.jpg output.pdf
 </code></pre></div></div> <p>如果是window，可以使用 cygwin 安装 imagemagick 。</p> <h2 id="把pdf导出成一张张imagehtmltext">把PDF导出成一张张image/html/text</h2> <p>使用XpdfReader项目：<a href="https://luowei.github.io/https://www.xpdfreader.com/pdftoppm-man.html">https://www.xpdfreader.com/pdftoppm-man.html</a></p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftopng ./aaa.pdf ./aaa   <span class="c"># 导出成png图片</span>
 pdftohtml ./aaa.pdf ./aaa   <span class="c"># 导出html并放到生成的aaa目录下 </span>

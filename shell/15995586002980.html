@@ -4,7 +4,11 @@
 sudo chown $USER /usr/local/Frameworks
 </code></pre></div></div> <p>**转成pdf **</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert *.jpg output.pdf
 convert -quality 60 *.jpg output.pdf
-</code></pre></div></div> <p>如果是window，可以使用 cygwin 安装 imagemagick 。</p> <h2 id="其他">其他</h2> <p>imagemagick安装好后，可能会有以下环境变量设置的提示：</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==&gt; glib
+</code></pre></div></div> <p>如果是window，可以使用 cygwin 安装 imagemagick 。</p> <h2 id="把pdf导出成一张张imagehtmltext">把PDF导出成一张张image/html/text</h2> <p>使用XpdfReader项目：<a href="https://luowei.github.io/https://www.xpdfreader.com/pdftoppm-man.html">https://www.xpdfreader.com/pdftoppm-man.html</a></p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pdftopng ./aaa.pdf ./aaa   <span class="c"># 导出成png图片</span>
+pdftohtml ./aaa.pdf ./aaa   <span class="c"># 导出html并放到生成的aaa目录下 </span>
+pdftotext ./aaa.pdf ./text   <span class="c"># 导出html并放到生成的aaa目录下 </span>
+</code></pre></div></div> <h2 id="如果是要把html生成为pdf">如果是要把html生成为pdf</h2> <p>使用wkhtmltopdf是一个不错的选择，官方地址：<a href="https://luowei.github.io/https://wkhtmltopdf.org/">https://wkhtmltopdf.org/</a></p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wkhtmltopdf http://localhost/aaaa.html $HOME/doc_pdf/check.pdf
+</code></pre></div></div> <h2 id="其他">其他</h2> <p>imagemagick安装好后，可能会有以下环境变量设置的提示：</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==&gt; glib
 Bash completion has been installed to:
   /usr/local/etc/bash_completion.d
 ==&gt; docbook

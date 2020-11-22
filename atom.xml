@@ -3,13 +3,40 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-09-11T23:14:08+08:00</updated>
+  <updated>2020-11-22T09:49:07+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>使用 macOS 程序员的常用软件</title>
+    <link href="https://luowei.github.io/macos/16059975716032.html"/>
+    <updated>2020-11-22T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/macos/16059975716032</id>
+    <content type="html">
+使用 macOS 程序员的常用软件
+
+Alfred : 快捷搜索
+
+  参考：程序员的macOS系列：高效Alfred进阶
+
+
+iTerm/Termius : 终端 
+JetBrains系列工具
+Dash : 文档查询
+VSCode : 开发工具
+xcode ： 开发工具
+DBeaver ： 看数据库
+Robo 3 T ： MongoDB管理
+Snappy : 代码片段截图置顶
+Parallels Client : 连windows server
+Beyond Compare : 文件对比
+TeamViewer/Splashtop Streamer : 远程屏幕控制
+Charles/P...</content>
+  </entry>
 
   <entry>
     <title>静态链接与动态链接的原理与区别</title>

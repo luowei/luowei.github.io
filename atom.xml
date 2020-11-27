@@ -3,13 +3,40 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-11-26T02:22:00+08:00</updated>
+  <updated>2020-11-28T06:45:02+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>程序的构建过程</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16065156342248.html"/>
+    <updated>2020-11-28T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16065156342248</id>
+    <content type="html">
+程序的构建过程
+
+以最简单的hello.c为例
+
+#include &amp;lt;stdio.h&amp;gt;
+
+int main() {
+    printf(&quot;Hello World\n&quot;);
+    return 0;
+}
+
+
+gcc hello.c 做了什么事情？
+
+预处理(也叫预编译Prepressing) -&amp;gt; 编译(Compilation) -&amp;gt; 汇编(Assembly) -&amp;gt; 链接(Linking)
+
+预编译
+处理源文件中以#开头的预编译指令、删除注释、添加行号与文件标识等。
+.c文件预编译成.i文件,.cpp文件成.ii文件，使用gcc 加-E 选项表示只进行预...</content>
+  </entry>
 
   <entry>
     <title>万能浏览器</title>

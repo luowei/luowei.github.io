@@ -3,13 +3,28 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-11-28T06:45:02+08:00</updated>
+  <updated>2020-11-29T03:11:19+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>可执行文件详解之ELF目标文件</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16065812543516.html"/>
+    <updated>2020-11-29T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16065812543516</id>
+    <content type="html">
+可执行文件详解之ELF目标文件
+
+目标文件格式：windows 下的PE(Portable Executable)、Linux 的ELF(Executable Linkable Format)以及 macOS 的Mach-O 格式。
+
+ELF文件类型：可重定位文件(Linux 的.o，Windows 的.obj)；可执行文件(如/bin/bash文件，Windows 的.exe)；共享目标文件(Linux 的.so，Windows 的DLL)；核心转储文件(Linux 下的core dump).
+
+注意：使用gcc -c hello.c，使用-c参数表示只编译，生成的目标文件只编译不链...</content>
+  </entry>
 
   <entry>
     <title>程序的构建过程</title>

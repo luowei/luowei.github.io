@@ -3,13 +3,56 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-01T09:30:40+08:00</updated>
+  <updated>2020-12-02T00:32:55+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>读《商君书》，叹驭民五术</title>
+    <link href="https://luowei.github.io/%E8%AF%BB%E4%B9%A6/16068398400651.html"/>
+    <updated>2020-12-02T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E8%AF%BB%E4%B9%A6/16068398400651</id>
+    <content type="html">
+读《商君书》，叹驭民五术
+
+
+
+1、愚民：统一思想，大一统，赞颂君王的赫赫武功。（反面：自由主义）
+2、弱民：国强民弱，治国之道，务在弱民。
+3、疲民：为民寻事，疲于奔命，使民无瑕顾及他事。 
+4、辱民：一无自尊自信；二唆之相互检举揭发，使人人自危于恐惧中。
+5、贫民：除了生活必须，剥夺余银余财；人穷志短。
+
+五皆不灵，杀之。
+</content>
+  </entry>
+
+  <entry>
+    <title>在main方法之前调用函数</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16068138551893.html"/>
+    <updated>2020-12-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16068138551893</id>
+    <content type="html">
+在main方法之前调用函数
+
+方法一：根据glibc的全局构造函数是放在.ctors段中，的怪可以在.ctors段中添加一些函数指针，就可以让这些函数在全局构造的时候调用了，如下：
+#include &amp;lt;stdio.h&amp;gt;
+
+void my_init(void){
+    printf(&quot;Hello &quot;);
+}
+
+typedef void(*ctor_t)(void);
+//向.ctors段中添加一个函数指针
+ctor_t __attribute__((section (&quot;.ctors&quot;))) my_init_p = &amp;amp;my_init;
+
+int main(){
+   ...</content>
+  </entry>
 
   <entry>
     <title>setjmp的工作原理</title>

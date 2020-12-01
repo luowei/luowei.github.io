@@ -3,13 +3,37 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-11-29T03:11:19+08:00</updated>
+  <updated>2020-12-01T09:30:40+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>setjmp的工作原理</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16067856417927.html"/>
+    <updated>2020-12-01T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16067856417927</id>
+    <content type="html">
+setjmp的工作原理
+
+执行环境
+简单说就是CPU中的一些寄存器，这些寄存器保存了程序执行的必要信息，以x86为例：
+
+  esp 保存当前栈顶的地址。
+  ebp 保存当前函数栈帧的地址，在函数的进入点处，把esp保存到ebp，这样在函数任何位置，都可以通过ebp加偏移拿到函数的参数。
+  eip 保存下一条指令的地址。
+
+
+函数调用约定
+函数的调用约定，对寄存器也有影响，以x86的cdecl(这是C语言函数的调用约定)为例：
+
+  函数参数通过栈传递，顺序从右到左，并且由调用者负责清理栈中的参数。
+  整型值和内存地址通过eax返回。
+  eax, ecx, edx由调用者负责保...</content>
+  </entry>
 
   <entry>
     <title>可执行文件详解之ELF目标文件</title>

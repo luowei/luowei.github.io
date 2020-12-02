@@ -3,13 +3,38 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-02T00:32:55+08:00</updated>
+  <updated>2020-12-02T15:29:20+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>静态链接的深入探究</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16068883427102.html"/>
+    <updated>2020-12-02T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16068883427102</id>
+    <content type="html">
+静态链接的深入探究
+
+首先使用gcc编译两个目标文件,生成a.o、b.o ：
+gcc -c a.c b.c 
+
+链接器对目标文件的链接过程中对输入的多个目标文件加工后合并成一个输出文件，合并的过程是将输入文件相同性质的段合并到一起，比如将所有输入文件的”.text”合并到输出文件的”.text”段。
+
+链接器的空间分配策略
+第一步：空间与地址分配
+第二步：符号解析与重定位
+
+将a.o与b.o链接起来：
+ld a.o b.o -e main -ab
+
+
+  -e main 表示将 main 函数作为程序入口，ld链接器默认的程序入口为_start;
+  -o ab 表示链接输出文件名为 ...</content>
+  </entry>
 
   <entry>
     <title>读《商君书》，叹驭民五术</title>

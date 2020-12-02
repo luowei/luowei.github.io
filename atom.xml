@@ -3,13 +3,42 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-02T15:32:02+08:00</updated>
+  <updated>2020-12-02T18:15:21+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>ELF文件的装装与Linux的进程</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16068978581321.html"/>
+    <updated>2020-12-02T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16068978581321</id>
+    <content type="html">
+ELF文件的装装与Linux的进程
+
+进程的虚拟地址空间
+ 查看进程虚拟空间分布
+cat /proc/&amp;lt;pid&amp;gt;/maps
+
+
+PAE(物理地址扩展)
+在CPU字长不变的情况下，扩展地址线长度，修改页映射方式，便使新映射方式可以访问更多的物理内存。
+
+程序的动态装载方法：覆盖装入(Overlay)、页映射(Paging)
+
+可执行文件的装载：
+ 1.进程的建立；
+ 2.页错误；
+
+Segment(程序头) 与 Section(段表)
+ Segment 是从装载的角度重新划分ELF的各个段；
+
+# 使用静态链接方式编译链接可执行文件
+gcc -static SectionMa...</content>
+  </entry>
 
   <entry>
     <title>静态链接的深入探究</title>

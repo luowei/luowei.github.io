@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-04T06:54:19+08:00</updated>
+  <updated>2020-12-04T07:41:44+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -50,6 +50,21 @@ C语言中的变量常量及其在虚拟内存中的分配
   
   
     把虚拟空间的页叫虚拟页(Virtual Page，VP)，物理内存中的页叫物理页(Physical Page，PP)，把磁盘...</content>
+  </entry>
+
+  <entry>
+    <title>C语言字节对齐及结构体对齐详解</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070329191495.html"/>
+    <updated>2020-12-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070329191495</id>
+    <content type="html">
+C语言字节对齐及结构体对齐详解
+
+为什么需要字节对齐
+对齐与数据在内存中的位置相关，若一个变量的内存地址正好位于它长度的整数倍，那么就称做自然对齐。如在32位CPU下，假设一个整型变量的地址为0x00000004，那它就是自然对齐的。
+
+字节对齐的作用不仅有利于CPU快速访问，同时合理的利用字节对齐还可以有效地节省内存。
+如果上面整型变量的地址不是自然对齐，比如为0x00000002，则CPU如果取它的值的话需要访问两次内存，第一次取从0x00000002-0x00000003的一个short，第二次取从0x00000004-0x00000005的一个short然后组合得到所要的数据，...</content>
   </entry>
 
   <entry>

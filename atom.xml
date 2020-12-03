@@ -3,13 +3,54 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-03T08:40:21+08:00</updated>
+  <updated>2020-12-04T06:54:19+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>C语言中的变量常量及其在虚拟内存中的分配</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070355852198.html"/>
+    <updated>2020-12-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070355852198</id>
+    <content type="html">
+C语言中的变量常量及其在虚拟内存中的分配
+
+
+  
+    在C语言里，使用auto关键字声明自动变量，如果没有被声明为其他类型的变更 ，默认都是自动变量。(注意：auto关键字在C与C++里的用法不同，若编写C/C++兼容程序,最好不要使用auto作为存储类别说明符。)
+  
+  
+    静态变量与自动变量的区别在于静在变量是在全局(静态)存储区内分配内存的单元(目标文件的.data段,未初始化的在.bss段),而自动变量则分配在动态存储区(栈区)；只有通过malloc或new生成的变量分配在堆区。
+  
+  
+    全局变(常)量与静态变(常)量都是存储在全局(静态)存储区(即...</content>
+  </entry>
+
+  <entry>
+    <title>计算机里的内存分配原理</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070353479002.html"/>
+    <updated>2020-12-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070353479002</id>
+    <content type="html">
+计算机里的内存分配原理
+
+
+  
+    操作系统要求进程不能直接访问物理内存，而是为每个进程分配一块自己独立的虚拟空间，并且每个进程只能访问自己的虚拟地址空间。
+  
+  
+    进程的虚拟空间是操作系统按分段或分页的方法映射到某个物理空间的，虚拟空间到物理空间的转换是依靠CPU里一个叫 MMU 的部件来支持的。
+  
+  
+    现代计算机主要是采用页映射的方式来划分地址空间，即把地址空间人为等分成固定大小的页，这个页大小为硬件决定。
+  
+  
+    把虚拟空间的页叫虚拟页(Virtual Page，VP)，物理内存中的页叫物理页(Physical Page，PP)，把磁盘...</content>
+  </entry>
 
   <entry>
     <title>动态链接深入详解</title>

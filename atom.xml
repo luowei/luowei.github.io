@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-03T08:33:20+08:00</updated>
+  <updated>2020-12-03T08:40:21+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -28,12 +28,12 @@ gcc -fPIC -s...</content>
   </entry>
 
   <entry>
-    <title>ELF文件的装装与Linux的进程</title>
+    <title>ELF文件的装载与Linux的进程</title>
     <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16068978581321.html"/>
     <updated>2020-12-02T00:00:00+08:00</updated>
     <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16068978581321</id>
     <content type="html">
-ELF文件的装装与Linux的进程
+ELF文件的装载与Linux的进程
 
 进程的虚拟地址空间
  查看进程虚拟空间分布

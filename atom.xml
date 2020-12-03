@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-02T18:15:21+08:00</updated>
+  <updated>2020-12-03T08:33:20+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>动态链接深入详解</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16069042964193.html"/>
+    <updated>2020-12-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16069042964193</id>
+    <content type="html">
+动态链接深入详解
+
+动态链接：为了解决内存及磁盘空间的浪费和更新困难的问题，把程序的链接过程推迟到运行时再进行，就是动态链接的基本思想。让程序在运行时可以动态地选择加载各种程序模块，实现程序功能的扩展，另一方面也可加强程序的兼容的。
+
+动态链接运行时地址空间分布：对于动态链接程序来说，除了可执行文件本身之外，还有它所依赖的共享目标文件。其共享对象的最终装载地址在编译时是不确定的，而是在装载时，装载器根据当前地址空间的空闲情况动态分配一块足够大小的虚拟地址空间给相应的共享对象。
+
+编译一个共享对象,-shared表示生生共享对象，-fPIC表示产生地址无关代码；
+gcc -fPIC -s...</content>
+  </entry>
 
   <entry>
     <title>ELF文件的装装与Linux的进程</title>

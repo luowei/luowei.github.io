@@ -3,13 +3,30 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-04T17:09:48+08:00</updated>
+  <updated>2020-12-05T06:10:05+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS中的 calloc 及权限修饰符</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070288519590.html"/>
+    <updated>2020-12-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070288519590</id>
+    <content type="html">
+iOS中的 calloc 及权限修饰符
+
+内存分配：
+NSObject的alloc类方法首先调用allocWithZone:类方法，这和GUNstep实现相机，然后调用class_createInstance函数，最后通过调用calloc来分配内存块。
+
+calloc与malloc的区别在于：用calloc分配的内存区域会初始化为0；而使用malloc分配的内存区域是没有初始化为0的；如果使用malloc函数分配内存区域后还需要用memset等函数将内存填充为0，所以在OC里面推荐使用calloc分配内存；
+
+GNUstep框架
+iOS 里 Objective-C 中的内存管理是包含在...</content>
+  </entry>
 
   <entry>
     <title>iOS weak 底层实现原理</title>

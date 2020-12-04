@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-04T07:41:44+08:00</updated>
+  <updated>2020-12-04T12:45:21+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Autorelease 及 Autoreleasepool 原理</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070546104738.html"/>
+    <updated>2020-12-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070546104738</id>
+    <content type="html">
+Autorelease 及 Autoreleasepool 原理
+
+自动释放池在 MRC 模式与 ARC 模式下还是有些差异的。
+
+MRC模式
+
+  autorelease会像C语言的自动变量那样来对待对象实例。当超出变量作用域时，对象实例的release实例方法被调用。但同C语言自动变量不同的是，开发者可以设定变量的作用域，而其中的NSAutoreleasePool对象的生存周期就相当于C语言变量的作用域。
+  要使用autorealse就需要生成并持有NSAutoreleasePool对象，而后把所有的autorealse实例通过push方法放在NSAutoreleasePool里...</content>
+  </entry>
 
   <entry>
     <title>C语言中的变量常量及其在虚拟内存中的分配</title>

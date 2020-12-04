@@ -3,13 +3,30 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-04T12:45:21+08:00</updated>
+  <updated>2020-12-04T14:45:19+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS weak 底层实现原理</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070583973992.html"/>
+    <updated>2020-12-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070583973992</id>
+    <content type="html">
+iOS weak 底层实现原理
+
+weak的原理在于底层维护了一张weak_table_t结构的hash表，Key是所指对象的地址，Value是weak指针的地址（这个地址的值是所指对象的地址）数组。
+
+weak 的实现原理可以概括一下三步：
+
+  初始化时：runtime会调用objc_initWeak函数，初始化一个新的weak指针指向对象的地址;
+  添加引用时：objc_initWeak函数会调用 objc_storeWeak() 函数， objc_storeWeak() 的作用是更新指针指向，创建对应的弱引用表。
+  释放时，调用clearDeallocating函数。cle...</content>
+  </entry>
 
   <entry>
     <title>Autorelease 及 Autoreleasepool 原理</title>

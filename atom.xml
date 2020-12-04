@@ -3,13 +3,27 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-05T06:10:05+08:00</updated>
+  <updated>2020-12-05T07:02:43+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Objective-C中的@property、@synthesize以及@dynamic</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16071202583411.html"/>
+    <updated>2020-12-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16071202583411</id>
+    <content type="html">
+Objective-C中的@property、@synthesize以及@dynamic
+
+解读
+
+  @property 的本质是实际上就是 ivar (实例变量) + 存取方法(getter + setter)。在属性定义完成后，编译器会自动生成该属性的 getter 和 setter 方法，这个过程就叫做自动合成。除了生成 getter 与 setter 方法，编译器还要自动向类中添加适当类型的实例变量，并且在属性名前面加下划线，以此做实例变量的名字;
+  @synthesize 的作用就是如果没有手动实现 getter 与 setter 方法，那么编译器就会自动加上这两个方法；...</content>
+  </entry>
 
   <entry>
     <title>iOS中的 calloc 及权限修饰符</title>

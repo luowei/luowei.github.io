@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-04T14:45:19+08:00</updated>
+  <updated>2020-12-04T16:51:30+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -41,7 +41,7 @@ Autorelease 及 Autoreleasepool 原理
 MRC模式
 
   autorelease会像C语言的自动变量那样来对待对象实例。当超出变量作用域时，对象实例的release实例方法被调用。但同C语言自动变量不同的是，开发者可以设定变量的作用域，而其中的NSAutoreleasePool对象的生存周期就相当于C语言变量的作用域。
-  要使用autorealse就需要生成并持有NSAutoreleasePool对象，而后把所有的autorealse实例通过push方法放在NSAutoreleasePool里...</content>
+  要使用autorealse就需要生成并持有NSAutoreleasePool对象，而后把所有的autorealse实例添加到NSAutoreleasePool里，离开作用时，...</content>
   </entry>
 
   <entry>

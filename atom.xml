@@ -3,13 +3,28 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-05T08:42:04+08:00</updated>
+  <updated>2020-12-05T13:16:13+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS里load与initialize方法总结</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16071300644840.html"/>
+    <updated>2020-12-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16071300644840</id>
+    <content type="html">
+iOS里load与initialize方法总结
+
++load方法
+
+  load方法在main函数执行之前调用，具体调用是在dyld加载类时，在dyld_start之后由dyld调用；
+  OC 运行时初始化时，会通过 dyld_register_image_state_change_handler 在每次有新的镜像加入运行时的时候，进行回调。执行 load_images 将所有包含 load 方法的文件加入列表 loadable_classes ，然后从这个列表中找到对应的 load 方法的实现，调用 load 方法。
+  ObjC 对于加载的管理，主要使用了两个列表，分别是 loa...</content>
+  </entry>
 
   <entry>
     <title>C语言中const关键字使用总结</title>

@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-05T08:07:50+08:00</updated>
+  <updated>2020-12-05T08:20:58+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -39,6 +39,44 @@ Objective-C中的@property、@synthesize以及@dynamic
 
   @property 的本质是实际上就是 ivar (实例变量) + 存取方法(getter + setter)。在属性定义完成后，编译器会自动生成该属性的 getter 和 setter 方法，这个过程就叫做自动合成。除了生成 getter 与 setter 方法，编译器还要自动向类中添加适当类型的实例变量，并且在属性名前面加下划线，以此做实例变量的名字;
   @synthesize 的作用就是如果没有手动实现 getter 与 setter 方法，那么编译器就会自动加上这两个方法；...</content>
+  </entry>
+
+  <entry>
+    <title>Objective-C对象的浅拷贝与深拷贝探究</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16070861382919.html"/>
+    <updated>2020-12-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16070861382919</id>
+    <content type="html">
+Objective-C对象的浅拷贝与深拷贝探究
+
+iOS提供了2个拷贝方法
+
+  copy 不可变拷贝，产生不可变副本；
+  mutableCopy可变拷贝，产生可变副本；
+
+
+深拷贝和浅拷贝
+深拷贝 内容拷贝，产生新的对象；
+浅拷贝 指针拷贝，没有产生新的对象；
+
+copy和mutableCopy 图解
+
+
+  
+    
+       
+      copy
+      mutableCopy
+    
+  
+  
+    
+      NSString
+      NSString 浅拷贝
+      NSMutableString深拷贝
+    
+    
+      NSMu...</content>
   </entry>
 
   <entry>

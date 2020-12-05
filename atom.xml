@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-05T07:02:43+08:00</updated>
+  <updated>2020-12-05T08:07:50+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS中触发离屏渲染的本质原因与场景</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16071248803343.html"/>
+    <updated>2020-12-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16071248803343</id>
+    <content type="html">
+iOS中触发离屏渲染的本质原因与场景
+
+当前屏幕渲染(On-Screen Rendering)：当前屏幕渲染，CPU、GPU 不停地将内容渲染完成放入frame buffer帧缓冲区中，显示屏幕从 frame buffer中获取内容显示。
+
+离屏渲染(Off-Screen Rendering)：离屏渲染，先创建离屏渲染帧缓冲区offscreen frame buffer，然后逐一将内容渲染放入其中，完成后对离屏渲染缓冲区做阴影叠加、裁剪等操作，最后将结果拷贝或切换到帧缓冲区frame buffer中，显示屏幕从 frame buffer中获取内容显示。
+
+触发离屏渲染的原因
+因为离屏渲...</content>
+  </entry>
 
   <entry>
     <title>Objective-C中的@property、@synthesize以及@dynamic</title>

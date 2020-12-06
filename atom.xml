@@ -3,13 +3,31 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-06T21:38:12+08:00</updated>
+  <updated>2020-12-07T01:39:50+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Objective-C当中的Block</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16071202187230.html"/>
+    <updated>2020-12-07T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16071202187230</id>
+    <content type="html">
+Objective-C当中的Block
+
+Blocks是C语言的扩充功能，即带有自动变量(局部变量)的匿名函数。
+使用clang可以通过添加-rewrite-objc编译选项将含有Block语法的源代码变换为C++的源代码，如用clang -rewrite-objc main.m会生成一个与main.m对等的main.cpp文件。
+
+先看总结：
+
+  当没有引入外部自动变量时，Block是__NSGlobalBlock__；
+  当只引入了非自动变量(如void *、变量的类型)时，Block仍然是__NSGlobalBlock__；
+  当引入了外部自动变量时，Block会变成__N...</content>
+  </entry>
 
   <entry>
     <title>Objective-C中Class、NSObject、id的本质</title>

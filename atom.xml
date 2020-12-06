@@ -3,13 +3,50 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-05T16:31:09+08:00</updated>
+  <updated>2020-12-06T10:36:47+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Xcode断点调试与lldb常用命令</title>
+    <link href="https://luowei.github.io/ios/16071825228878.html"/>
+    <updated>2020-12-06T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16071825228878</id>
+    <content type="html">
+Xcode断点调试与lldb常用命令
+
+Xcode断点调试
+
+断点
+添加符号断点
+我们可以使用方法名作为符号名，添加符号断点。添加符号断点左下角加号，如下图：
+
+
+添加一个符号名为sayHello的符号断点。
+
+然后，调试运行
+
+
+编辑断点
+
+
+添加断点行为，在断点时执行代码
+
+
+创建条件断点，并在断点时打印函数调用的堆栈信息
+
+
+lldb常用命令
+LLDB 是一个有着 REPL 的特性和 C++ ,Python 插件的开源调试器。也可以安装 Chisel，它是一个开源的 LLDB 插件合辑这会使调试变得更加强大。
+
+常用命令
+
+  po：查看对象的 description 方法的结果...</content>
+  </entry>
 
   <entry>
     <title>iOS里load与initialize方法总结</title>

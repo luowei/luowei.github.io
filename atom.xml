@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-08T13:51:49+08:00</updated>
+  <updated>2020-12-09T02:24:35+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -23,6 +23,23 @@
 
 
 </content>
+  </entry>
+
+  <entry>
+    <title>深入理解 iOS 中 GCD 原理</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16074006673494.html"/>
+    <updated>2020-12-08T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16074006673494</id>
+    <content type="html">
+深入理解 iOS 中 GCD 原理
+
+首先了解一下，计算机程序是怎样运行的，然后再具体讲 GCD 相关内容。
+
+  当开始运行程序时，首先应把第一条指令所在存储单元的地址赋予程序计数器PC，然后机器就进入了取指阶段；
+  在取指阶段，CPU从内存中读取的内容必为指令。然后送往数据缓冲寄存器DR，经DR送往指令寄存器IR；
+  之后由指令译码器ID对IR中的指令的操作码字段进行译码，然后又PLA发出执行该指令所需要的各种微操作控制信号，取指阶段到此结束。
+  之后，机器就进入执行指令阶段，这时CPU便执行指令所规定的具体操作。
+  当一条指令执行完毕后，即转入下一条指令的取指阶段，如此循...</content>
   </entry>
 
   <entry>

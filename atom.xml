@@ -3,13 +3,27 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-07T01:39:50+08:00</updated>
+  <updated>2020-12-08T13:51:49+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>古代中国梦</title>
+    <link href="https://luowei.github.io/%E8%AF%BB%E4%B9%A6/16074064214707.html"/>
+    <updated>2020-12-08T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E8%AF%BB%E4%B9%A6/16074064214707</id>
+    <content type="html">
+古代中国梦
+
+看历史，有人说古代中国老百姓有三个梦，暂且叫『古代中国梦』吧。
+
+
+</content>
+  </entry>
 
   <entry>
     <title>Objective-C当中的Block</title>

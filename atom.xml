@@ -3,13 +3,31 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-11T22:52:09+08:00</updated>
+  <updated>2020-12-12T20:37:25+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>深入理解iOS 中的 Runloop</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16074478217682.html"/>
+    <updated>2020-12-12T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16074478217682</id>
+    <content type="html">
+深入理解iOS 中的 Runloop
+
+我们知道Runloop本质上是一个执行死循环的对象，它跑起来后大多数时候是处于休眠等待状态，是不占用CPU资源的。我们先来看一下它是怎么做到的：
+
+闲等待：在死循环里是如何不占用CPU资源的
+所谓闲等待是在一个循环里，CPU不是一直在空转，没有任务处理时，就不占用CPU计算资源，让CPU就去干别的事。这一般都是通 过中断来实现的：
+
+  中断是CPU停止正在运行的程序并转入处理新情况的程序，处理完毕后才返回原被暂停的程序继续运行；
+  比如在阻塞IO中IO设备向CPU发一条IO中断信号，CPU就会暂停当前程序的处理去服务该I/O设备的程序；
+  ...</content>
+  </entry>
 
   <entry>
     <title>古代中国梦</title>

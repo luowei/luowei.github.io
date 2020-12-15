@@ -3,13 +3,93 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-12T20:37:25+08:00</updated>
+  <updated>2020-12-15T17:32:07+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>开小灶</title>
+    <link href="https://luowei.github.io/%E8%AF%BB%E4%B9%A6/16080116747063.html"/>
+    <updated>2020-12-15T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E8%AF%BB%E4%B9%A6/16080116747063</id>
+    <content type="html">
+开小灶
+
+
+
+关于开小灶这事，之前看到在一个评选节目上看到马云质问批责一个候选人，在公司替老板上班的时候自己业余也搞了一个小网站的行为。
+
+看后时常在思考对这个问题的价值判断，从人性的角度看也总觉得马云这个批评质问总欠缺些什么。现在仔细一想这就是不准人家开小灶，剥夺个人的私有权力。
+
+如果说那个候选人是因为工作时间自己开小灶导致没有完成公事，那是这候选人的不对；如果人家很好的完成了公事还禁止人家开小灶，那就是剥夺个人的私人空间了，并且还会打击员工的积极性，让本来很有能力的人会要磨洋工。
+
+允许员工在完成公事后，可以自己开小灶，这会极大的激发员工的积极性，因为人都有私心，都想更快更有效率...</content>
+  </entry>
+
+  <entry>
+    <title>iOS 中 NSProxy 的特性与应用</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16074772192999.html"/>
+    <updated>2020-12-15T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16074772192999</id>
+    <content type="html">
+iOS 中 NSProxy 的特性与应用
+
+NSProxy 的特性
+
+  NSProxy的主要功能，负责把消息转发给真正的target的代理类；
+  NSProxy没有继承NSObject，但是实现了NSObject协议，作为一个抽象类，它没有实现初始化方法，并且会在收到任何它不响应的消息时会引发异常；
+  NSProxy的子类必须要实现一个初始化或创建方法，并要重写- (void)forwardInvocation:(NSInvocation *)invocation;和-(nullable NSMethodSignature *)methodSignatureForSelector...</content>
+  </entry>
+
+  <entry>
+    <title>iOS 中常见的内存泄漏</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16074769341843.html"/>
+    <updated>2020-12-15T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16074769341843</id>
+    <content type="html">
+iOS 中常见的内存泄漏
+
+内存泄漏（memory leak）：是指申请的内存空间使用完毕之后未回收。
+内存溢出（out of memory）：是指程序在申请内存时，没有足够的内存空间供其使用。
+
+
+  delegate 变量没声明为 weak 类型；
+  NSNotification没有移除通知；
+  block强引用捕获外部变量；
+  NSTimer在释放前未调用[timer invalidate]，对target强引用；
+  performSelector:afterDelay只有在runloop为DefaultMode时才能成功，否则会对target强引用；
+  提供了rele...</content>
+  </entry>
+
+  <entry>
+    <title>Json学编程开发——B站直播间</title>
+    <link href="https://luowei.github.io/%E7%9B%B4%E6%92%AD/16079545869098.html"/>
+    <updated>2020-12-14T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E7%9B%B4%E6%92%AD/16079545869098</id>
+    <content type="html">
+Json学编程开发——B站直播间
+
+B站直播间,每晚8点准时开播。
+ 直播间地址：https://live.bilibili.com/22683419
+
+或者扫码可直接观看：
+ 
+
+本周主要讲：
+ iOS高级开发原理解析
+
+会附带去零散一点知识点：
+ 1.讲日常编程开发，比如Shell、Java，Chrome；
+ 2.一个独立开发者的日常，读书； 
+ 3.提高工作效率与电脑使用效率的一些应用，Sublim，VSCode使用；
+ 4.日常常用的Shell脚本的写法； 
+ 5.应用开发，主要iOS平台上的应用开发；
+</content>
+  </entry>
 
   <entry>
     <title>深入理解iOS 中的 Runloop</title>

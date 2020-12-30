@@ -3,13 +3,37 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2020-12-15T17:33:17+08:00</updated>
+  <updated>2020-12-30T22:28:20+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Fastlane自动打包配置</title>
+    <link href="https://luowei.github.io/ios/16093382846124.html"/>
+    <updated>2020-12-30T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16093382846124</id>
+    <content type="html">
+Fastlane自动打包配置
+
+Fastlane自动打包配置，主要是编辑Fastfile，下面给一个简单的示例，代码如下：
+default_platform(:ios)
+
+platform :ios do
+  desc &quot;Description of what the lane does&quot;
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+  # source &quot;https://gems-china.org&quot;
+
+  lane :buildApp do
+
+  ...</content>
+  </entry>
 
   <entry>
     <title>开小灶</title>

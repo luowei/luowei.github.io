@@ -3,13 +3,26 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-01-01T20:27:46+08:00</updated>
+  <updated>2021-01-19T07:36:02+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS & macOS 的 framwork 与 dylib 目录</title>
+    <link href="https://luowei.github.io/ios/16110128370860.html"/>
+    <updated>2021-01-19T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16110128370860</id>
+    <content type="html">
+iOS &amp;amp; macOS 的 framwork 与 dylib 目录
+
+framework 目录：/System/Library/Frameworks
+dylib 目录：/usr/lib/
+</content>
+  </entry>
 
   <entry>
     <title>文学与文化</title>

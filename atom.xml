@@ -3,13 +3,49 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-01-19T07:36:02+08:00</updated>
+  <updated>2021-01-21T20:16:39+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>异或的两个常见应用</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/16112306834700.html"/>
+    <updated>2021-01-21T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/16112306834700</id>
+    <content type="html">
+异或的两个常见应用
+
+异或运算符”∧”也称XOR运算符。它的规则是：若参加运算的两个二进位同号，则结果为0（假）；异号则为1（真）。即 0∧0＝0，0∧1＝1， 1^0=1，1∧1＝0。
+
+
+  
+    
+      运算
+      说明
+    
+  
+  
+    
+      0 ^ 0=0,0 ^ 1=1
+      0异或任何数，其结果=任何数
+    
+    
+      1 ^ 0=1,1 ^ 1=0
+      1异或任何数，其结果=任何数取反
+    
+    
+      x ^ x=0
+      任何数异或自己，等于把自己置0
+    
+  
+
+
+翻转特定...</content>
+  </entry>
 
   <entry>
     <title>iOS & macOS 的 framwork 与 dylib 目录</title>

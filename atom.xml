@@ -3,13 +3,32 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-02-01T14:29:48+08:00</updated>
+  <updated>2021-02-26T13:33:44+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Mach原语</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16143174374867.html"/>
+    <updated>2021-02-26T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16143174374867</id>
+    <content type="html">
+Mach原语
+
+同步原语
+
+Mach IPC架构中的两个重要组件，一个是消息传递机制；另一个是同步机制(synchronization)。而同步机制在根本上是由同步原语来实现的。
+
+自旋锁(hw_lock_t)
+
+
+  自旋锁是让没有获取到锁的线程一直循环等待判断该资源是否已经释放锁，它不会把线程阻塞起来。
+  互斥体与信息量都是阻塞等待的对象。阻塞等待是指如果锁对象被其他线程持有，那么请求访问的线程就被加入到等待队列中，因而被阻塞。阻塞一处线程意味着放弃线程的时间片，把处理器让给调度器认为下一个要执行的线程。当锁可用时，调度器会得到通知，然而根据自己的判断将线程从等待队列中取出并重新...</content>
+  </entry>
 
   <entry>
     <title>历史是由流氓导演并主演的</title>

@@ -3,13 +3,38 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-02-26T13:49:43+08:00</updated>
+  <updated>2021-03-12T01:17:02+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>macOS/iOS中的I/O多路复用方案kqueue</title>
+    <link href="https://luowei.github.io/%E5%8E%9F%E7%90%86/16138994642898.html"/>
+    <updated>2021-03-12T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%8E%9F%E7%90%86/16138994642898</id>
+    <content type="html">
+macOS/iOS中的I/O多路复用方案kqueue
+
+XNU内核
+
+
+Mach+BSD内核
+
+
+尽管XUN的绝对核心是Mach，但是XUN向用户态提供的主要接口是BSD接口。BSD层是建立在Mach之上，是XNU中一个不可分割的一部分。BSD负责提供可靠的、现代的API。其内容包括：
+UNIX进程模型
+POSIX线程模型及相关的同步原语
+UNIX用户和组
+网络协议栈
+文件访问系统
+设备访问
+
+kqueue是BSD中使用的内核事件通知机制,一个kqueue指的是一个描述符，这个描述符会阻塞等待直到一个特定的类型和种类的事件发生。用户态或者内核的进程可以等待这个描述符，因而kqueue提...</content>
+  </entry>
 
   <entry>
     <title>Mach原语</title>

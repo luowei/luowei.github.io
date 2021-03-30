@@ -3,13 +3,32 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-03-12T01:17:02+08:00</updated>
+  <updated>2021-03-30T18:47:55+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>使用 Swift Package Manager</title>
+    <link href="https://luowei.github.io/ios/16170858898202.html"/>
+    <updated>2021-03-30T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16170858898202</id>
+    <content type="html">
+使用 Swift Package Manager
+
+Swift Package Manager 是一个去中心化的源码管理工具。
+
+创建一个基本的Swift package
+mkdir SwiftGrabber
+swift package init --type executable
+
+
+生成 xcode project
+在生成xcode project的过程当中，SPM 会检查Package.swift里定义的 dependency、target、product，将dependency引入project中；根据定义的target在project里产生对应的target；根据定义的pro...</content>
+  </entry>
 
   <entry>
     <title>macOS/iOS中的I/O多路复用方案kqueue</title>

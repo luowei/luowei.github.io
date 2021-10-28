@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-10-29T00:32:41+08:00</updated>
+  <updated>2021-10-29T00:39:54+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -25,6 +25,24 @@ export https_proxy=http://127.0.0.1:15236 http_proxy=http://127.0.0.1:15236 all_
 
 Mac / Linux 设置命令行代理：
 export https_proxy=http://127.0.0.1:1...</content>
+  </entry>
+
+  <entry>
+    <title>Adblock 拦截规则</title>
+    <link href="https://luowei.github.io/ios/16284935780754.html"/>
+    <updated>2021-10-29T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16284935780754</id>
+    <content type="html">
+Adblock 拦截规则
+
+AdblockPlus拦截规则简单教程
+
+adblock过滤规则编写
+
+adblock过滤规则编写
+
+检测API是否可用Can_I_Use
+</content>
   </entry>
 
   <entry>

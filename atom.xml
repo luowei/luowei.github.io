@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-03-30T18:47:55+08:00</updated>
+  <updated>2021-10-29T00:32:41+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>终端Terminal中设置代理</title>
+    <link href="https://luowei.github.io/linux/16354341220835.html"/>
+    <updated>2021-10-29T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/linux/16354341220835</id>
+    <content type="html">
+终端Terminal中设置代理
+
+export https_proxy=http://127.0.0.1:1087 http_proxy=http://127.0.0.1:1087 all_proxy=socks5://127.0.0.1:1080
+export https_proxy=http://127.0.0.1:15236 http_proxy=http://127.0.0.1:15236 all_proxy=socks5://127.0.0.1:15235
+
+
+Mac / Linux 设置命令行代理：
+export https_proxy=http://127.0.0.1:1...</content>
+  </entry>
 
   <entry>
     <title>使用 Swift Package Manager</title>

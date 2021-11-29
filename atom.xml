@@ -3,13 +3,34 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-10-29T00:39:54+08:00</updated>
+  <updated>2021-11-30T00:01:42+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS面试常问</title>
+    <link href="https://luowei.github.io/%E9%9D%A2%E8%AF%95/16286975952834.html"/>
+    <updated>2021-11-30T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E9%9D%A2%E8%AF%95/16286975952834</id>
+    <content type="html">
+iOS面试常问
+
+NSObect对象本质
+答：
+本质是对C语言结构体objc_object的封装，主要实现是在C++的中结构体objc_object中实现的。其中的isa指针是个联合体，实现了objc_object 与 objc_class 的继承引用体系结构。
+
+KVO原理
+答：
+为被观察者对象动态生成其子类，并把观察者对象的isa替换成新生的子类，在子类中重载了setXXProperty方法及setValue:forKey方法，并在重载的方法中触发KVO的回调。
+
+Block底层原理与捕获机制
+答：
+Block底层是个结构体，有对函数指针与捕获变量的封装，有Global、Stack...</content>
+  </entry>
 
   <entry>
     <title>终端Terminal中设置代理</title>

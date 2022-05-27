@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-05-27T22:09:39+08:00</updated>
+  <updated>2022-05-28T03:43:15+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -23,15 +23,28 @@
 
 
 
-方法一：
+步骤：
 
   使用  ^((?!&quot;aid&quot;: \d+).)*$ -&amp;gt;  $2 筛选出 所有含的 “aid”: 939288219 的行；
   ,\n* -&amp;gt; \n 去掉多余的换行；
   ^(?:\s)\s+  去掉多余的空格；
 
 
-方法二： 
-优化regex,一步到位, ^((?!&quot;aid&quot;: \d+).)* -&amp;gt;  $2
+原数直接处理
+
+  
+    筛出 &quot;aid&quot;:\d++, 匹配 (&quot;aid&quot;:\d++) 替换成 \n$1\n；
+
+  
+  
+    使用 ^((?!&quot;aid&quot;:\d++).)*+\n?+ 删除多余文本；
+
+  
+  
+    结果数据
+
+  
+
 </content>
   </entry>
 

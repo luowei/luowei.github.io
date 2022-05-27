@@ -3,13 +3,37 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2021-12-05T23:44:33+08:00</updated>
+  <updated>2022-05-27T22:09:39+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>正则删除文本中非匹配项</title>
+    <link href="https://luowei.github.io/regex/16536602052877.html"/>
+    <updated>2022-05-27T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/regex/16536602052877</id>
+    <content type="html">
+正则删除文本中非匹配项
+
+比如在Sublime中处理有以下文本：
+
+
+
+方法一：
+
+  使用  ^((?!&quot;aid&quot;: \d+).)*$ -&amp;gt;  $2 筛选出 所有含的 “aid”: 939288219 的行；
+  ,\n* -&amp;gt; \n 去掉多余的换行；
+  ^(?:\s)\s+  去掉多余的空格；
+
+
+方法二： 
+优化regex,一步到位, ^((?!&quot;aid&quot;: \d+).)* -&amp;gt;  $2
+</content>
+  </entry>
 
   <entry>
     <title>iOS面试常问</title>
@@ -1142,7 +1166,7 @@ self.wkWebView.allowsBackForwardNavigationGestures = YES;
 macOS的say命令使用详解
 
 voice列表
-(base) ➜  ~ say -v '?'      
+(base) ➜  ~ say -v &apos;?&apos;      
 Alex                en_US    # Most people recognize me by my voice.
 Alice               it_IT    # Salve, mi chiamo Alice e sono una voce italiana.
 Alva                sv_SE    # Hej, jag heter Alva. Jag är en svensk röst.
@@ -1864,10 +1888,10 @@ TED英文演讲
 MySQL命令
 替数据表中某个字段中的部份内容
 UPDATE `topic`
-SET `preImage` = REPLACE (`preImage`, '7xstyo.com2.z0.glb.clouddn.com', 'wdyzj.wodedata.com')
+SET `preImage` = REPLACE (`preImage`, &apos;7xstyo.com2.z0.glb.clouddn.com&apos;, &apos;wdyzj.wodedata.com&apos;)
 WHERE id IN (
   select id from (
-      SELECT id FROM `topic` WHERE `preImage` LIKE '%7xstyo.com2.z0.glb.clouddn.com%' 
+      SELECT id FROM `topic` WHERE `preImage` LIKE &apos;%7xstyo.com2.z0.glb.clouddn.com%&apos; 
   ) tempC
 )
 
@@ -1941,8 +1965,8 @@ NetLogo : http://ccl.northwestern.edu/netlogo/
 
 批量改文件： for i in *; do mv $i $i.mp3; done;
 去掉多余的mp3后缀： for i in *; do mv $i ${i/.mp3.mp3/.mp3}; done;
-*文件名全改成小写: for i in *; do mv $i ` echo &quot;print '$i'.lower()&quot; | python `; done; 
-或   for i in *; do mv $i ` echo &quot;print '$i'.downcase()&quot; | ruby `; done;
+*文件名全改成小写: for i in *; do mv $i ` echo &quot;print &apos;$i&apos;.lower()&quot; | python `; done; 
+或   for i in *; do mv $i ` echo &quot;print &apos;$i&apos;.downcase()&quot; | ruby `; done;
 或   for i in *; do mv $i ` p...</content>
   </entry>
 
@@ -2660,11 +2684,11 @@ Objective-C内存管理的对象
 CREATE DATABASE IF NOT EXISTS rootls DEFAULT CHARSET utf8 COLLATE utf8_general_ci
 
 # 创建用户并授权
-CREATE USER 'rootls'@'localhost' IDENTIFIED BY 'xxxxxx'; 
-GRANT ALL ON rootls.* TO 'rootls'@'localhost' ;
+CREATE USER &apos;rootls&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;xxxxxx&apos;; 
+GRANT ALL ON rootls.* TO &apos;rootls&apos;@&apos;localhost&apos; ;
 
 # 设置密码
-# Set PASSWORD for rootls@localhost = password('xxxxxx') ;
+# Set PASSWORD for rootls@localhost = password(&apos;xxxxxx&apos;) ;
 
 # 登录rootls
 mysql -h l...</content>
@@ -2682,7 +2706,7 @@ mysql -h l...</content>
             Ray Wenderlich | Tutorials for iPhone / iOS Developers and Gamers
             我爱自然语言处理 | I Love Natural Language Processing
             Glow 技术团队博客
-            OneV's Den
+            OneV&apos;s Den
             sunnyxx的技术博客
             Chun Ti...</content>
   </entry>
@@ -3052,7 +3076,7 @@ bool IsExitsLoop(List *head){
 
 关键函数：
 
-istream&amp;amp;getline(char *pch,int nCount,char delime='\n')
+istream&amp;amp;getline(char *pch,int nCount,char delime=&apos;\n&apos;)
  	extern char * strchr(char *str,char characte...</content>
   </entry>
 
@@ -3159,7 +3183,7 @@ CentOS最常用命令及快捷键整理
   文件和目录:
 
 
-# cd /home                        进入 '/home' 目录
+# cd /home                        进入 &apos;/home&apos; 目录
 # cd ..                                返回上一级目录
 # cd ../..                             返回上两级目录
 # cd -                                 返回上次所在目录

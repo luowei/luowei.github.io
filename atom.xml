@@ -3,13 +3,34 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-05-28T22:11:26+08:00</updated>
+  <updated>2022-06-03T22:01:15+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>正则中的Group、反向引用、前向引用</title>
+    <link href="https://luowei.github.io/%E6%AD%A3%E5%88%99/16536646132317.html"/>
+    <updated>2022-06-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E6%AD%A3%E5%88%99/16536646132317</id>
+    <content type="html">
+正则中的Group、反向引用、前向引用
+
+参考：https://www.regular-expressions.info/backref.html
+
+反向引用
+
+使用反向引用重复匹配html标签
+&amp;lt;([A-Z][A-Z0-9]*)\b[^&amp;gt;]*&amp;gt;.*?&amp;lt;/\1&amp;gt; 
+匹配 
+Testing &amp;lt;B&amp;gt;&amp;lt;I&amp;gt;bold italic&amp;lt;/I&amp;gt;&amp;lt;/B&amp;gt; text 中的 &amp;lt;B&amp;gt;&amp;lt;I&amp;gt;bold italic&amp;lt;/I&amp;gt;&amp;lt;/B&amp;gt;.
+
+反向引用的重复问题
+因为每次找到的新匹配会覆盖保存旧...</content>
+  </entry>
 
   <entry>
     <title>正则删除文本中非匹配项</title>

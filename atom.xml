@@ -3,13 +3,28 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-06-03T22:01:15+08:00</updated>
+  <updated>2022-06-04T23:58:49+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>不同的仓库使用不同的github账号提交</title>
+    <link href="https://luowei.github.io/shell/16543014008199.html"/>
+    <updated>2022-06-04T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/shell/16543014008199</id>
+    <content type="html">
+不同的仓库使用不同的github账号提交
+
+配置仓库
+git config --add --local core.sshCommand &apos;ssh -i &amp;lt;&amp;lt;&amp;lt;PATH_TO_SSH_KEY&amp;gt;&amp;gt;&amp;gt;&apos;
+
+
+In some cases this doesn’t work because ssh_config overriding the command, in this case try ssh -i ~/.ssh/[insert_your_keyname] -F /dev/null to not use the ssh_config. such as b...</content>
+  </entry>
 
   <entry>
     <title>正则中的Group、反向引用、前向引用</title>

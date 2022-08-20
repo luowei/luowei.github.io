@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-06-04T23:58:49+08:00</updated>
+  <updated>2022-08-20T16:56:21+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -316,7 +316,7 @@ Mach IPC架构中的两个重要组件，一个是消息传递机制；另一个
   </entry>
 
   <entry>
-    <title>iOS & macOS 的 framwork 与 dylib 目录</title>
+    <title>iOS &amp; macOS 的 framwork 与 dylib 目录</title>
     <link href="https://luowei.github.io/ios/16110128370860.html"/>
     <updated>2021-01-19T00:00:00+08:00</updated>
     <id>https://luowei.github.io/ios/16110128370860</id>

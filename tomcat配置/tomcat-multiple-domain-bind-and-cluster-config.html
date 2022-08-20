@@ -8,7 +8,7 @@
     ProxyIOBufferSize 8192  
     ProxyRequests Off   
     ProxyVia Full   
-    # 把 my.wodedata.com 指向 http://wodedata.com:8080 tomcat应用端口
+    # 把 my.wodedata.com 指向 http://wodedata.com:8080 tomcat 应用端口
     ProxyPass / http://wodedata.com:8080/ smax=5 max=20 ttl=120 retry=300   
     ProxyPassReverse / http://wodedata.com:8080/
 &lt;/VirtualHost&gt;

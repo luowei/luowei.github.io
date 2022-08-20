@@ -3,13 +3,41 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-08-20T17:14:32+08:00</updated>
+  <updated>2022-08-21T05:22:36+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>使用Socat进行端口转发</title>
+    <link href="https://luowei.github.io/shell/16610218773192.html"/>
+    <updated>2022-08-21T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/shell/16610218773192</id>
+    <content type="html">
+使用Socat进行端口转发
+
+以前写使用ssh隧道进行端口转发，这次再介绍下Socat进行端口转发。如
+
+安装
+brew install socat
+
+
+端口转发
+TCP
+监听本地TCP 80 端口，并将请求转发(代理)到 10.0.0.1:8080 上：
+socat TCP-LISTEN:80,reuseaddr,fork TCP:10.0.0.1:8080
+UDP
+
+
+监听本地UDP 53 端口，并将请求转发(代理)到 10.0.0.1:5353 上：
+socat UDP-LISTEN:53,reuseaddr,fork UDP:10.0.0.1:5353
+
+
+将访问本机 1523...</content>
+  </entry>
 
   <entry>
     <title>不同的仓库使用不同的github账号提交</title>

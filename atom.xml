@@ -3,13 +3,40 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-08-21T05:22:36+08:00</updated>
+  <updated>2022-08-21T19:28:14+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS Rotation Animation 旋转动画的几种实现</title>
+    <link href="https://luowei.github.io/ios/16610712855071.html"/>
+    <updated>2022-08-21T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16610712855071</id>
+    <content type="html">
+iOS Rotation Animation 旋转动画的几种实现
+
+Swift 实现抽奖轮盘动画：
+
+  绘制轮盘：RaflleWheel；
+    
+      根据指定的Rect与角度旋转轮盘图片；
+    
+  
+  利用Easing时间曲线函数自定义淡入淡出动画；
+  视图动画、视图动画、属性动画师；
+  旋转（沿着Z轴）CABasicAnimation 与 CASpringAnimation两种实现方式；
+
+
+//抽奖轮盘
+class RaflleWheel: UIView {
+    var angle: CGFloat = 0 {
+        didSet {
+   ...</content>
+  </entry>
 
   <entry>
     <title>使用Socat进行端口转发</title>

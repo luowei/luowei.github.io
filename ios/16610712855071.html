@@ -216,4 +216,193 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div></div> <p><strong>轮盘交互动画再封装</strong></p> <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnAction</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">animation</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">animation</span><span class="o">.</span><span class="n">loopSize</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="n">animation</span><span class="o">.</span><span class="n">turnCallback</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"== ran around </span><span class="se">\(</span><span class="n">n</span><span class="se">)</span><span class="s"> times"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">animation</span><span class="o">.</span><span class="n">startCallback</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"== animation start"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">animation</span><span class="o">.</span><span class="n">stopCallback</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"== animation stop"</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">animation</span><span class="o">.</span><span class="n">running</span> <span class="p">{</span>
+            <span class="n">animation</span><span class="o">.</span><span class="nf">stopAnimate</span><span class="p">()</span>
+        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+            <span class="n">animation</span><span class="o">.</span><span class="nf">startAnimate</span><span class="p">()</span>
+        <span class="p">}</span>
+
+
+        <span class="c1">// var animation =  ManualAnimation(raffleWheel: self.raffleWheel)</span>
+        <span class="c1">// animation.manualAnimation()</span>
+
+        <span class="c1">// self.viewAnimate()</span>
+
+        <span class="c1">// self.animateKeyframes()</span>
+
+        <span class="c1">// self.propertyAnimator()</span>
+
+        <span class="c1">// self.addBaseAnimation()</span>
+
+    <span class="p">}</span>
+
+    <span class="kd">class</span> <span class="kt">GameAnimation</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>      <span class="c1">//第几片</span>
+        <span class="k">var</span> <span class="nv">loopSize</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">8</span>   <span class="c1">//蛋糕片数</span>
+
+        <span class="k">var</span> <span class="nv">running</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">//正在运行动画</span>
+        <span class="k">var</span> <span class="nv">stop</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">//停止标志</span>
+        <span class="k">var</span> <span class="nv">retry</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">//重试标志</span>
+        <span class="k">var</span> <span class="nv">interval</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1">// 20毫秒</span>
+
+        <span class="k">var</span> <span class="nv">unitFactor</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.618</span>
+        <span class="k">var</span> <span class="nv">unit</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span>     <span class="c1">//1片蛋糕的弧度 * 0.618</span>
+            <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">loopSize</span><span class="p">)</span> <span class="o">*</span> <span class="n">unitFactor</span>
+        <span class="p">}</span>
+        <span class="k">var</span> <span class="nv">upLen</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="c1">//加速距离</span>
+            <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">3</span>
+        <span class="p">}</span>
+        <span class="k">var</span> <span class="nv">downLen</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="c1">//减速距离</span>
+            <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">unit</span> <span class="o">*</span> <span class="p">(</span><span class="kt">CGFloat</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">retry</span> <span class="p">?</span> <span class="mf">0.5</span> <span class="p">:</span> <span class="mf">0.0</span><span class="p">))</span> <span class="o">/</span> <span class="n">unitFactor</span>
+        <span class="p">}</span>
+
+        <span class="k">var</span> <span class="nv">raffleWheel</span><span class="p">:</span> <span class="kt">RaflleWheel</span>
+
+        <span class="k">var</span> <span class="nv">turnCallback</span><span class="p">:</span> <span class="p">((</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+        <span class="k">var</span> <span class="nv">startCallback</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+        <span class="k">var</span> <span class="nv">stopCallback</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+
+        <span class="k">var</span> <span class="nv">currentAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="kd">func</span> <span class="nf">startAnimate</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">stop</span> <span class="p">{</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="nf">updateWheel</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">}</span>
+
+         <span class="kd">func</span> <span class="nf">stopAnimate</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="p">}</span>
+
+        <span class="nf">init</span><span class="p">(</span><span class="nv">raffleWheel</span><span class="p">:</span> <span class="kt">RaflleWheel</span><span class="p">){</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">raffleWheel</span> <span class="o">=</span> <span class="n">raffleWheel</span>
+            <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+        <span class="p">}</span>
+
+
+        <span class="kd">func</span> <span class="nf">updateWheel</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">i</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">remain</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">factor</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//print("==== angle:\(angle)")</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">raffleWheel</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span> <span class="c1">//start</span>
+                <span class="nf">startCallback</span><span class="p">?()</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="kt">Int</span><span class="p">(</span><span class="kt">CGFloat</span><span class="p">(</span><span class="n">loopSize</span><span class="p">)</span><span class="o">/</span><span class="n">unitFactor</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="nf">turnCallback</span><span class="p">?(</span><span class="n">i</span><span class="o">/</span><span class="kt">Int</span><span class="p">(</span><span class="kt">CGFloat</span><span class="p">(</span><span class="n">loopSize</span><span class="p">)</span><span class="o">/</span><span class="n">unitFactor</span><span class="p">))</span>
+            <span class="p">}</span>
+
+            <span class="k">var</span> <span class="nv">currentAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="cm">/*
+            //start - easing in
+            if unit * CGFloat(i) * CGFloat(loopSize) &lt; upLen {
+                let factor = factor * ( 1 + pow(factor, 2))
+                let offset = unit * (factor &gt;= 1 ? factor : factor)
+                currentAngle = (angle + offset).remainder(dividingBy: 2 * CGFloat.pi)
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(interval)) { [weak self] in
+                    self?.updateWheel(angle: currentAngle, i: i + 1)
+                }
+                return
+            }
+*/</span>
+
+            <span class="n">currentAngle</span> <span class="o">=</span> <span class="p">(</span><span class="n">angle</span> <span class="o">+</span> <span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="nf">truncatingRemainder</span><span class="p">(</span><span class="nv">dividingBy</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+            <span class="c1">//running</span>
+            <span class="k">if</span> <span class="n">stop</span> <span class="o">==</span> <span class="kc">false</span> <span class="p">{</span>
+                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="n">interval</span><span class="p">))</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">updateWheel</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="n">currentAngle</span><span class="p">,</span> <span class="nv">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+
+            <span class="c1">//stop - easing out</span>
+            <span class="k">let</span> <span class="nv">factor</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nf">pow</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">offset</span> <span class="o">=</span> <span class="n">unit</span> <span class="o">*</span> <span class="n">factor</span>
+            <span class="n">currentAngle</span> <span class="o">=</span> <span class="p">(</span><span class="n">angle</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span><span class="o">.</span><span class="nf">remainder</span><span class="p">(</span><span class="nv">dividingBy</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+            <span class="k">var</span> <span class="nv">rem</span> <span class="o">=</span> <span class="n">downLen</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">remain</span> <span class="o">=</span> <span class="n">remain</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="n">remain</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">{</span>
+                    <span class="nf">stopCallback</span><span class="p">?()</span>
+                    <span class="n">stop</span> <span class="o">=</span> <span class="kc">false</span>
+                    <span class="k">return</span>
+                <span class="p">}</span>
+
+                <span class="n">rem</span> <span class="o">=</span> <span class="n">remain</span> <span class="o">-</span> <span class="n">offset</span>
+                <span class="k">if</span> <span class="n">rem</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">{</span>
+                    <span class="n">currentAngle</span> <span class="o">=</span> <span class="p">(</span><span class="n">angle</span> <span class="o">+</span> <span class="n">remain</span><span class="p">)</span><span class="o">.</span><span class="nf">remainder</span><span class="p">(</span><span class="nv">dividingBy</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+                    <span class="n">rem</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">currentOffset</span> <span class="o">=</span> <span class="n">angle</span><span class="o">.</span><span class="nf">remainder</span><span class="p">(</span><span class="nv">dividingBy</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+                <span class="n">rem</span> <span class="o">=</span> <span class="n">downLen</span> <span class="o">-</span> <span class="n">currentOffset</span> <span class="o">-</span> <span class="n">offset</span>
+            <span class="p">}</span>
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="n">interval</span><span class="p">))</span> <span class="p">{[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+                <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">updateWheel</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="n">currentAngle</span><span class="p">,</span> <span class="nv">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">remain</span><span class="p">:</span> <span class="n">rem</span><span class="p">,</span> <span class="nv">factor</span><span class="p">:</span> <span class="n">factor</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+    <span class="kd">struct</span> <span class="kt">ManualAnimation</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">raffleWheel</span><span class="p">:</span> <span class="kt">RaflleWheel</span>
+
+        <span class="k">var</span> <span class="nv">startValue</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">var</span> <span class="nv">endValue</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">180</span>  <span class="c1">//n圈 + 半圈</span>
+        <span class="k">var</span> <span class="nv">total</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="k">let</span> <span class="nv">duration_t</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">//秒</span>
+        <span class="k">var</span> <span class="nv">currentValue</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1">//手动 动画</span>
+        <span class="kd">func</span> <span class="nf">manualAnimation</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">updateWhell</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">currentValue</span><span class="p">),</span> <span class="nv">idx</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+
+
+        <span class="kd">func</span> <span class="nf">updateWhell</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">idx</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"==== angle:</span><span class="se">\(</span><span class="n">angle</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">raffleWheel</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">idx</span> <span class="o">==</span> <span class="n">total</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+
+            <span class="k">let</span> <span class="nv">ang</span> <span class="o">=</span> <span class="nf">easeInOutQuad</span><span class="p">(</span><span class="nv">elapsed</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">duration_t</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">updateWhell</span><span class="p">(</span><span class="nv">angle</span><span class="p">:</span> <span class="n">ang</span><span class="p">,</span> <span class="nv">idx</span><span class="p">:</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+
+        <span class="c1">//曲线函数 ease timing curve function</span>
+        <span class="kd">func</span> <span class="nf">easeInOutQuad</span><span class="p">(</span><span class="nv">elapsed</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span> <span class="p">{</span>
+            <span class="k">var</span> <span class="nv">newElapsed</span> <span class="o">=</span> <span class="n">elapsed</span>
+            <span class="n">newElapsed</span> <span class="o">/=</span>  <span class="kt">CGFloat</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+            <span class="k">if</span> <span class="n">newElapsed</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">endValue</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">newElapsed</span> <span class="o">*</span> <span class="n">newElapsed</span> <span class="o">+</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">startValue</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">newElapsed</span> <span class="o">=</span> <span class="n">newElapsed</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="o">-</span><span class="kt">CGFloat</span><span class="p">(</span><span class="n">endValue</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">newElapsed</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">newElapsed</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">startValue</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
 </code></pre></div></div> <p><strong>参考：</strong> <a href="https://luowei.github.io/https://juejin.cn/post/6844903839779274765">Core Animation总结</a> <br /> <a href="https://luowei.github.io/https://betterprogramming.pub/ui-animations-with-swift-2ebb5e6d2292">UI Animations With Swift</a><br /> <a href="https://luowei.github.io/https://juejin.cn/post/6844903863414161416">使用UIViewPropertyAnimator实现高级动画</a></p> <footer> <p> 本作品由 <a href="mailto:luowei010101@gmail.com">luowei</a> 创作，采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="查看协议详细信息" target="_blank">CC BY-NC-SA 3.0 许可协议</a> 进行许可。 </p> </footer> </section> </article> </section> <section> <div class="tag-box-wrapper"> <ul class="tag-box inline"> <li><i class="icon-large icon-folder-open"></i></li> <li><a href="/categories.html#iOS-ref"> iOS <span>20</span> </a></li> </ul> </div> <div class="pagination"> <ul> <li class="prev"><a href="/shell/16610218773192.html" title="使用Socat进行端口转发">&larr; 上一篇</a></li> <li><a href="/archive.html">文章列表</a></li> <li class="next disabled"><a>下一篇 &rarr;</a></li> </ul> </div> </section> <section id="comments"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> <div id="gitalk-container"></div> <script type="text/javascript"> var gitalk = new Gitalk({ clientID: '9d5ee666269c252cf949', clientSecret: '728cd598f1fca9d8c1df1dfa300057883a3a8676', repo: 'luowei.github.io', owner: 'luowei', admin: ['luowei'], id: decodeURI('iOS Rotation Animation 旋转动画的几种实现'), distractionFreeMode: false }); gitalk.render('gitalk-container'); </script> </section> </div> </div> <div id="back-top"> <a href="#top" title="回到顶部"> <i class="icon-2x icon-arrow-up"></i> </a> </div> <script type="text/javascript"> $("#back-top").hide(); $(document).ready(function () { $(window).scroll(function () { if ($(this).scrollTop() > 100) { $('#back-top').fadeIn(); } else { $('#back-top').fadeOut(); } }); $('#back-top a').click(function () { $('body,html').animate({ scrollTop: 0 }, 500); return false; }); }); </script> </section> <footer id="bottom"> <p align="center">&copy; 2022 luowei with help from <a href="https://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> and <a href="https://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1277627361'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1277627361%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script> </p> </footer> </div> <script type="text/javascript"> $('article.post a').attr('target', '_blank'); if (navigator.appVersion.indexOf("Mac") != -1) { $('code, pre').css('font-family', 'Courier, monospace'); } </script> <script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-31488864-2']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script> </body> </html>

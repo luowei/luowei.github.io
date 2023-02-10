@@ -3,13 +3,35 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2022-08-23T06:16:58+08:00</updated>
+  <updated>2023-02-11T01:35:10+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>区块链技术学习</title>
+    <link href="https://luowei.github.io/%E5%AD%A6%E4%B9%A0/16760467294537.html"/>
+    <updated>2023-02-11T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%AD%A6%E4%B9%A0/16760467294537</id>
+    <content type="html">
+区块链技术学习
+
+区块链中账本的验证过程
+
+
+区块链交易中账户所有权的确权验证流程
+
+
+BTC区块链的记账挖矿过程
+
+
+BTC的共识机制
+
+</content>
+  </entry>
 
   <entry>
     <title>iOS Rotation Animation 旋转动画的几种实现</title>

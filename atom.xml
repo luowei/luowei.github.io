@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-02-24T02:34:25+08:00</updated>
+  <updated>2023-02-24T02:35:20+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -61,6 +61,25 @@ Hyperledger Fabric多通道数据隔离
 Peer账本存储
 
 </content>
+  </entry>
+
+  <entry>
+    <title>windows &amp; linux 上设置端口转发</title>
+    <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/16741455669142.html"/>
+    <updated>2023-02-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/16741455669142</id>
+    <content type="html">
+windows &amp;amp; linux 上设置端口转发
+
+以下案例在使用某机场代理时，发现其代理的端口都是私有的，这边是打开作用域在0.0.0.0上的端口转发到本地127.0.0.1的私有端口上，从而实现可供外部设备连接使用。
+
+
+@echo off
+
+rem Find the process information of a listening port 15246
+rem for /f &quot;tokens=5&quot; %i in (&apos;netstat -ano ^| find &quot;:15246&quot; ^| find &quot;LISTENING&quot;&apos;) do set &quot;PID=%i&quot;
+
+rem Kill th...</content>
   </entry>
 
   <entry>

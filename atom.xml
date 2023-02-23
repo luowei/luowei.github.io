@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-02-24T02:31:10+08:00</updated>
+  <updated>2023-02-24T02:34:25+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -31,6 +31,36 @@ ifconfig查看主机上的网络
 cat /etc/hosts # 查看主机内部IP映射表
 cat /etc/resolv.conf # 查看主机dns服务器配置
 cat /etc/nsswitch.co...</content>
+  </entry>
+
+  <entry>
+    <title>区块链学习笔记2</title>
+    <link href="https://luowei.github.io/%E5%AD%A6%E4%B9%A0/16766897332728.html"/>
+    <updated>2023-02-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E5%AD%A6%E4%B9%A0/16766897332728</id>
+    <content type="html">
+区块链学习笔记2
+
+
+
+
+
+
+
+
+
+Hyperledger Fabric 系统架构
+
+
+Hyperledger Fabric网络拓扑图
+
+
+Hyperledger Fabric多通道数据隔离
+
+
+Peer账本存储
+
+</content>
   </entry>
 
   <entry>

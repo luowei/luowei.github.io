@@ -3,13 +3,35 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-02-18T11:09:42+08:00</updated>
+  <updated>2023-02-24T02:31:10+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>Docker容器常用</title>
+    <link href="https://luowei.github.io/docker/16769919072309.html"/>
+    <updated>2023-02-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/docker/16769919072309</id>
+    <content type="html">
+Docker容器常用
+
+查看容器IP地址和网络相关的参数
+
+查看容器的IP地址，可以在主机上运行
+sudo docker ps # 查看正在运行的容器的id等信息
+&quot;sudo docker inspect 容器id&quot; # 可以查看到容器的相关信息
+&quot;docker inspect --format &apos;&apos; 容器id&quot; # 可以查看容器的具体IP地址，如果输出是空的说明没有配置IP地址
+
+
+ifconfig查看主机上的网络
+cat /etc/hosts # 查看主机内部IP映射表
+cat /etc/resolv.conf # 查看主机dns服务器配置
+cat /etc/nsswitch.co...</content>
+  </entry>
 
   <entry>
     <title>区块链技术学习笔记1</title>

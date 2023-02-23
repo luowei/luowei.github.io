@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-02-24T02:35:20+08:00</updated>
+  <updated>2023-02-24T02:35:54+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -60,6 +60,30 @@ Hyperledger Fabric多通道数据隔离
 
 Peer账本存储
 
+</content>
+  </entry>
+
+  <entry>
+    <title>R2S刷写OpenWrt软路由</title>
+    <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/16761735786108.html"/>
+    <updated>2023-02-24T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/16761735786108</id>
+    <content type="html">
+R2S刷写OpenWrt软路由
+
+R2S刷写OpenWrt软路由系统教程
+
+看云·OpenWRT刷写教程
+
+iStoreOS固件下载地址
+
+R2S固件Github源码地址
+
+arm软路由系统&amp;amp;刷机工具
+
+TP-LINK路由器AP模式配置
+
+试了手头两个多看前买的TP-LINK路由器做成AP接入点，看了下都有无线AP功能，但我这想用一根网线接入到TP路由器直接让这个路由器充当无线交换机用，试了几种连线方法发现其实很简单，先把TP路由器配置成无线AP模式，再把从主路由拉一根线接入到TP路由器的LAN口即可。
 </content>
   </entry>
 

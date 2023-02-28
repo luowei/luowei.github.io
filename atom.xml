@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-03-01T00:31:45+08:00</updated>
+  <updated>2023-03-01T00:34:01+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -24,12 +24,11 @@ Docker容器常用
 查看容器的IP地址，可以在主机上运行
 sudo docker ps # 查看正在运行的容器的id等信息
 &quot;sudo docker inspect 容器id&quot; # 可以查看到容器的相关信息
-&quot;docker inspect --format &apos;\{\{ .NetworkSettings.IPAddress \}\}&apos; 容器id&quot; # 可以查看容器的具体IP地址，如果输出是空的说明没有配置IP地址
+&quot;docker inspect --format &apos;&amp;amp;#123;&amp;amp;#123; .NetworkSettings.IPAddress &amp;amp;#125&amp;amp;#125&apos; 容器id&quot; # 可以查看容器的具体IP地址，如果输出是空的说明没有配置IP地址
 
 
 ifconfig查看主机上的网络
-cat /etc/hosts # 查看主机内部IP映射表
-cat /etc/resolv.conf...</content>
+cat /etc/hosts # 查看...</content>
   </entry>
 
   <entry>

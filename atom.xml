@@ -3,13 +3,30 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-03-01T00:34:01+08:00</updated>
+  <updated>2023-07-07T22:07:46+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>基于Zerotier内网穿透虚拟网络的搭建</title>
+    <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C/16771589916655.html"/>
+    <updated>2023-07-07T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C/16771589916655</id>
+    <content type="html">
+基于Zerotier内网穿透虚拟网络的搭建
+
+搭建ZeroTier内网穿透
+优惠链接：https://cloud.tencent.com/act/pro/618season?from=17200
+
+在服务器上部署ZeroTier
+项目地址：https://github.com/Jonnyan404/zerotier-planet
+相关命令：
+docker run --restart=on-failure:3 -d --name ztncui -e HTTP_PORT=5688 -e HTTP_ALL_INTERFACES=yes -e ZTNCUI_PASSWD=xxxxx -p 56...</content>
+  </entry>
 
   <entry>
     <title>Docker容器常用</title>

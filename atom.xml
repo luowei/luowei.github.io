@@ -3,13 +3,36 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2023-07-07T22:07:46+08:00</updated>
+  <updated>2023-09-05T00:24:30+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>iOS 集成WireGuard库</title>
+    <link href="https://luowei.github.io/ios/16929036009560.html"/>
+    <updated>2023-09-05T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/ios/16929036009560</id>
+    <content type="html">
+iOS 集成WireGuard库
+
+编译 wireguard-apple
+
+仓库：
+https://github.com/WireGuard/wireguard-apple
+
+**Embedding WireGuard in Custom Applications: **
+https://www.wireguard.com/embedding/
+
+Go编译环境配置
+# 启用Go语言中的模块支持,就可以使用 go mod 命令来初始化模块、添加依赖、构建和管理你的项目
+go env -w GO111MODULE=on
+# 设置Go代理
+go env -w GOPROXY=https://...</content>
+  </entry>
 
   <entry>
     <title>基于Zerotier内网穿透虚拟网络的搭建</title>

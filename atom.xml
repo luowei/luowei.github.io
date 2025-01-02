@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2025-01-03T01:12:30+08:00</updated>
+  <updated>2025-01-03T01:15:58+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -12,22 +12,26 @@
 
 
   <entry>
-    <title>挖矿病毒处理排查</title>
+    <title>Python3快速在当前目录建立HTTP(S)服务器</title>
     <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C/17257252710627.html"/>
     <updated>2024-09-08T00:00:00+08:00</updated>
     <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C/17257252710627</id>
     <content type="html">
-挖矿病毒处理排查
+Python3快速在当前目录建立HTTP(S)服务器
 
-查找并修复常见的系统配置文件与参数
+Phthon3 快速启一个默认 8000 端口 http.server
+python3 -m http.server
 
-必查清单
 
-狡猾的猎手会在最出其不意的地方隐藏自己。Shell环境变量就是用户最容易忽视的地方。PATH/LD_LIBRARY_PATH/LD_PRELOAD/LD_AUDIT/alias篡改可以实现用户执行命令时主动触发恶意代码执行。
+Python3 的简单 HTTPS 服务器脚本
+import http.server, ssl
 
-PATH变量：
+server_ip = &apos;0.0.0.0&apos;
+server_port = 4443
+server_address = (server_ip, server_port)
+server_cert = &apos;../local.test-pem&apos;
 
-此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local&amp;lt;!----&amp;gt;/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改P...</content>
+httpd = http.server.HTTPServer (server_a...</content>
   </entry>
 
   <entry>

@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2024-09-08T00:08:56+08:00</updated>
+  <updated>2025-01-03T00:58:27+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -19,13 +19,13 @@
     <content type="html">
 挖矿病毒处理排查 - 查找并修复常见的系统配置文件与参数
 
-入门姿势：
+入门姿势
 
 狡猾的猎手会在最出其不意的地方隐藏自己。Shell环境变量就是用户最容易忽视的地方。PATH/LD_LIBRARY_PATH/LD_PRELOAD/LD_AUDIT/alias篡改可以实现用户执行命令时主动触发恶意代码执行。
 
 PATH变量：
 
-此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改PATH变量的内容，可能...</content>
+此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改PATH变量的内容，可能导...</content>
   </entry>
 
   <entry>

@@ -3,13 +3,32 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2025-01-03T01:15:58+08:00</updated>
+  <updated>2025-01-03T01:19:56+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>挖矿病毒处理排查</title>
+    <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C/17358381289150.html"/>
+    <updated>2025-01-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C/17358381289150</id>
+    <content type="html">
+挖矿病毒处理排查
+
+查找并修复常见的系统配置文件与参数
+
+必查清单
+
+狡猾的猎手会在最出其不意的地方隐藏自己。Shell环境变量就是用户最容易忽视的地方。PATH/LD_LIBRARY_PATH/LD_PRELOAD/LD_AUDIT/alias篡改可以实现用户执行命令时主动触发恶意代码执行。
+
+PATH变量：
+
+此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local&amp;lt;!----&amp;gt;/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改P...</content>
+  </entry>
 
   <entry>
     <title>Python3快速在当前目录建立HTTP(S)服务器</title>

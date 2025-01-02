@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2025-01-03T00:58:27+08:00</updated>
+  <updated>2025-01-03T01:02:35+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -25,7 +25,7 @@
 
 PATH变量：
 
-此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改PATH变量的内容，可能导...</content>
+此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local&amp;lt;!----&amp;gt;/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改...</content>
   </entry>
 
   <entry>

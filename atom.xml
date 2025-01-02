@@ -3,13 +3,29 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2025-01-03T01:19:56+08:00</updated>
+  <updated>2025-01-03T01:31:12+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
     <email>luowei010101@gmail.com</email>
   </author>
 
+
+  <entry>
+    <title>局域网内启用 mDNS, 以使用 `.local` 域名</title>
+    <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C/17358390284832.html"/>
+    <updated>2025-01-03T00:00:00+08:00</updated>
+    <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C/17358390284832</id>
+    <content type="html">
+局域网内启用 mDNS, 以使用 .local 域名
+
+在局域网内启用 mDNS（多播 DNS）协议， 以便使用 .local 域名，Debian 通常预装并启用了 Avahi 服务（mDNS 服务），而 Ubuntu 的 Avahi 可能未正确配置或未启用。
+
+
+  检查主机名：hostnamectl，设置主机名： sudo hostnamectl set-hostname pven100-ubuntu；
+  检查 /etc/hosts 文件，确保主机名正确映射到本地主机：sudo vim /etc/hosts, 并确保有以下条目：127.0.1.1 pven100-ubuntu；
+...</content>
+  </entry>
 
   <entry>
     <title>挖矿病毒处理排查</title>

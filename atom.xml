@@ -3,7 +3,7 @@
   <title>维唯为为</title>
   <link href="https://luowei.github.io/atom.xml" rel="self"/>
   <link href="https://luowei.github.io"/>
-  <updated>2025-01-03T01:08:29+08:00</updated>
+  <updated>2025-01-03T01:12:30+08:00</updated>
   <id>https://luowei.github.io</id>
   <author>
     <name>luowei</name>
@@ -12,34 +12,22 @@
 
 
   <entry>
-    <title>挖矿病毒处理排查 - 查找并修复常见的系统配置文件与参数</title>
+    <title>挖矿病毒处理排查</title>
     <link href="https://luowei.github.io/%E7%BD%91%E7%BB%9C/17257252710627.html"/>
     <updated>2024-09-08T00:00:00+08:00</updated>
     <id>https://luowei.github.io/%E7%BD%91%E7%BB%9C/17257252710627</id>
     <content type="html">
-挖矿病毒处理排查 - 查找并修复常见的系统配置文件与参数
+挖矿病毒处理排查
 
-查找详细的入侵痕迹
+查找并修复常见的系统配置文件与参数
 
+必查清单
 
-  
-    执行last,lastlog命令，查看最近登录的账户和登录时间，锁定异常账户。
-  
-  
-    执行grep -i Accepted /var/log/secure命令，查看远程登录成功的IP地址。
-  
-  
-    执行以下命令，查找计划任务。
+狡猾的猎手会在最出其不意的地方隐藏自己。Shell环境变量就是用户最容易忽视的地方。PATH/LD_LIBRARY_PATH/LD_PRELOAD/LD_AUDIT/alias篡改可以实现用户执行命令时主动触发恶意代码执行。
 
-    cat /var/spool/cron/
-cat /etc/cron.hourly
-cat /etc/crontab
-    
-  
-  
-    执行find / -ctime 1通过文件状态最后修改时间来查找木马文件。
-  
-...</content>
+PATH变量：
+
+此变量决定用户执行程序时系统定位目标程序的方式，默认情况下，普通用户会包含/bin, /usr/bin, /usr/local&amp;lt;!----&amp;gt;/bin等内容，root用户额外有/sbin, /usr/sbin, /usr/local/sbin等内容。如果攻击者篡改P...</content>
   </entry>
 
   <entry>

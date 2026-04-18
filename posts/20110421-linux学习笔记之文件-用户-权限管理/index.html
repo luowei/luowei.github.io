@@ -1,0 +1,629 @@
+<!doctype html><html lang=zh-CN data-theme=tokyo-night><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>linux学习笔记之文件、用户、权限管理 - 维唯为为</title>
+<meta name=description content="linux学习笔记之文件、用户、权限管理"><meta name=theme-color content="#1a1b26"><link rel=canonical href=https://luowei.github.io/posts/20110421-linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%96%87%E4%BB%B6-%E7%94%A8%E6%88%B7-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/><link id=favicon-svg rel=icon type=image/svg+xml href=/favicon-dark.svg><link id=favicon-ico rel="shortcut icon" href=/favicon-dark.ico><link rel=stylesheet href="/assets/dist/public-site.css?v=20260412"><script>window.LUOWEI_SITE_CONFIG={comments:{giscus:{category:"General",categoryId:"DIC_kwDOAXGNgc4C5G6p",emitMetadata:"0",enabled:!0,inputPosition:"top",lang:"zh-CN",mapping:"pathname",reactionsEnabled:"1",repo:"luowei/luowei.github.io",repoId:"MDEwOlJlcG9zaXRvcnkyNDIxOTAwOQ==",strict:"0",theme:"light"},provider:"giscus"}}</script><script>(function(){var t,s,n='"luowei-site-theme"',e="tokyo-night";try{e=window.localStorage.getItem(n)||e}catch{}t=e==="classic"?"classic":"tokyo-night",s=t==="classic"?"light":"dark",document.documentElement.setAttribute("data-theme",t),document.documentElement.style.colorScheme=s,window.__siteThemeStorageKey=n})()</script></head><body><div id=wrap><header id=top><button id=mobile-sidebar-toggle class=mobile-sidebar-toggle type=button aria-label=打开侧边栏 aria-controls=sidebar aria-expanded=false>≡</button>
+<a id=logo href=/ title=回到首页 aria-label=维唯为为><svg class="site-logo" viewBox="0 0 4056 1100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="site-logo-accent" x1="0" y1="0" x2="100%" y2="0"><stop offset="0" stop-color="currentcolor" stop-opacity=".18"/><stop offset="50%" stop-color="currentcolor" stop-opacity=".78"/><stop offset="100%" stop-color="currentcolor" stop-opacity=".32"/></linearGradient><filter id="site-logo-soften" x="-3%" y="-10%" width="106%" height="120%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><path id="site-logo-wordmark" d="M635 959q-14 0-22 7-26 23-82 23t-83-14-34-48q-2-10-6-10t-9 1q-181 55-232 55-56 0-86.5-32.5T50 856.5t15.5-75T121 744q9-2 9-4t-10-6q-56-26-56-94 0-63 49-126 3-3 3-6t-7-5q-58-20-58-99 0-74 61-187T203 68.5 269.5 33 355 56.5 416 139q2 8 4 8 3 0 24-42.5t43.5-57 46-14.5 56 9.5T643 73q2 3 5 3t8-4q19-14 47.5-23.5T754 39q76 0 118 124 2 6 21 6 57 0 81.5 24.5T999 286t-30 91q-5 4-5 8t3 8q18 24 18 82t-18 79q-4 5-4 8t5 9q17 18 17 83.5T970 741q-3 3-3 6t5 6q32 21 32 89t-21 92.5T902 959zm267-37q38 0 51.5-16T967 847.5t-14.5-58T902 774H845q-8 0-8-9V735q0-2 2.5-4.5T845 728h38q44 0 54.5-13.5T948 658t-9.5-57.5T883 586H845q-8 0-8-9V551q0-7 8-7h33q41 0 55.5-14T948 475t-13.5-56T878 404H845q-8 0-8-10V367q0-7 8-7h48q38 0 53.5-16.5T962 283t-16-60.5T893 206H858q-12 0-15-10-17-60-40-89T749.5 78 689 95t-30 48q0 14 8 32.5t8 24.5-8 6H625q-7 0-7-3t1-5q12-29 12-54 0-40-29.5-56.5T546.5 71t-40 11.5T475 126t-32.5 63.5T427 230t17 17 36 31 19 67.5T474 426q-20 31-20 47 0 26 6 29 13 10 21.5 31t8.5 51-7.5 51T451 676q-9 8-9 11.5t7 8.5q24 14 33.5 44t9.5 56q0 52-36 85-7 9-7 29t17 31 67 11 64-21q5-9 14-9zM674 394q0 10-9 10H613q-7 0-7-10V367q0-7 7-7h52q9 0 9 7zm0 183q0 9-9 9H613q-7 0-7-9V551q0-7 7-7h52q9 0 9 7zm0 188q0 9-8 9H613q-7 0-7-9V735q0-2 2.5-4.5T613 728h52q9 0 9 7zM185 472q7 0 7 3t-2 6q-57 61-72.5 95T102 640t20 49 51.5 19 70.5-4 79.5-13.5 65-18 41-21 23-29T459 578t-15.5-45.5T401 515q-9 0-22.5 3T360 521t-5-2q0-3 18-20t50.5-57.5 39-60T469 345q0-44-29.5-64T381 261t-63 54q-7 12-11 15t-11.5 3-7.5-3q0-6 79-128 13-20 13-44 0-42-36-64T281.5 72t-44 16.5-55 78.5T116 295 87 406q0 66 57 66zM461 794q0-32-14.5-56T398 714t-82 18q-69 23-153 39-45 10-60.5 27.5T87 853.5 109 913t59.5 22T283 913.5 394.5 881 445 847t16-53zm858-693q70 0 103 25 5 4 8.5 4t7.5-11q15-41 46.5-63t66-22T1625 44.5t51.5 22T1691 78t18-8 44-15 50-7q82 0 105 113 1 7 4 9t12 3q46 5 62.5 31t16.5 90-28 92q-5 5-5 8t3 6q17 23 17 77t-19 78q-6 7-6 9.5t3 5.5q17 24 17 73.5T1972 716q-3 5-3 8.5t5 7.5q31 27 31 93t-24 91-83 25H1642q-12 0-21 9-37 39-102 39-118 0-118-111V818q0-7-3.5-7t-8.5 2q-23 12-62 12H1164q-58 0-86-32t-28-1e2V232q0-60 39-95.5T1191 101zm579 803q38 0 54-16.5t16-59.5-15-60.5-55-17.5h-48q-6 0-8.5-3t-2.5-15 2-15.5 9-3.5h43q31 0 43-15t12-51.5-12-51.5-43-15h-44q-6 0-8.5-3t-2.5-14 2-15.5 10-4.5h48q32 0 43.5-16t11.5-50-11-50.5-44-16.5h-49q-7 0-9-4.5t-2-14.5 2-14 11-4h49q35 0 50.5-19.5t15.5-65-14.5-62.5-58.5-17q-14 0-17-17-8-54-27.5-80T1796 86t-69.5 17.5T1690 157q0 14 3.5 24.5T1697 195q0 13-23.5 13t-23.5-6 5.5-28 5.5-41q0-39-37.5-50.5t-66-11.5T1506 86.5 1473 131q-38 112-105 256-8 18-8 37 0 52 60 79 10 3 14 7.5t4 14.5V878q0 74 81 74 35 0 58-10t23-21.5 3.5-14T1616 904zM1667 373q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm0 170q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm0 170q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm-256-7V558q0-14-4-20.5T1387 522q-61-39-61-98 0-22 13-50 32-66 50-111t18-68q0-57-88-57H1191q-47 0-75.5 25.5T1087 232V693q0 50 19 72.5t58 22.5h163q84 0 84-82zM1281 599q0 15-15.5 15t-20-3-4.5-12V333q0-12 4.5-13.5T1261 318t15.5 2.5T1281 333zM2817 217q95 0 133 27t38 118q0 194-7 301.5t-22.5 175-36.5 97-51.5 39.5-112 10T2628 973t-68.5-39-19.5-86q0-104 47-127 6-3 6-5t-5.5-6-12.5-12.5-10-8.5-6 5q-48 77-92 123.5t-101.5 92-92.5 61-63 15.5q-52 0-89-50t-37-88q0-59 90-132 99-80 144.5-154.5T2364 476q0-4-8-4H2241q-48 0-71-8.5t-32.5-35T2128 345q0-86 49-113 7-3 7-7t-3-9q-12-20-12-40 0-37 35.5-79.5T2290 54q14 0 31 4.5t50 30 46 40 15.5 14.5 3.5-9q7-49 41-72t104.5-23T2686 67.5t34 89.5v52q0 8 11 8zm-66 210q10 0 12.5 3.5T2766 446q0 79-4 147t-11.5 107.5-16 52T2711 765t-36.5-6-38.5-6q-31 0-45 23t-14 78.5 35 74.5 156 19q69 0 93.5-10.5t40-42 28-106.5 17-171.5T2951 362q0-67-29-87.5T2817 254H2692q-9 0-9-8V157q0-42-24.5-61.5T2578 76t-81 19.5-25 61.5V263q0 17-5 30t-21.5 32-38.5 29-45 10q-44 0-72-34-13-17-33.5-38.5t-28-25T2213 263q-20 0-34 22t-14 66.5 11 64 65 19.5h172q10 0 10 4 0 10-53 109T2197 745q-74 60-74 105 0 28 26.5 62.5T2212 947q25 0 56-16t76.5-52.5 76-66 62-70.5 43.5-63 12-36-19-43q-32-48-39-62t-7-32q0-35 31.5-69t80.5-34q35 0 61 16 15 8 32 8zM2446 248q0-24-17-48t-43-49.5-50.5-42T2290 92q-33 0-57.5 29T2208 174t26.5 51 79.5 85q19 24 48.5 24t56.5-27 27-59zm289 362q0-26-33-78.5t-57-76-59-23.5-58 26-23 48 16 44q36 53 62.5 97t62.5 44q26 0 57.5-28t31.5-53zm-31-149q-7 0-7 2t8.5 12.5T2725 505q3 4 4.5 4t1.5-7l1-35q0-6-7-6zm-5 268q10 0 13.5-12.5T2716 701t-1.5-3-10.5 7-18.5 11.5-9.5 5.5q0 2 9 4.5t14 2.5zM3817 217q95 0 133 27t38 118q0 194-7 301.5t-22.5 175-36.5 97-51.5 39.5-112 10T3628 973t-68.5-39-19.5-86q0-104 47-127 6-3 6-5t-5.5-6-12.5-12.5-10-8.5-6 5q-48 77-92 123.5t-101.5 92-92.5 61-63 15.5q-52 0-89-50t-37-88q0-59 90-132 99-80 144.5-154.5T3364 476q0-4-8-4H3241q-48 0-71-8.5t-32.5-35T3128 345q0-86 49-113 7-3 7-7t-3-9q-12-20-12-40 0-37 35.5-79.5T3290 54q14 0 31 4.5t50 30 46 40 15.5 14.5 3.5-9q7-49 41-72t104.5-23T3686 67.5t34 89.5v52q0 8 11 8zm-66 210q10 0 12.5 3.5T3766 446q0 79-4 147t-11.5 107.5-16 52T3711 765t-36.5-6-38.5-6q-31 0-45 23t-14 78.5 35 74.5 156 19q69 0 93.5-10.5t40-42 28-106.5 17-171.5T3951 362q0-67-29-87.5T3817 254H3692q-9 0-9-8V157q0-42-24.5-61.5T3578 76t-81 19.5-25 61.5V263q0 17-5 30t-21.5 32-38.5 29-45 10q-44 0-72-34-13-17-33.5-38.5t-28-25T3213 263q-20 0-34 22t-14 66.5 11 64 65 19.5h172q10 0 10 4 0 10-53 109T3197 745q-74 60-74 105 0 28 26.5 62.5T3212 947q25 0 56-16t76.5-52.5 76-66 62-70.5 43.5-63 12-36-19-43q-32-48-39-62t-7-32q0-35 31.5-69t80.5-34q35 0 61 16 15 8 32 8zM3446 248q0-24-17-48t-43-49.5-50.5-42T3290 92q-33 0-57.5 29T3208 174t26.5 51 79.5 85q19 24 48.5 24t56.5-27 27-59zm289 362q0-26-33-78.5t-57-76-59-23.5-58 26-23 48 16 44q36 53 62.5 97t62.5 44q26 0 57.5-28t31.5-53zm-31-149q-7 0-7 2t8.5 12.5T3725 505q3 4 4.5 4t1.5-7l1-35q0-6-7-6zm-5 268q10 0 13.5-12.5T3716 701t-1.5-3-10.5 7-18.5 11.5-9.5 5.5q0 2 9 4.5t14 2.5z"/></defs><rect class="site-logo__underline" x="50" y="1018" width="3938" height="54" rx="27"/><use class="site-logo__shadow" href="#site-logo-wordmark"/><use class="site-logo__wordmark" href="#site-logo-wordmark" filter="url(#site-logo-soften)"/></svg></a><nav id=navbar><ul><li><a href=/>首页</a></li><li><a href=/archive/>存档</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/messages/>留言板</a></li><li><a href=/about/>关于我</a></li><li id=rss-link><a href=/index.xml title=RSS aria-label=RSS target=_blank rel=noreferrer>RSS</a></li></ul></nav></header><div id=mobile-sidebar-backdrop hidden></div><section id=main><aside id=sidebar><div class=mobile-sidebar-header><div style=margin-top:4px;font-size:22px;font-weight:700>站点菜单</div><button class=mobile-sidebar-close type=button aria-label=关闭侧边栏>×</button></div><section id=search-box><form id=search-form action=/ method=get><input id=query type=search name=q placeholder=搜索公开文章>
+<button type=submit aria-label=搜索 title=搜索 data-sidebar-collapsed-action=focus-search>
+<span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M10.5 4a6.5 6.5.0 110 13 6.5 6.5.0 010-13zm0 2a4.5 4.5.0 100 9 4.5 4.5.0 000-9zm5.65 8.24 3.61 3.61-1.41 1.41-3.61-3.61 1.41-1.41z"/></svg></span></button></form><div class=search-hint>支持标题、摘要、正文片段、分类和标签关键词。</div></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-action=expand-sidebar title=最近文章><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7 2h2v3h6V2h2v3h2.5A1.5 1.5.0 0121 6.5v12A1.5 1.5.0 0119.5 20h-15A1.5 1.5.0 013 18.5v-12A1.5 1.5.0 014.5 5H7V2zm12 8H5v8h14v-8zM9 13h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+<span class=sidebar-text>最近文章</span></div><ul><li><a href=/posts/20260323-modern_dev_syntax_and_mermaid_showcase/>现代软件开发语法高亮与 Mermaid 图示例</a></li><li><a href=/posts/20251214-cnh2n_2_cnh2n_aliphatic_hydrocarbons_saturated/>常见的有机化合物的结构与性质</a></li><li><a href=/posts/20251212-post/>常见的化学有机物化合物 甲醇乙醇</a></li><li><a href=/posts/20251210-viii_0_5_6_2n2/>元素的化学性质的周期变化</a></li><li><a href=/posts/20250419-17358390284832/>局域网内启用 mDNS, 以使用 `.local` 域名</a></li><li><a href=/posts/20251018-choh/>产品说明书 空气检测仪CHOH(甲醛)</a></li><li><a href=/posts/20251006-rust_rust_b/>rust 教程</a></li><li><a href=/posts/20250907-macos_nfs/>macos 上 nfs 共享设置</a></li></ul></section><section class=activity-calendar-section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-action=expand-sidebar title=发布日历><span class=activity-calendar-title-text><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7 2h2v3h6V2h2v3h2.5A1.5 1.5.0 0121 6.5v12A1.5 1.5.0 0119.5 20h-15A1.5 1.5.0 013 18.5v-12A1.5 1.5.0 014.5 5H7V2zm12 8H5v8h14v-8zM5 8h14V7H5v1zm3 5h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+<span class=sidebar-text>发布日历</span>
+</span><button type=button class=activity-calendar-toggle data-activity-calendar-toggle aria-expanded=false>展开</button></div><div class=activity-calendar-shell hidden><div class=activity-calendar data-activity-calendar data-activity-calendar-url="/assets/site/activity-calendar-v1.msgpack.gz?v=20260412" data-activity-calendar-archive-pattern="/archive/{month}/?date={date}"><p class=activity-calendar__empty>正在生成发布日历...</p></div></div></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-href=/categories/ title=分类><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M4 6.5A1.5 1.5.0 015.5 5h5.38c.4.0.78.16 1.06.44l1.12 1.12c.28.28.66.44 1.06.44H18.5A1.5 1.5.0 0120 8.5v8A1.5 1.5.0 0118.5 18h-13A1.5 1.5.0 014 16.5v-10zM6 9v7h12V9H6z"/></svg></span>
+<span class=sidebar-text>分类</span></div><ul><li><a href=/categories/ios/>IOS (90)</a></li><li><a href=/categories/server/>Server (66)</a></li><li><a href=/categories/linux/>Linux (59)</a></li><li><a href=/categories/tips/>Tips (59)</a></li><li><a href=/categories/java/>Java (50)</a></li><li><a href=/categories/%E7%BD%91%E7%BB%9C/>网络 (43)</a></li><li><a href=/categories/%E8%AF%BB%E4%B9%A6/>读书 (33)</a></li><li><a href=/categories/homelab/>Homelab (30)</a></li><li><a href=/categories/%E5%8E%9F%E7%90%86/>原理 (26)</a></li><li><a href=/categories/%E7%A7%91%E6%99%AE/>科普 (25)</a></li><li><a href=/categories/%E9%9D%A2%E8%AF%95/>面试 (24)</a></li><li><a href=/categories/%E5%AD%A6%E4%B9%A0/>学习 (20)</a></li></ul></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-href=/tags/ title=标签><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M10.59 3H5A2 2 0 003 5v5.59A2 2 0 003.59 12l8 8a2 2 0 002.82.0l5.18-5.18a2 2 0 000-2.82l-8-8a2 2 0 00-1-1zM7.25 8.5A1.25 1.25.0 118.5 7.25 1.25 1.25.0 017.25 8.5z"/></svg></span>
+<span class=sidebar-text>标签</span></div><ul><li><a href=/tags/swift%E7%AC%94%E8%AE%B0/>Swift笔记 (18)</a></li><li><a href=/tags/ios/>IOS (11)</a></li><li><a href=/tags/article/>Article (7)</a></li><li><a href=/tags/apache/>Apache (5)</a></li><li><a href=/tags/%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/>视频教程 (5)</a></li><li><a href=/tags/java%E5%9F%BA%E7%A1%80/>Java基础 (4)</a></li><li><a href=/tags/java%E7%BB%98%E5%9B%BE/>Java绘图 (4)</a></li><li><a href=/tags/linux%E5%91%BD%E4%BB%A4/>Linux命令 (4)</a></li><li><a href=/tags/mvc/>MVC (4)</a></li><li><a href=/tags/radasm/>RadASM (4)</a></li><li><a href=/tags/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/>算法问题 (4)</a></li><li><a href=/tags/docker/>Docker (3)</a></li><li><a href=/tags/java%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/>Java零碎笔记 (3)</a></li><li><a href=/tags/jekyll/>Jekyll (3)</a></li><li><a href=/tags/linux/>Linux (3)</a></li><li><a href=/tags/pve/>PVE (3)</a></li></ul></section><section><div class=sidebar-title data-sidebar-expand title=相关链接><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7.76 14.83a3 3 0 010-4.24l2.83-2.83A3 3 0 1114.83 12l-.7.71-1.42-1.42.71-.7A1 1 0 1012 9.17L9.17 12a1 1 0 001.42 1.42l.7-.71 1.42 1.42-.7.7a3 3 0 01-4.24.0zm8.48-5.66a3 3 0 010 4.24l-2.83 2.83A3 3 0 119.17 12l.7-.71 1.42 1.42-.71.7A1 1 0 1012 14.83L14.83 12a1 1 0 10-1.42-1.42l-.7.71-1.42-1.42.7-.7a3 3 0 014.24.0z"/></svg></span>
+<span class=sidebar-text>相关链接</span></div><ul><li><a href=https://wodedata.com target=_blank rel=noreferrer>wodedata</a></li><li><a href=http://app.wodedata.com target=_blank rel=noreferrer>作品集</a></li><li><a href=https://luowei.github.io/list target=_blank rel=noreferrer>知不知</a></li></ul></section><div class=theme-switcher><label class=theme-switcher-label for=theme-switcher-select data-sidebar-expand title=切换主题><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M12 3a1 1 0 011 1v1.05a6.98 6.98.0 013.95 2.3l.74-.74a1 1 0 111.41 1.41l-.74.74A6.98 6.98.0 0119 12c0 1.53-.49 2.95-1.31 4.1l.74.74a1 1 0 01-1.41 1.41l-.74-.74A6.98 6.98.0 0113 18.95V20a1 1 0 11-2 0v-1.05a6.98 6.98.0 01-3.1-1.44l-.74.74a1 1 0 01-1.41-1.41l.74-.74A6.98 6.98.0 015 12c0-1.53.49-2.95 1.31-4.1l-.74-.74A1 1 0 016.98 5.7l.74.74A6.98 6.98.0 0111 5.05V4a1 1 0 011-1zm0 4a5 5 0 100 10 5 5 0 000-10zm0 2.2A2.8 2.8.0 119.2 12 2.8 2.8.0 0112 9.2z"/></svg></span>
+<span class=sidebar-text>Theme</span>
+</label><select id=theme-switcher-select><option value=tokyo-night>Tokyo Night</option><option value=classic>Classic</option></select></div><div class=sidebar-desktop-controls><button id=sidebar-collapse-toggle class="sidebar-collapse-toggle muted" type=button aria-label=收起侧栏 aria-expanded=true title=收起侧栏>
+<span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M4 4h5v2H4V4zm0 14h5v2H4v-2zm0-7h5v2H4v-2zm7.59 1 4.7-4.7 1.41 1.4L14.41 12l3.29 3.29-1.41 1.41-4.7-4.7z"/></svg></span>
+<span class=sidebar-text>收起侧栏</span></button></div></aside><div id=main-inner><div id=search-results hidden></div><div id=main-content><section id=content><article class=post><header class=page-header><h1>linux学习笔记之文件、用户、权限管理</h1><p>linux学习笔记之文件、用户、权限管理</p><div class=page-header__meta><span>2011-04-20 16:00</span></div></header><section class=article-markdown><p><strong>主要内容：</strong> 包括linux系统下文件特性、文件/目录操作、文件权限、用户增删改查、用户权限、用户组、UMask、ACL等</p><p><strong>linux简单说明</strong></p><pre tabindex=0><code>内核：在计算机启动时载入基本内存，管理一些基本的输入输出，管理一些进程的初始化以及进程之间的调
+试。控制硬件的运行。
+Shell:系统的命令解释器，用户进程与kernel的桥梁作用
+终端模拟器(Terminal Emulator):交互操作系统，并得到提示与反馈。
+x window系统：c/s模型提供图形用户接口
+窗口管理器：kde,gnome
+查看Redhat版本的方法:cat /proc/version或者cat /etc/redhat-release或者cat /etc/issue或者uname
+ls / 执行后，深蓝色的文件表示是目录，白色表的文件
+</code></pre><h3 id=常用操作>常用操作</h3><p><strong>运行指令</strong></p><pre tabindex=0><code>帮助指令
+--help 如：mknod –help    mknod 命令建立一个目录项和一个特殊文件的对应索引节点。
+man 如：man mknod
+info 如：info mknod
+
+操作指令
+拷贝目录 cp –r old new
+重命名 cp test test2    将当前目录下的test文件改名为test2
+rm test2 ./dirtest/test    将当前目录下的test文件移到dirtest目录下，并改名为:test
+
+cd ..    切换路径,这里是返回上一层目录，直接cd 回车，则切换到家目录
+pwd        显示当前目录的路径
+mkdir    创建目录
+rmdir    删除目录
+
+rm –rf aa        强制删除目录aa
+cat         查看文件内容
+more    可以逐行或逐屏查看
+less        逐行查看文件内容
+date        显示当前时间
+cal        显示月历
+
+df        查看系统分区和磁盘的容量
+du        计算文件占用的磁盘大小    //默认以kb为单位输出
+例：du –h test        连同单位也一起输出
+head        显示文件开头10行的内容
+tail        显示文件最后10行的内容
+例：tail –f /var/log/services        显示即时更新，一般用于查看日志文件
+
+按Tab键自动，补全文件名
+</code></pre><p><strong>设备文件</strong></p><pre tabindex=0><code>设备文件存放在 /dev/目录下，有以c开头(字符设备,如：键盘)和b开头(块设备,如：硬盘)的。
+用户身份切换：su luowei     直接这样切换，环境变量不会跟着改变
+env         查看环境变量
+su – luowei    这样切换，会改变当前的用户环境变量
+</code></pre><p><strong>/proc目录</strong></p><pre tabindex=0><code>/proc目录是一个虚拟的文件系统，包含了来自正在运行着的核心的信息。  
+用户可以通过cat /proc/下的文件来获得系统的信息。  
+这些信息包括系统硬件、网络设置、内存使用，及其他一引些东西。  
+/proc/sys目录下的文件，允许系统管理员更动，这些变动会直接影响当前核心。  
+</code></pre><p>例：</p><pre tabindex=0><code>[root@redhat root]# ls -l /proc/        //查看/proc/目录下的文件
+[root@redhat root]# cat /proc/cpuinfo        //查看cpu的信息
+[root@redhat root]# echo &#34;&#34; &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all        //忽略所有ping消息
+</code></pre><p><strong>系统日志存放在 /var/log 目录下</strong><br>常用的系统日志：</p><pre tabindex=0><code>/var/log/dmesg 核心启动日志
+/var/log/messages 系统报错日志
+/var/log/maillog 邮件系统日志
+</code></pre><p>例：</p><pre tabindex=0><code>[root@redhat root]# tail -f /var/log/messages    //查看最近的系统日志
+[root@redhat root]# cat /var/log/maillog        //查看邮件服务信息
+/var/log/xferlog    //FTP服务用日志
+/var/log/secure        //安全信息，系统登录与网络连接的信息
+/var/log/wtmp        //登录记录
+</code></pre><p>例：</p><pre tabindex=0><code>[root@redhat root]# last        //显示最近登录的用户
+</code></pre><h3 id=安装gcc>安装gcc</h3><p>在redHat 9的第一个cd中找到四个包，和在第二个cd中找到一个包，分别为：</p><pre tabindex=0><code>binutils-2.13.90.0.18-9.i386.rpm
+cpp-3.2.2-5.i386.rpm
+glibc-devel-2.3.2-11.9.i386.rpm
+glibc-kernheaders-2.4-8.10.i386.rpm
+和
+gcc-3.2.2-5.i386.rpm
+</code></pre><hr><p><strong>操作如下：</strong><br>插入第一个光盘</p><pre tabindex=0><code>mount /dev/cdrom /mnt/cdrom/
+find -iname binutils*
+rpm -ivh cdrom/RedHat/RPMS/binutils-2.13.90.0.18-9.i386.rpm
+find -iname cpp*
+rpm -ivh cdrom/RedHat/RPMS/cpp-3.2.2-5.i386.rpm
+find -iname glibc-k*
+rpm -ivh cdrom/RedHat/RPMS/glibc-kernheaders-2.4-8.10.i386.rpm
+find -iname glibc-devel*
+rpm -ivh cdrom/RedHat/RPMS/glibc-devel-2.3.2-11.9.i386.rpm
+umount /mnt/cdrom
+</code></pre><p>插入第二个光盘</p><pre tabindex=0><code>mount /dev/cdrom /mnt/cdrom/
+find -iname gcc*
+rpm -ivh cdrom/RedHat/RPMS/gcc-3.2.2-5.i386.rpm
+检查gcc是否安装好了
+rpm -qa gcc*
+</code></pre><p>命令行乱码问题</p><pre tabindex=0><code>解决命令行乱码问题
+export LANG=&#34;en_US.UTF-8&#34;
+解决命令行中文乱码问题
+export LANG=zh_CN.GB18030
+</code></pre><p>或者用以下的方法</p><pre tabindex=0><code>方法一：
+　　#locale (locale命令用于查看使用语言详细信息，为中文语言)
+　　#export LC_ALL=POSIX (export命令导出修改LC_ALL语言选项)
+　　#locale (再次查看，信息已经改变了)
+　　该方法在用户注销或重启后将失效，要想保存设置，见方法2。
+方法二：
+　　#vi /etc/sysconfig/i18n (利用vi编辑器修改配置文件i18n)
+　　将LC_ALL=POSIX写入i18n配置文件中。注销或重启服务便永久生效。
+</code></pre><p><strong>离开系统</strong></p><pre tabindex=0><code>    重启
+Reboot
+Shutdown –r now
+Init 6
+    关机
+Halt
+Shutdown –h now
+Poweroff
+Init 0
+</code></pre><h3 id=文件的特性>文件的特性</h3><p><strong>文件名</strong><br>文件名最大为255个字符。开头为.的文件为隐藏文件。<br>目录 的详细信息用d标识。目录用 / 分隔。</p><p><strong>检查文件</strong></p><pre tabindex=0><code>ls –l     以长模式查看文件的详细信息
+file 检查文件类型
+cd 和cd ~ 都是直接回到家
+</code></pre><p><strong>文件类型</strong></p><pre tabindex=0><code>在linux中，所有的东西都被当成文件。
+文件权限前的第一个字母用来标识文件类型
+-：        一般文件
+d:        目录文件
+b:        块设备文件
+c:        字符设备文件
+l:        链接文件，类型windows系统中的快捷方式
+p:        人工管道(管道文件)
+</code></pre><p><strong>文件权限</strong></p><pre tabindex=0><code>对于每一个文件，Linux都提供了一套文件权限系统。
+文件权限系统，将操作文件的用户都分成三类。
+文件的拥有者(u)
+文件所属组的成员(g)
+其他用户(o)
+</code></pre><p><strong>文件权限类型</strong></p><pre tabindex=0><code>读(r):用户是否有权限读取文件
+写(w):用户是否有权限写文件
+执行(x):用户是否有权限执行文件
+
+例：[root@localhost root]# ls -l
+total 32
+- rw- r-- r-- 1 root root 1201 Oct 21 05:37 anaconda-ks.cfg
+d rwx r-x r-x 12 luowei luowei 4096 Oct 22 11:57 httpd-2.2.4
+文件类型 u g o 文件硬连接参数 文件的拥有者 文件的所属群组 文件大小
+</code></pre><p><strong>更改文件的权限vv</strong></p><pre tabindex=0><code>例：
+[root@localhost root]# su - luowei
+[luowei@localhost luowei]$ ls
+dirtest test2
+[luowei@localhost luowei]$ ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+-rw-rw-r-- 1 luowei luowei 149 Oct 22 10:30 test2
+[luowei@localhost luowei]$ chmod u-w test2    删除拥有者对此文件的写的权限
+[luowei@localhost luowei]$ ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+-r--rw-r-- 1 luowei luowei 149 Oct 22 10:30 test2
+[luowei@localhost luowei]$ chmod u+w test2    给拥有者添加对此文件写的的权限
+[luowei@localhost luowei]$ ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+-rw-rw-r-- 1 luowei luowei 149 Oct 22 10:30 test2
+[luowei@localhost luowei]$ chmod g-w test2    删除此群组对此文件的写权限
+[luowei@localhost luowei]$ ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+-rw-r--r-- 1 luowei luowei 149 Oct 22 10:30 test2
+[luowei@localhost luowei]$ chmod o+w test2    给其他人添加对此文件的写权限
+[luowei@localhost luowei]$ chmod g+x test2    给此群组添加对此文件的执行权限
+[luowei@localhost luowei]$ chmod u=rwx test2 给拥有者设置对此文件读写执行权限
+</code></pre><p><strong>通过数字的方式来更改</strong></p><pre tabindex=0><code>4 读    2 写    1 执行
+[luowei@localhost luowei]$ chmod 644 test2 设置权限
+[luowei@localhost luowei]$ ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+-rw-r--r-- 1 luowei luowei 149 Oct 22 10:30 test2
+</code></pre><p><strong>只有文件的拥有者和root才可以改变文件的权限</strong></p><pre tabindex=0><code>例2：
+[luowei@redhat luowei]$ su - root
+Password:
+[root@redhat root]# cd /home/luowei
+[root@redhat luowei]# mkdir test
+[root@redhat luowei]# chown luowei:luowei test    修改test文件夹的所属用户及用户组
+[root@redhat luowei]# chmod 677 test        设置它的权限，拥有者只能读和写，不能执行
+[root@redhat luowei]# su - luowei
+[luowei@redhat luowei]$ ls -l
+总用量 4
+-rwxrwxrw- 1 luowei luowei 0 10月 24 19:45 aa
+drw-rwxrwx 2 luowei luowei 4096 10月 24 19:54 test
+[luowei@redhat luowei]$ cd test
+-bash: cd: test: 权限不够
+</code></pre><p><strong>硬链接</strong><br>语法：ln 源文件 新建链接名.</p><pre tabindex=0><code>例：
+[luowei@localhost luowei]$ ln /home/luowei/test.txt tom.txt 建立硬链接文件
+[luowei@localhost luowei]$ ls
+dirtest test.txt tom.txt
+[luowei@localhost luowei]$ ls -l
+total 12
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+-rw-r--r-- 2 luowei luowei 149 Oct 22 10:30 test.txt
+-rw-r--r-- 2 luowei luowei 149 Oct 22 10:30 tom.txt
+[luowei@localhost luowei]$ echo &#34;hello world&#34; &gt;/home/luowei/test.txt 输入内容
+[luowei@localhost luowei]$ cat /home/luowei/test.txt
+hello world
+[luowei@localhost luowei]$ cat tom.txt
+hello world
+[luowei@localhost luowei]$ rm -f /home/luowei/test.txt    删除链接文件
+[luowei@localhost luowei]$ cat tom.txt        打开文件
+hello world
+[luowei@localhost luowei]$
+</code></pre><p><strong>软链接</strong><br>语法：ln –s 源文件 新建链接名.</p><pre tabindex=0><code>例：
+[luowei@localhost luowei]$ ls
+dirtest tom.txt
+[luowei@localhost luowei]$ touch /home/luowei/test.txt
+[luowei@localhost luowei]$ echo &#34;hello&#34; &gt;/home/test.txt
+-bash: /home/test.txt: No such file or directory
+[luowei@localhost luowei]$ echo &#34;hello&#34; &gt;/home/luowei/test.txt    //另一个方式向文件中写入文件
+[luowei@localhost luowei]$ ln -s /home/luowei/test.txt jack.txt
+[luowei@localhost luowei]$ ls -l
+total 12
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+lrwxrwxrwx 1 luowei luowei 21 Oct 22 13:55 jack.txt -&gt; /home/luowei/test.txt
+-rw-rw-r-- 1 luowei luowei 6 Oct 22 13:55 test.txt
+-rw-r--r-- 1 luowei luowei 12 Oct 22 13:49 tom.txt
+[luowei@localhost luowei]$ cat jack.txt
+hello
+[luowei@localhost luowei]$ rm -f /home/luowei/test.txt
+[luowei@localhost luowei]$ cat jack.txt
+cat: jack.txt: No such file or directory
+[luowei@localhost luowei]$
+</code></pre><p>注：<code>硬链接不能给目录做链接，软链接可以给目录做链接。</code></p><p><strong>ext2/3中文件的构成</strong><br>在ext2和ext3文件系统中，文件以inod+block的方式存在。一旦用rm指令删除文件中的inode记录。文件无法被找回。stat 指令可以用来检查文件的block与inode状况。</p><p><strong>查看目录或文件是哪里的</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># which ls        查看ls所在的路径及命名信息</span>
+</span></span><span class=line><span class=cl><span class=nb>alias</span> <span class=nv>ls</span><span class=o>=</span><span class=s1>&#39;ls --color=tty&#39;</span>
+</span></span><span class=line><span class=cl>/bin/ls
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># which ping        查看ping所在的路径信息</span>
+</span></span><span class=line><span class=cl>/bin/ping
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ls -l /bin/ping</span>
+</span></span><span class=line><span class=cl>-rwsr-xr-x <span class=m>1</span> root root <span class=m>28628</span> 2003-01-25 /bin/ping
+</span></span><span class=line><span class=cl>说明其它用户执行ping 时，是用root的权限使用的，因为ping设置了UID,并且拥有者是root
+</span></span><span class=line><span class=cl>如果删除ping对root的UID后：
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ ping 127.0.0.1
+</span></span><span class=line><span class=cl>PING 127.0.0.1 <span class=o>(</span>127.0.0.1<span class=o>)</span> 56<span class=o>(</span>84<span class=o>)</span> bytes of data.
+</span></span><span class=line><span class=cl><span class=m>64</span> bytes from 127.0.0.1: <span class=nv>icmp_seq</span><span class=o>=</span><span class=m>1</span> <span class=nv>ttl</span><span class=o>=</span><span class=m>64</span> <span class=nv>time</span><span class=o>=</span>0.803 ms
+</span></span><span class=line><span class=cl>--- 127.0.0.1 ping statistics ---
+</span></span><span class=line><span class=cl><span class=m>7</span> packets transmitted, <span class=m>7</span> received, 0% packet loss, <span class=nb>time</span> 6008ms
+</span></span><span class=line><span class=cl>rtt min/avg/max/mdev <span class=o>=</span> 0.053/0.170/0.803/0.259 ms
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ su -
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># chmod u-s /bin/ping         删除ping文件的UID</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ping 127.0.0.1</span>
+</span></span><span class=line><span class=cl>PING 127.0.0.1 <span class=o>(</span>127.0.0.1<span class=o>)</span> 56<span class=o>(</span>84<span class=o>)</span> bytes of data.
+</span></span><span class=line><span class=cl><span class=m>64</span> bytes from 127.0.0.1: <span class=nv>icmp_seq</span><span class=o>=</span><span class=m>1</span> <span class=nv>ttl</span><span class=o>=</span><span class=m>64</span> <span class=nv>time</span><span class=o>=</span>0.856 ms
+</span></span><span class=line><span class=cl>--- 127.0.0.1 ping statistics ---
+</span></span><span class=line><span class=cl><span class=m>2</span> packets transmitted, <span class=m>2</span> received, 0% packet loss, <span class=nb>time</span> 1006ms
+</span></span><span class=line><span class=cl>rtt min/avg/max/mdev <span class=o>=</span> 0.098/0.477/0.856/0.379 ms
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># su - luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ ping 127.0.0.1            这将没有权限ping了
+</span></span><span class=line><span class=cl>ping: icmp open socket: Operation not permitted
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ su -
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># chmod u+s /bin/ping             添加ping文件对root的UID</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># su - luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ ping 127.0.0.1
+</span></span><span class=line><span class=cl>PING 127.0.0.1 <span class=o>(</span>127.0.0.1<span class=o>)</span> 56<span class=o>(</span>84<span class=o>)</span> bytes of data.
+</span></span><span class=line><span class=cl><span class=m>64</span> bytes from 127.0.0.1: <span class=nv>icmp_seq</span><span class=o>=</span><span class=m>1</span> <span class=nv>ttl</span><span class=o>=</span><span class=m>64</span> <span class=nv>time</span><span class=o>=</span>0.058 ms
+</span></span></code></pre></div><blockquote><p>注意：uid只能对文件设定，gid既可以在文件上设定也可以在目录上设定，在目录上可以设定gid与冒险位(sticky)，冒险位(sticky)只能设定在目录上。</p></blockquote><p><strong>根目录下的目录</strong></p><pre tabindex=0><code>/bin:存储常用用户指令。
+/boot:存储核心模块映像等启动文件
+/dev:存储设备文件
+/etc:存储系统、服务的配置目录与谁的
+/home:存放个人主目录
+/lib:存放库文件，诸如核心模块、驱动
+/lost+found:存储fsck用的孤儿文件
+/mnt:系统加载文件系统时用的常用挂载点
+/opt:第三方工具使用的安装目录
+/proc:虚拟文件系统，包含系统讯息等资料
+/root:root用户的主目录
+/sbin存储系统管理用指令
+/tmp:临时文件的暂存点
+/usr:存放用户直接相关的文件与目录
+/var:存储在系统运行中可能会更改的数据
+</code></pre><hr><h3 id=用户权限相关>用户权限相关</h3><p><strong>创建用户</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl><span class=o>[</span>root@localhost httpd-2.2.4<span class=o>]</span><span class=c1># useradd luowei    创建一个luowei用户</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@localhost httpd-2.2.4<span class=o>]</span><span class=c1># passwd luowei    更改密码</span>
+</span></span><span class=line><span class=cl>Changing password <span class=k>for</span> user luowei.
+</span></span><span class=line><span class=cl>New password: luowei
+</span></span><span class=line><span class=cl>BAD PASSWORD: it is based on a dictionary word
+</span></span><span class=line><span class=cl>Retype new password: luowei
+</span></span><span class=line><span class=cl>passwd: all authentication tokens updated successfully.
+</span></span><span class=line><span class=cl><span class=o>[</span>root@localhost httpd-2.2.4<span class=o>]</span><span class=c1># passwd root    修改root的密码</span>
+</span></span><span class=line><span class=cl>Changing password <span class=k>for</span> user root.
+</span></span><span class=line><span class=cl>New password: luowei
+</span></span><span class=line><span class=cl>BAD PASSWORD: it is based on a dictionary word
+</span></span><span class=line><span class=cl>Retype new password: luowei
+</span></span><span class=line><span class=cl>passwd: all authentication tokens updated successfully.
+</span></span><span class=line><span class=cl><span class=o>[</span>root@localhost httpd-2.2.4<span class=o>]</span><span class=c1># su - luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@localhost luowei<span class=o>]</span>$ su - root
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=o>[</span>root@localhost root<span class=o>]</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># su - luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ su -            这样默认是切换到root用户
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1>#</span>
+</span></span></code></pre></div><p><strong>所属用户</strong><br>每一个文件都有一个拥有者。文件的拥有者可以改变文件的权限。<br>root 用户可以用chown来改变文件的拥有者。<br>例：</p><pre tabindex=0><code>[root@localhost luowei]# useradd xiaowang
+[root@localhost luowei]# chown xiaowang tom.txt
+[root@localhost luowei]# ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+lrwxrwxrwx 1 luowei luowei 21 Oct 22 13:55 jack.txt -&gt; /home/luowei/test.txt
+-rw-r--r-- 1 root root 0 Oct 22 14:06 test.txt
+-rw-r--r-- 1 xiaowang luowei 12 Oct 22 13:49 tom.txt
+</code></pre><p><strong>所属组</strong><br>每一个文件只能属于一个指定的组，文件的拥有者与root用户，可以chgrp改变文件所属的组。<br>修改群组，例：</p><pre tabindex=0><code>[root@localhost luowei]# chgrp xiaowang jack.txt        更改jack.txt的群组
+[root@localhost luowei]# ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+lrwxrwxrwx 1 luowei xiaowang 21 Oct 22 13:55 jack.txt -&gt; /home/luowei/test.txt
+-rw-r--r-- 1 root root 0 Oct 22 14:13 test.txt
+-rw-r--r-- 1 xiaowang luowei 12 Oct 22 13:49 tom.txt
+[root@localhost luowei]# chown root:luowei test.txt    另一种方式更改所属群组
+[root@localhost luowei]# ls -l
+total 8
+drwxrwxr-x 2 luowei luowei 4096 Oct 22 10:34 dirtest
+lrwxrwxrwx 1 luowei xiaowang 21 Oct 22 13:55 jack.txt -&gt; /home/luowei/test.txt
+-rw-r--r-- 1 root luowei 0 Oct 22 14:13 test.txt
+-rw-r--r-- 1 xiaowang luowei 12 Oct 22 13:49 tom.txt
+</code></pre><p><strong>操作用户及用户组</strong></p><pre tabindex=0><code>1、建用户：
+adduser phpq //新建phpq用户
+passwd phpq //给phpq用户设置密码
+
+2、建工作组
+groupadd test //新建test工作组
+
+3、新建用户同时增加工作组
+useradd -g test phpq //新建phpq用户并增加到test工作组
+注：：-g 所属组 -d 家目录 -s 所用的SHELL
+
+4、给已有的用户增加工作组
+usermod -G groupname username
+或者：gpasswd -a user group
+
+5、临时关闭：
+在/etc/shadow文件中属于该用户的行的第二个字段（密码）前面加上*就可以了。
+想恢复该用户，去掉*即可。
+或者使用如下命令关闭用户账号：
+passwd peter –l
+重新释放：
+passwd peter –u
+
+6、永久性删除用户账号
+userdel peter
+groupdel peter
+usermod –G peter peter （强制删除该用户的主目录和主目录下的所有文件和子目录）
+
+7、从组中删除用户
+编辑/etc/group 找到GROUP1那一行，删除 A
+或者用命令
+gpasswd -d A GROUP
+
+8、显示用户信息
+id user
+cat /etc/passwd
+</code></pre><p><strong>强制位与冒险位</strong></p><blockquote><p>除了读写执行权限以外，ext3文件系统还支持强制位（setuid 和setgid)与冒险位(sticky)的特别权限针对u，g，o，分别有set uid，set gid，及sticky。</p><p>强制位与冒险位添加在执行权限的位置上，如果该位置上原已有执行权限，则强制位与冒险位以小写字母的方式表示，否则，以大写字母表示。</p><p>强制位set uid与set gid在u和g的x位置上各采用一个s，冒险位(sticky)使用一个t。 在可执行文件上，用户可以添加set uid和set gid，默认情况下，用户执行一个指令，会以该用户的身份来运行进程，因为指令文件上的强制位，可以让用户执行的指令，以指令文件的拥有者或所属组的身份运行进程。</p><p>Umask 冒险位和强制位,网上也有说成粘着位的.<br>所谓的强制位和冒险位都是最最前面那个0的位置来表示,当前面那个位，2和4权限就叫强制位，1的权限就是冒险位,2代表的是GID，4代表的是uid，1代表的是sticky。</p><p><strong>gid,uid,sticky的作用：</strong><br>GID的作用：默认情况下，用户建立的文件属于用户当前所在的组，但是设置了GID以后，表示在此目录中，任何人建立的文件，都会属于目录所属的组。注意：GID只能对目录设置. 这个在文件权限和团队使用文件目录很有用处.</p><p>chmod g+s 文件名 用这个命令也可以给他设置GID.<br>UID的作用：当一个文件设置了UID，那么所有用户执行这个文件的时候，都是以这个用户的所有者的权限来执行。</p><p>Sticky:一旦目录上设置了冒险位，则表示在此目录中，只有文件的拥有者、目录的拥有者与系统管理员可以删除文件。这个也是对目录进行设置，我们给目录一个冒险位，最后一个X变成了t.</p><p>一个例子是/bin/passwd ，要读写/etc/passwd文件需要超级用户权限，但一般用户也需要随时可以改变自己的密码，所以/bin/passwd就设置了suid，当用户改自己密码的时侯就拥有了超级用户权限。</p><p>要删除一个文件，你不一定要有这个文件的写权限，但你一定要有这个文件的上级目录的写权限。也就是说，你即使没有一个文件的写权限，但你有这个文件的上级目录的写权限，你也可以把这个文件给删除，而如果没有一个目录的写权限，也就不能在这个目录下创建文件。</p><p>如何才能使一个目录既可以让任何用户写入文件，又不让用户删除这个目录下他人的文件，sticky就是能起到这个作用。stciky一般只用在目录上，用在文件上起不到什么作用。</p><p>在一个目录上设了sticky位后，（如/home，权限为1777)所有的用户都可以在这个目录下创建文件，但只能删除自己创建的文件(root除外)，这就对所有用户能写的目录下的用户文件启到了保护的作用。</p><p>默认情况下，如果一个目录上有w和x权限，则任何人可以在此目录中建立与删除文件。 如果目录上设置了冒险位，则表示在此目录中，只有文件的拥有者、目录的拥有者与系统管理员可以删除文件。</p><p>用户可以用chmod指令来为文件设置强制位与冒险位。<br>– set uid：chmod u+s 文件名<br>– set gid：chmod g+s 文件名<br>– sticky：chmod o+t 文件名</p><p>强制位与冒险位也可以通过一个数字加和，放在读写执行的三位数字前来指定。<br>– 4(set uid)<br>– 2(set gid)<br>– 1(sticky)</p></blockquote><p>设置suid / guid</p><p>|&mdash;|&mdash;|&mdash;|
+|命令| 结果| 含义|
+|chmod 4755 |-rwsr-xr-x |suid、文件属主具有读、写和执行的权限，所有其他用户具有读和执行的权限|
+|chmod 6711| -rws&ndash;s&ndash;x |suid、sgid、文件属主具有读、写和执行的权限，所有其他用户具有执行的权限|
+|chmod 4511| -rwS&ndash;x—x |suid、文件属主具有读、写的权限，所有其他用户具有执行的权限|</p><blockquote><p>上面的表中有具有这样权限的文件：rwS &ndash;x &ndash; x，其中S为大写。它表示相应的执行权限位并未被设置，这是一种没有什么用处的suid设置可以忽略它的存在。</p></blockquote><p><strong>umask</strong></p><blockquote><p>如果没有掩码的情况下，创建文件的默认权限为 rw- rw- rw- ; 创建目录的默认权限是 rwx rwx rwx 。</p><p>而在实际的环境中，一般都会受到掩码的作用。用户也可以自主改动umask值，并在改动后建立的文件上得到体现。一般用户的默认umask值为002，系统用户的默认umask值为022 。</p></blockquote><p>如：</p><pre tabindex=0><code>[luowei@redhat luowei]$ umask
+0002
+[luowei@redhat luowei]$ su -
+Password:
+[root@redhat root]# umask
+0022
+[root@redhat root]#
+</code></pre><p><strong>创建后的文件或目录的</strong><br><code>权限=默认权限-umask</code>
+例：</p><pre tabindex=0><code>[root@redhat a]# umask 003        将root的umask值改为003
+[root@redhat a]# mkdir a_dir
+[root@redhat a]# ls -ld a_dir
+drwxrwxr-- 2 root root 4096 10月 25 00:32 a_dir
+[root@redhat a]# umask 022        将root的umask值改回022
+[root@redhat a]# mkdir b_dir
+[root@redhat a]# ls -ld b_dir
+drwxr-xr-x 2 root root 4096 10月 25 00:32 b_dir
+[root@redhat a]#
+</code></pre><p><strong>ACL权限操作</strong></p><pre tabindex=0><code>可以对某个文件设置该文件具体的某些用户的权限,意思就是通过ACL可以对一个文件权限做扩展,  
+可以不同的用户对某个文件有不同的权限。  
+现在我们把redhat用户加上一个RWX的权限:`setfacl -m u:redhat:rwx file`  
+现在我们取消redhat用户的权限:`setfacl -x redhat file`  
+现在我们也取消redhat组的权限:`setfacl -x g:redhat file`  
+用ll看,权限后面有个+就可能是设置了文件权限,所以没必要没个文件都用gefacl 去看。  
+</code></pre><p><code>getfacl &lt;文件名></code>：获取文件的访问控制信息；</p><p>setfacl`设置文件的acl</p><pre tabindex=0><code>-m 修改文件的acl 
+-x 取消对文件的设置
+setfacl –m u:用户名:权限   文件名             #加用户权限
+setfacl –m g:组名:权限   文件名            #加组权限
+setfacl –x 用户名 文件名                     #-用户权限
+setfacl –x g:组名 文件名                    #-组权限
+
+注意,撤消ACL操作: 
+对用户直接加用户名字就可以了 
+对组,在前面加g:组名
+</code></pre><p><strong>文件及用户权限操作示例：</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ls -l test1.txt</span>
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root root <span class=m>0</span> 10月 <span class=m>24</span> 20:23 test1.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># id root                显示root用户的详细信息</span>
+</span></span><span class=line><span class=cl><span class=nv>uid</span><span class=o>=</span>0<span class=o>(</span>root<span class=o>)</span> <span class=nv>gid</span><span class=o>=</span>0<span class=o>(</span>root<span class=o>)</span> <span class=nv>groups</span><span class=o>=</span>0<span class=o>(</span>root<span class=o>)</span>,1<span class=o>(</span>bin<span class=o>)</span>,2<span class=o>(</span>daemon<span class=o>)</span>,3<span class=o>(</span>sys<span class=o>)</span>,4<span class=o>(</span>adm<span class=o>)</span>,6<span class=o>(</span>disk<span class=o>)</span>,10<span class=o>(</span>wheel<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># mkdir test                创建test目录</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># touch test/test.txt        在目录test下建立一个test.txt文件</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># chown root:luowei test    w修改目录test的所属组</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ls -l test                这样是显示目录test的文件属性</span>
+</span></span><span class=line><span class=cl>总用量 <span class=m>0</span>
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root root <span class=m>0</span> 10月 <span class=m>24</span> 20:25 test.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ls -ld test                显示目录test的目录属性，拥有者是root，所属组是luowei</span>
+</span></span><span class=line><span class=cl>drwxr-xr-x <span class=m>2</span> root luowei <span class=m>4096</span> 10月 <span class=m>24</span> 20:25 <span class=nb>test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># chmod 745 test        修改目录test的权限</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ls -ld test</span>
+</span></span><span class=line><span class=cl>drwxr--r-x <span class=m>2</span> root luowei <span class=m>4096</span> 10月 <span class=m>24</span> 20:25 <span class=nb>test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># chmod g+s test        在test目录所属组上设置强制位</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># ls -ld test</span>
+</span></span><span class=line><span class=cl>drwxr-Sr-x <span class=m>2</span> root luowei <span class=m>4096</span> 10月 <span class=m>24</span> 20:25 <span class=nb>test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># cd test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># ls -l</span>
+</span></span><span class=line><span class=cl>总用量 <span class=m>0</span>
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root root <span class=m>0</span> 10月 <span class=m>24</span> 20:25 test.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># touch test1.txt</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># chown root:luowei test1.txt    修改test1.txt的所属组</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># cd /home/luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># chmod 776 test            修改test权限</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># ls -ld test</span>
+</span></span><span class=line><span class=cl>drwxrwxrw- <span class=m>2</span> luowei luowei <span class=m>4096</span> 10月 <span class=m>24</span> 19:54 <span class=nb>test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># chown root:luowei test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># ls -ld test</span>
+</span></span><span class=line><span class=cl>drwxrwxrw- <span class=m>2</span> root luowei <span class=m>4096</span> 10月 <span class=m>24</span> 19:54 <span class=nb>test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># chmod g+s test             在test目录所属组上设置强制位</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># ls -ld test</span>
+</span></span><span class=line><span class=cl>drwxrwsrw- <span class=m>2</span> root luowei <span class=m>4096</span> 10月 <span class=m>24</span> 19:54 <span class=nb>test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># cd test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># ls</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># touch test.txt</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1># ls -l test.txt</span>
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root luowei <span class=m>0</span> 10月 <span class=m>24</span> 21:05 test.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat test<span class=o>]</span><span class=c1>#</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># cd /home/luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># mkdir sticky_test</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># chown luowei:luowei sticky_test/</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># chmod 777 sticky_test/</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># chmod o+t sticky_test/         添加冒险位</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># cd sticky_test/</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat sticky_test<span class=o>]</span><span class=c1># touch test.txt</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat sticky_test<span class=o>]</span><span class=c1># chown root:luowei test.txt</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat sticky_test<span class=o>]</span><span class=c1># ls -l test.txt</span>
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root luowei <span class=m>0</span> 10月 <span class=m>24</span> 22:44 test.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat sticky_test<span class=o>]</span><span class=c1># su - luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ <span class=nb>cd</span> sticky_test/
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat sticky_test<span class=o>]</span>$ touch test2.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat sticky_test<span class=o>]</span>$ ls -l
+</span></span><span class=line><span class=cl>总用量 <span class=m>0</span>
+</span></span><span class=line><span class=cl>-rw-rw-r-- <span class=m>1</span> luowei luowei <span class=m>0</span> 10月 <span class=m>24</span> 22:46 test2.txt
+</span></span><span class=line><span class=cl>-rw-r--r-- <span class=m>1</span> root luowei <span class=m>0</span> 10月 <span class=m>24</span> 22:44 test.txt
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat sticky_test<span class=o>]</span>$ rm test.txt
+</span></span><span class=line><span class=cl>rm：是否删除有写保护的一般空文件<span class=s1>&#39;test.txt&#39;</span>? y
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat sticky_test<span class=o>]</span>$ <span class=nb>cd</span> ..
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ ls -l
+</span></span><span class=line><span class=cl>总用量 <span class=m>8</span>
+</span></span><span class=line><span class=cl>-rwxrwxrw- <span class=m>1</span> luowei luowei <span class=m>0</span> 10月 <span class=m>24</span> 19:45 aa
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ su - root
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># groupadd test             建立一个test用户组</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># useradd -g test test1     在test用户组下建立一个名为test1的用户</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># id test1                     显示test1的用户信息</span>
+</span></span><span class=line><span class=cl><span class=nv>uid</span><span class=o>=</span>501<span class=o>(</span>test1<span class=o>)</span> <span class=nv>gid</span><span class=o>=</span>501<span class=o>(</span><span class=nb>test</span><span class=o>)</span> <span class=nv>groups</span><span class=o>=</span>501<span class=o>(</span><span class=nb>test</span><span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat root<span class=o>]</span><span class=c1># cd /home/luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># passwd test1             修改test1的密码</span>
+</span></span><span class=line><span class=cl>Changing password <span class=k>for</span> user test1.
+</span></span><span class=line><span class=cl>New password:
+</span></span><span class=line><span class=cl>BAD PASSWORD: it is based on a dictionary word
+</span></span><span class=line><span class=cl>Retype new password:
+</span></span><span class=line><span class=cl>passwd: all authentication tokens updated successfully.
+</span></span><span class=line><span class=cl><span class=o>[</span>root@redhat luowei<span class=o>]</span><span class=c1># su - luowei</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>luowei@redhat luowei<span class=o>]</span>$ su - test1
+</span></span><span class=line><span class=cl>Password:
+</span></span><span class=line><span class=cl><span class=o>[</span>test1@redhat test1<span class=o>]</span>$ <span class=nb>cd</span> /home/luowei
+</span></span><span class=line><span class=cl>-bash: cd: /home/luowei: 权限不够
+</span></span></code></pre></div><h3 id=用户管理>用户管理</h3><p><strong>检查用户身份</strong></p><pre tabindex=0><code>who:查询当前登录的用户
+groups:查询用户所属的组
+id:显示当前用户信息
+finger:查询用户信息
+</code></pre><p>例：</p><pre tabindex=0><code>[root@redhat root]# groups        //显示当前系统存在的用户组
+[root@redhat root]# id root    //显示root用户的详细信息
+[root@redhat root]# finger luowei        //显示luowei这个用户的详细信息
+[root@redhat root]# whoami        //显示当前的用户
+[root@redhat root]# w            //显示当前用户的详细信息
+</code></pre><p><strong>添加用户</strong><br>用指令添加命令：<br><code>useradd &lt;username></code><br><code>passwd &lt;password></code><br>系统添加用户的标准步骤：<br>编辑 <code>/etc/password与 /etc/group</code><br>创建用户主目录<br>从 /etc/skel拷贝文件与目录<br>让新用户获得其主目录与文件的拥有权限<br>给新用户一个密码</p><p><strong>更改/删除用户</strong></p><blockquote><p>1.更改用户的资料可以通过：redhat-config-users或kusers之类的图形界面工具来完成，在字符界面下可以使用usermod指令来更改。<br>2.系统管理者可以用userdel指令来删除已存在的用户, 参数-r可以帮助系统将一个用户的目录等一并删除。</p></blockquote><p><strong>例：</strong></p><pre tabindex=0><code>[root@redhat root]# usermod -c &#34;this is luowei&#39;s username&#34; luowei    //修改luowei的全名
+[root@redhat root]# finger luowei
+Login: luowei Name: this is luowei&#39;s username
+Directory: /home/luowei Shell: /bin/bash
+Last login Mon Oct 24 17:32 (CST) on :0
+No mail.
+No Plan.
+[root@redhat home]# mkdir tst1
+[root@redhat home]# usermod -d /home/tst1 test1        //将test1的家目录改到tst1
+[root@redhat home]# cd ~test1        //切换到test1的家目录
+[root@redhat tst1]# cd ..        //切换上层目录
+[root@redhat home]# chown test1.test tst1        //修改tst1目录的属主
+[root@redhat home]# chmod 700 tst1        //修改tst1的权限
+[root@redhat tst1]# usermod -e &#34;2012-01-01&#34; test1    //设置test1用户的过期时间为2012-01-01
+[root@redhat tst1]# id test1
+uid=501(test1) gid=501(test) groups=501(test)
+[root@redhat tst1]# usermod -G root test1        //将test1加入到root用户组
+[root@redhat tst1]# id test1
+uid=501(test1) gid=501(test) groups=501(test),0(root)
+[root@redhat tst1]# usermod -g root test1        //修改test1的gid改成root组的
+[root@redhat tst1]# id test1
+uid=501(test1) gid=0(root) groups=0(root)
+[root@redhat tst1]# usermod -g 501 test1        //将test1的gid改成501
+[root@redhat tst1]# id test1
+uid=501(test1) gid=501(test) groups=501(test),0(root)
+[root@redhat tst1]# usermod -s /bin/csh test1    //将test1的默认shell改为csh
+[root@redhat tst1]# usermod -u 504 test1        //修改test1的uid
+[root@redhat tst1]# usermod -p 1234 test1        //将test1的密码设置为1234
+[root@redhat tst1]# usermod -L test1        //锁定test1用户
+[root@redhat tst1]# passwd -S test1        //查看test1用户的状态
+Password locked.
+[root@redhat tst1]# useradd jack            //添加jack用户
+[root@redhat tst1]# ls /home
+jack luowei test1 tst1
+[root@redhat tst1]# userdel jack            //删除jack用户
+[root@redhat tst1]# id jack
+id: jack: No such user
+[root@redhat tst1]# ls /home
+jack luowei test1 tst1
+[root@redhat tst1]# useradd tom
+[root@redhat tst1]# ls /home
+jack luowei test1 tom tst1
+[root@redhat tst1]# userdel -r tom        //删除tom用户及以tom相关的其它信息
+[root@redhat tst1]# ls /home
+jack luowei test1 tst1
+[root@redhat tst1]#
+</code></pre><p><strong>/etc/password文件</strong><br>password文件中记录的是用户的登录信息，每一行代表一个用户。</p><p>例：</p><pre tabindex=0><code>[root@redhat root]# vi /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+…………
+luowei:x:500:500:this is luowei&#39;s username:/home/luowei:/bin/bash
+test1:x:504:501::/home/tst1:/bin/csh
+tom:x:505:505::/home/tom:/bin/bash
+[root@redhat root]# cat /etc/passwd|wc –l        //显示passwd文件中共有多少行
+39
+[root@redhat root]#
+</code></pre><p>password文件详细信息(分别表示)：</p><pre tabindex=0><code>login name:登录用户名
+passwd:密码
+uid:用户身份编号
+gid:登录默认所在组编号
+full name:用户全名或注释
+home directory:用户主目录
+shell:用户默认使用shell
+</code></pre><blockquote><p>login.defs中的create home选项决定系统在建立用户的时候是否同时创建其主目录，系统在建立用户主目录时，会将/etc/skel下的内容复制到新目录下，最后系统会使该目录与其下的文件归属于新用户。</p><p>Red Hat Linux默认将用户密码存储在/etc/shadow文件中，passwd文件默认权限为644，shadow文件默认权限为400，shadow文件支持密码过期设定等功能，shadow文件中每一行表示一个系统用户的密码记录，用　：号分隔。用户可以通过authconfig来设定是否使用shadow文件及md5加密。</p></blockquote><p>shadow文件的每一行中的每一项具体来说：</p><pre tabindex=0><code>登录用户名
+用户密码(一般经md5加密)
+从1970年1月1日起到密码上一次被更改的时间
+密码再过几天可以被变更(0表示随时可被变更)
+密码再过几天必须被变更(999999表示永不过期)
+密码过期前几天系统提醒用户(默认为一周)
+密码过期几天后账号会被取消
+从1970年1月1日算起，多少天后帐号失效
+</code></pre><p>操作示例：</p><pre tabindex=0><code>[root@redhat root]# groupadd gp1         //添加群组
+[root@redhat root]# groupdel gp1        //删除群组
+[root@redhat root]# groupmod -n jack tom        //将名称为tomr的群组重命名为jack
+[root@redhat root]# cat /etc/group    //查看所有的群组
+[root@redhat root]# groupmod -n tom jack         //将名称改回来
+[root@redhat root]# gpasswd tom        //给tom群组设置密码
+Changing the password for group tom
+New Password:
+Re-enter new password:
+[root@redhat root]# useradd jack        //添加一个jack用户
+[root@redhat root]# passwd jack
+Changing password for user jack.
+New password:
+BAD PASSWORD: it is too short
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[root@redhat root]# groups jack        //添加jack群组
+jack : jack
+[root@redhat root]# gpasswd -a jack tom        //将jack添加到tom群组中
+Adding user jack to group tom
+[root@redhat root]# vi /etc/group
+…………
+luowei:x:500:
+test:x:501:jack        //手动添加jack到test群组
+tom:x:505:jack
+jack:x:506:jack
+&#34;/etc/group&#34; 48L, 659C written
+[root@redhat root]# cat /etc/passwd
+…………
+luowei:x:500:500:this is luowei&#39;s username:/home/luowei:/bin/bash
+test1:x:504:501::/home/tst1:/bin/csh
+tom:x:505:505::/home/tom:/bin/bash
+jack:x:506:501::/home/jack:/bin/bash    后边一个501表示初始群组gid
+[root@redhat root]# su - jack
+[jack@redhat home]$ groups        //列出当前用户的群组
+test tom jack
+[jack@redhat home]$ cd
+[jack@redhat jack]$ touch test
+[jack@redhat jack]$ ls -l
+total 0
+-rw-r--r-- 1 jack test 0 Nov 5 17:20 test
+[jack@redhat jack]$ newgrp jack        //修改当前用户的有效群组
+[jack@redhat jack]$ groups
+jack test tom
+[jack@redhat jack]$ touch test1
+[jack@redhat jack]$ ls -l
+total 0
+-rw-r--r-- 1 jack test 0 Nov 5 17:20 test
+-rw-rw-r-- 1 jack jack 0 Nov 5 17:23 test1
+[jack@redhat jack]$ su -
+Password:
+[root@redhat root]# useradd -u 600 -g test -G jack jim    //建立jim用户，并设置其uid为600，初始群组为test,并且还将其加入jack群组中。
+[root@redhat root]# useradd lucy -s /bin/csh        //创建lucy并将它的默认shell改为csh
+[root@redhat root]# useradd -M test2        //创建test2目录但不创建它的家目录
+[root@redhat root]# ls /home
+jack jim lucy luowei test1 tom tst1
+[root@redhat /]# useradd test3 -d /test3        //创建test3并设置它的家目录为 /test3
+[root@redhat /]# finger test3
+Login: test3 Name: (null)
+Directory: /test3 Shell: /bin/bash
+Never logged in.
+[root@redhat root]# useradd -r lucy_sys        //创建一个名为lucy_sys的系统用户
+[root@redhat root]# cat /etc/passwd
+…………
+luowei:x:500:500:this is luowei&#39;s username:/home/luowei:/bin/bash
+test1:x:504:501::/home/tst1:/bin/csh
+tom:x:505:505::/home/tom:/bin/bash
+jack:x:506:501::/home/jack:/bin/bash
+jim:x:600:501::/home/jim:/bin/bash
+test2:x:602:602::/home/test2:/bin/bash
+test3:x:603:603::/test3:/bin/bash
+lucy_sys:x:100:101::/home/lucy_sys:/bin/bash
+[root@redhat root]# groupadd -r lucygp_sys        //创建系统群组
+</code></pre><section class=nested><ul class="tag-box tag-box--single-row"><li><a href=/categories/linux/>linux</a></li><li><a href=/tags/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/>linux基本命令</a></li></ul></section><section class="nested continue-reading"><header><h2>继续阅读</h2></header><div class=continue-reading__nav><article class="nested continue-reading__card"><header><h3>上一篇</h3></header><p><a href=/posts/20110420-%E5%B4%94%E8%80%81%E5%B8%88%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-linux%E9%83%A8%E5%88%86/>崔老师课程笔记(linux部分)</a></p><div class=post-card__meta>2011-04-19</div></article><article class="nested continue-reading__card"><header><h3>下一篇</h3></header><p><a href=/posts/20110422-linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C/>linux学习笔记之常用基础命令及工具操作</a></p><div class=post-card__meta>2011-04-21</div></article></div><div class=continue-reading__related><header><h3>相关文章</h3></header><div class=post-card-stack><article class="nested post-card-shell"><header><h2><a href=/posts/20110420-%E5%B4%94%E8%80%81%E5%B8%88%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-linux%E9%83%A8%E5%88%86/ title=查看《崔老师课程笔记(linux部分)》>崔老师课程笔记(linux部分)</a></h2><div class=post-card__meta-row><div class=post-card__meta>发表日期：
+<a href=/archive/2011-04/ title=查看此月所有文章>2011-04-19</a>
+，类别：
+<a href=/categories/linux/>linux</a></div><ul class="tag-box tag-box--inline"><li><a href=/tags/linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/>linux基本命令</a></li></ul></div></header><section><p class=post-card__summary>linux基本命令笔记</p></section></article></div></div></section><section id=comments class=nested><div id=giscus-container data-comments-root></div></section></section></article></section></div></div></section><footer id=bottom><p>&copy; 2026 luowei. Built with Hugo.</p></footer></div><button id=scroll-top-button class=scroll-top-button type=button aria-label=回到顶部 title=回到顶部><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentcolor" d="M12 5.5l6.25 6.25-1.41 1.41L13 9.32V19h-2V9.32l-3.84 3.84-1.41-1.41L12 5.5z"/></svg></button><div id=image-lightbox class=image-lightbox hidden><div class=image-lightbox__backdrop data-lightbox-close></div><div class=image-lightbox__dialog role=dialog aria-modal=true aria-label=图片预览><div class=image-lightbox__toolbar><button type=button class="button-link muted" data-lightbox-zoom=out>-</button>
+<button type=button class="button-link muted" data-lightbox-zoom=reset>100%</button>
+<button type=button class="button-link muted" data-lightbox-zoom=in>+</button>
+<button type=button class="button-link muted" data-lightbox-close>关闭</button></div><div class=image-lightbox__viewport><img id=image-lightbox-image src alt></div><div id=image-lightbox-caption class=image-lightbox__caption></div></div></div><script>(function(){var o,i,r,c,d,f,b,j,n=document.body,p=document.getElementById("sidebar"),s=document.getElementById("mobile-sidebar-toggle"),g=document.querySelector(".mobile-sidebar-close"),t=document.getElementById("mobile-sidebar-backdrop"),e=document.getElementById("sidebar-collapse-toggle"),m="luowei-public-sidebar-collapsed";function a(t,s){if(window.innerWidth<=999){n.classList.remove("sidebar-collapsed"),e instanceof HTMLButtonElement&&(e.hidden=!0);return}if(n.classList.toggle("sidebar-collapsed",t),e instanceof HTMLButtonElement){var o=e.querySelector(".sidebar-text");o instanceof HTMLElement&&(o.textContent=t?"展开侧栏":"收起侧栏"),e.hidden=!1,e.setAttribute("aria-label",t?"展开侧栏":"收起侧栏"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("title",t?"展开侧栏":"收起侧栏")}if(s)try{window.localStorage.setItem(m,t?"1":"0")}catch{}}function u(){var e=!1;try{e=window.localStorage.getItem(m)==="1"}catch{}a(e,!1)}function y(){n.classList.add("mobile-sidebar-open"),s&&s.setAttribute("aria-expanded","true"),t&&(t.hidden=!1)}function l(){n.classList.remove("mobile-sidebar-open"),s&&s.setAttribute("aria-expanded","false"),t&&(t.hidden=!0)}s&&s.addEventListener("click",y),g&&g.addEventListener("click",l),t&&t.addEventListener("click",l),e instanceof HTMLButtonElement&&e.addEventListener("click",function(){a(!n.classList.contains("sidebar-collapsed"),!0)}),window.addEventListener("resize",u),u(),p&&p.addEventListener("click",function(e){var s,o,i,t=e.target;if(t instanceof HTMLElement&&t.tagName==="A"&&window.innerWidth<=999){l();return}if(window.innerWidth>999&&n.classList.contains("sidebar-collapsed")&&(s=t instanceof Element?t.closest("[data-sidebar-collapsed-action], [data-sidebar-collapsed-href], [data-sidebar-expand]"):null,s instanceof HTMLElement)){if(o=s.getAttribute("data-sidebar-collapsed-action"),o==="focus-search"){e.preventDefault(),a(!1,!0),window.requestAnimationFrame(function(){var e=document.getElementById("query");e instanceof HTMLInputElement&&(e.focus(),e.select())});return}if(o==="expand-sidebar"){e.preventDefault(),a(!1,!0);return}if(i=s.getAttribute("data-sidebar-collapsed-href"),i){e.preventDefault(),window.location.href=i;return}a(!1,!0)}}),i=document.getElementById("scroll-top-button");function h(){if(!i)return;var e=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;i.classList.toggle("is-visible",e>240)}if(i&&(i.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})}),h(),window.addEventListener("scroll",h,{passive:!0})),r=document.getElementById("query"),r instanceof HTMLInputElement)try{f=new URLSearchParams(window.location.search),f.get("focusSearch")==="1"&&window.requestAnimationFrame(function(){r.focus(),r.select()})}catch{}o=document.getElementById("theme-switcher-select"),d=document.getElementById("favicon-svg"),c=document.getElementById("favicon-ico");function v(e){var t=e==="classic"?"light":"dark";d&&d.setAttribute("href","/favicon-"+t+".svg"),c&&c.setAttribute("href","/favicon-"+t+".ico")}v(document.documentElement.getAttribute("data-theme")||"tokyo-night"),o instanceof HTMLSelectElement&&(b=window.__siteThemeStorageKey||"luowei-site-theme",j=document.documentElement.getAttribute("data-theme")||"tokyo-night",o.value=j,o.addEventListener("change",function(){var e=o.value||"tokyo-night",t=e==="classic"?"light":"dark";document.documentElement.setAttribute("data-theme",e),document.documentElement.style.colorScheme=t,v(e);try{window.localStorage.setItem(b,e)}catch{}document.dispatchEvent(new CustomEvent("luowei:themechange",{detail:{theme:e,mode:t}}))}))})()</script><script src="/assets/dist/public-site.js?v=20260412"></script><script src=https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js></script><script>(function(){var i,n=document.getElementById("image-lightbox"),t=document.getElementById("image-lightbox-image"),s=document.getElementById("image-lightbox-caption"),e=1;function o(){if(!t)return;t.style.transform="scale("+e+")"}function a(){if(!n||!t||!s)return;n.hidden=!0,t.setAttribute("src",""),t.setAttribute("alt",""),s.textContent="",e=1,o()}if(document.querySelectorAll(".article-markdown img, .post img").forEach(function(i){i.addEventListener("click",function(){if(!(i instanceof HTMLImageElement)||!n||!t||!s)return;n.hidden=!1,t.setAttribute("src",i.currentSrc||i.src),t.setAttribute("alt",i.alt||""),s.textContent=i.alt||i.currentSrc||i.src,e=1,o()})}),document.querySelectorAll("[data-lightbox-close]").forEach(function(e){e.addEventListener("click",a)}),document.querySelectorAll("[data-lightbox-zoom]").forEach(function(t){t.addEventListener("click",function(){if(!(t instanceof HTMLElement))return;var n=t.getAttribute("data-lightbox-zoom");n==="in"&&(e=Math.min(4,e+.25)),n==="out"&&(e=Math.max(.5,e-.25)),n==="reset"&&(e=1),o()})}),t instanceof HTMLImageElement&&t.addEventListener("wheel",function(t){if(!n||n.hidden)return;t.preventDefault(),e=t.deltaY<0?Math.min(4,e+.2):Math.max(.5,e-.2),o()},{passive:!1}),document.addEventListener("keydown",function(e){e.key==="Escape"&&a()}),i=Array.from(document.querySelectorAll("pre code.language-mermaid, pre code[data-lang='mermaid']")),!i.length)return;i.forEach(function(e){var n,t=e.closest("pre"),s=t&&t.parentElement&&t.parentElement.classList.contains("highlight")?t.parentElement:t;if(!s||!(s instanceof HTMLElement))return;n=document.createElement("div"),n.className="mermaid",n.dataset.mermaidSource=e.textContent||"",n.textContent=e.textContent||"",s.replaceWith(n)});function c(){return document.documentElement.getAttribute("data-theme")==="classic"?"default":"dark"}function r(){if(!window.mermaid)return;window.mermaid.initialize({startOnLoad:!1,theme:c()}),document.querySelectorAll(".mermaid").forEach(function(e){if(!(e instanceof HTMLElement))return;e.removeAttribute("data-processed"),e.innerHTML=e.dataset.mermaidSource||e.textContent||""}),window.mermaid.run({querySelector:".mermaid"})}r(),document.addEventListener("luowei:themechange",function(){r()})})()</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token":"0ae81a65778b49e19a788637c92e5e20"}'></script></body></html>

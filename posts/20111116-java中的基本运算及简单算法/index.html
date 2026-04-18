@@ -1,0 +1,602 @@
+<!doctype html><html lang=zh-CN data-theme=tokyo-night><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Java-Java中的基本运算及简单算法 - 维唯为为</title>
+<meta name=description content="Java面向对象基础，Java中常用的位运算如：相加、相减、逻辑右移、算术右移、循环左右移及由原码求补码等，获取当前日期、求两个数的最大公约数与最大公倍数、杨辉三角"><meta name=theme-color content="#1a1b26"><link rel=canonical href=https://luowei.github.io/posts/20111116-java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E5%8F%8A%E7%AE%80%E5%8D%95%E7%AE%97%E6%B3%95/><link id=favicon-svg rel=icon type=image/svg+xml href=/favicon-dark.svg><link id=favicon-ico rel="shortcut icon" href=/favicon-dark.ico><link rel=stylesheet href="/assets/dist/public-site.css?v=20260412"><script>window.LUOWEI_SITE_CONFIG={comments:{giscus:{category:"General",categoryId:"DIC_kwDOAXGNgc4C5G6p",emitMetadata:"0",enabled:!0,inputPosition:"top",lang:"zh-CN",mapping:"pathname",reactionsEnabled:"1",repo:"luowei/luowei.github.io",repoId:"MDEwOlJlcG9zaXRvcnkyNDIxOTAwOQ==",strict:"0",theme:"light"},provider:"giscus"}}</script><script>(function(){var t,s,n='"luowei-site-theme"',e="tokyo-night";try{e=window.localStorage.getItem(n)||e}catch{}t=e==="classic"?"classic":"tokyo-night",s=t==="classic"?"light":"dark",document.documentElement.setAttribute("data-theme",t),document.documentElement.style.colorScheme=s,window.__siteThemeStorageKey=n})()</script></head><body><div id=wrap><header id=top><button id=mobile-sidebar-toggle class=mobile-sidebar-toggle type=button aria-label=打开侧边栏 aria-controls=sidebar aria-expanded=false>≡</button>
+<a id=logo href=/ title=回到首页 aria-label=维唯为为><svg class="site-logo" viewBox="0 0 4056 1100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="site-logo-accent" x1="0" y1="0" x2="100%" y2="0"><stop offset="0" stop-color="currentcolor" stop-opacity=".18"/><stop offset="50%" stop-color="currentcolor" stop-opacity=".78"/><stop offset="100%" stop-color="currentcolor" stop-opacity=".32"/></linearGradient><filter id="site-logo-soften" x="-3%" y="-10%" width="106%" height="120%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><path id="site-logo-wordmark" d="M635 959q-14 0-22 7-26 23-82 23t-83-14-34-48q-2-10-6-10t-9 1q-181 55-232 55-56 0-86.5-32.5T50 856.5t15.5-75T121 744q9-2 9-4t-10-6q-56-26-56-94 0-63 49-126 3-3 3-6t-7-5q-58-20-58-99 0-74 61-187T203 68.5 269.5 33 355 56.5 416 139q2 8 4 8 3 0 24-42.5t43.5-57 46-14.5 56 9.5T643 73q2 3 5 3t8-4q19-14 47.5-23.5T754 39q76 0 118 124 2 6 21 6 57 0 81.5 24.5T999 286t-30 91q-5 4-5 8t3 8q18 24 18 82t-18 79q-4 5-4 8t5 9q17 18 17 83.5T970 741q-3 3-3 6t5 6q32 21 32 89t-21 92.5T902 959zm267-37q38 0 51.5-16T967 847.5t-14.5-58T902 774H845q-8 0-8-9V735q0-2 2.5-4.5T845 728h38q44 0 54.5-13.5T948 658t-9.5-57.5T883 586H845q-8 0-8-9V551q0-7 8-7h33q41 0 55.5-14T948 475t-13.5-56T878 404H845q-8 0-8-10V367q0-7 8-7h48q38 0 53.5-16.5T962 283t-16-60.5T893 206H858q-12 0-15-10-17-60-40-89T749.5 78 689 95t-30 48q0 14 8 32.5t8 24.5-8 6H625q-7 0-7-3t1-5q12-29 12-54 0-40-29.5-56.5T546.5 71t-40 11.5T475 126t-32.5 63.5T427 230t17 17 36 31 19 67.5T474 426q-20 31-20 47 0 26 6 29 13 10 21.5 31t8.5 51-7.5 51T451 676q-9 8-9 11.5t7 8.5q24 14 33.5 44t9.5 56q0 52-36 85-7 9-7 29t17 31 67 11 64-21q5-9 14-9zM674 394q0 10-9 10H613q-7 0-7-10V367q0-7 7-7h52q9 0 9 7zm0 183q0 9-9 9H613q-7 0-7-9V551q0-7 7-7h52q9 0 9 7zm0 188q0 9-8 9H613q-7 0-7-9V735q0-2 2.5-4.5T613 728h52q9 0 9 7zM185 472q7 0 7 3t-2 6q-57 61-72.5 95T102 640t20 49 51.5 19 70.5-4 79.5-13.5 65-18 41-21 23-29T459 578t-15.5-45.5T401 515q-9 0-22.5 3T360 521t-5-2q0-3 18-20t50.5-57.5 39-60T469 345q0-44-29.5-64T381 261t-63 54q-7 12-11 15t-11.5 3-7.5-3q0-6 79-128 13-20 13-44 0-42-36-64T281.5 72t-44 16.5-55 78.5T116 295 87 406q0 66 57 66zM461 794q0-32-14.5-56T398 714t-82 18q-69 23-153 39-45 10-60.5 27.5T87 853.5 109 913t59.5 22T283 913.5 394.5 881 445 847t16-53zm858-693q70 0 103 25 5 4 8.5 4t7.5-11q15-41 46.5-63t66-22T1625 44.5t51.5 22T1691 78t18-8 44-15 50-7q82 0 105 113 1 7 4 9t12 3q46 5 62.5 31t16.5 90-28 92q-5 5-5 8t3 6q17 23 17 77t-19 78q-6 7-6 9.5t3 5.5q17 24 17 73.5T1972 716q-3 5-3 8.5t5 7.5q31 27 31 93t-24 91-83 25H1642q-12 0-21 9-37 39-102 39-118 0-118-111V818q0-7-3.5-7t-8.5 2q-23 12-62 12H1164q-58 0-86-32t-28-1e2V232q0-60 39-95.5T1191 101zm579 803q38 0 54-16.5t16-59.5-15-60.5-55-17.5h-48q-6 0-8.5-3t-2.5-15 2-15.5 9-3.5h43q31 0 43-15t12-51.5-12-51.5-43-15h-44q-6 0-8.5-3t-2.5-14 2-15.5 10-4.5h48q32 0 43.5-16t11.5-50-11-50.5-44-16.5h-49q-7 0-9-4.5t-2-14.5 2-14 11-4h49q35 0 50.5-19.5t15.5-65-14.5-62.5-58.5-17q-14 0-17-17-8-54-27.5-80T1796 86t-69.5 17.5T1690 157q0 14 3.5 24.5T1697 195q0 13-23.5 13t-23.5-6 5.5-28 5.5-41q0-39-37.5-50.5t-66-11.5T1506 86.5 1473 131q-38 112-105 256-8 18-8 37 0 52 60 79 10 3 14 7.5t4 14.5V878q0 74 81 74 35 0 58-10t23-21.5 3.5-14T1616 904zM1667 373q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm0 170q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm0 170q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm-256-7V558q0-14-4-20.5T1387 522q-61-39-61-98 0-22 13-50 32-66 50-111t18-68q0-57-88-57H1191q-47 0-75.5 25.5T1087 232V693q0 50 19 72.5t58 22.5h163q84 0 84-82zM1281 599q0 15-15.5 15t-20-3-4.5-12V333q0-12 4.5-13.5T1261 318t15.5 2.5T1281 333zM2817 217q95 0 133 27t38 118q0 194-7 301.5t-22.5 175-36.5 97-51.5 39.5-112 10T2628 973t-68.5-39-19.5-86q0-104 47-127 6-3 6-5t-5.5-6-12.5-12.5-10-8.5-6 5q-48 77-92 123.5t-101.5 92-92.5 61-63 15.5q-52 0-89-50t-37-88q0-59 90-132 99-80 144.5-154.5T2364 476q0-4-8-4H2241q-48 0-71-8.5t-32.5-35T2128 345q0-86 49-113 7-3 7-7t-3-9q-12-20-12-40 0-37 35.5-79.5T2290 54q14 0 31 4.5t50 30 46 40 15.5 14.5 3.5-9q7-49 41-72t104.5-23T2686 67.5t34 89.5v52q0 8 11 8zm-66 210q10 0 12.5 3.5T2766 446q0 79-4 147t-11.5 107.5-16 52T2711 765t-36.5-6-38.5-6q-31 0-45 23t-14 78.5 35 74.5 156 19q69 0 93.5-10.5t40-42 28-106.5 17-171.5T2951 362q0-67-29-87.5T2817 254H2692q-9 0-9-8V157q0-42-24.5-61.5T2578 76t-81 19.5-25 61.5V263q0 17-5 30t-21.5 32-38.5 29-45 10q-44 0-72-34-13-17-33.5-38.5t-28-25T2213 263q-20 0-34 22t-14 66.5 11 64 65 19.5h172q10 0 10 4 0 10-53 109T2197 745q-74 60-74 105 0 28 26.5 62.5T2212 947q25 0 56-16t76.5-52.5 76-66 62-70.5 43.5-63 12-36-19-43q-32-48-39-62t-7-32q0-35 31.5-69t80.5-34q35 0 61 16 15 8 32 8zM2446 248q0-24-17-48t-43-49.5-50.5-42T2290 92q-33 0-57.5 29T2208 174t26.5 51 79.5 85q19 24 48.5 24t56.5-27 27-59zm289 362q0-26-33-78.5t-57-76-59-23.5-58 26-23 48 16 44q36 53 62.5 97t62.5 44q26 0 57.5-28t31.5-53zm-31-149q-7 0-7 2t8.5 12.5T2725 505q3 4 4.5 4t1.5-7l1-35q0-6-7-6zm-5 268q10 0 13.5-12.5T2716 701t-1.5-3-10.5 7-18.5 11.5-9.5 5.5q0 2 9 4.5t14 2.5zM3817 217q95 0 133 27t38 118q0 194-7 301.5t-22.5 175-36.5 97-51.5 39.5-112 10T3628 973t-68.5-39-19.5-86q0-104 47-127 6-3 6-5t-5.5-6-12.5-12.5-10-8.5-6 5q-48 77-92 123.5t-101.5 92-92.5 61-63 15.5q-52 0-89-50t-37-88q0-59 90-132 99-80 144.5-154.5T3364 476q0-4-8-4H3241q-48 0-71-8.5t-32.5-35T3128 345q0-86 49-113 7-3 7-7t-3-9q-12-20-12-40 0-37 35.5-79.5T3290 54q14 0 31 4.5t50 30 46 40 15.5 14.5 3.5-9q7-49 41-72t104.5-23T3686 67.5t34 89.5v52q0 8 11 8zm-66 210q10 0 12.5 3.5T3766 446q0 79-4 147t-11.5 107.5-16 52T3711 765t-36.5-6-38.5-6q-31 0-45 23t-14 78.5 35 74.5 156 19q69 0 93.5-10.5t40-42 28-106.5 17-171.5T3951 362q0-67-29-87.5T3817 254H3692q-9 0-9-8V157q0-42-24.5-61.5T3578 76t-81 19.5-25 61.5V263q0 17-5 30t-21.5 32-38.5 29-45 10q-44 0-72-34-13-17-33.5-38.5t-28-25T3213 263q-20 0-34 22t-14 66.5 11 64 65 19.5h172q10 0 10 4 0 10-53 109T3197 745q-74 60-74 105 0 28 26.5 62.5T3212 947q25 0 56-16t76.5-52.5 76-66 62-70.5 43.5-63 12-36-19-43q-32-48-39-62t-7-32q0-35 31.5-69t80.5-34q35 0 61 16 15 8 32 8zM3446 248q0-24-17-48t-43-49.5-50.5-42T3290 92q-33 0-57.5 29T3208 174t26.5 51 79.5 85q19 24 48.5 24t56.5-27 27-59zm289 362q0-26-33-78.5t-57-76-59-23.5-58 26-23 48 16 44q36 53 62.5 97t62.5 44q26 0 57.5-28t31.5-53zm-31-149q-7 0-7 2t8.5 12.5T3725 505q3 4 4.5 4t1.5-7l1-35q0-6-7-6zm-5 268q10 0 13.5-12.5T3716 701t-1.5-3-10.5 7-18.5 11.5-9.5 5.5q0 2 9 4.5t14 2.5z"/></defs><rect class="site-logo__underline" x="50" y="1018" width="3938" height="54" rx="27"/><use class="site-logo__shadow" href="#site-logo-wordmark"/><use class="site-logo__wordmark" href="#site-logo-wordmark" filter="url(#site-logo-soften)"/></svg></a><nav id=navbar><ul><li><a href=/>首页</a></li><li><a href=/archive/>存档</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/messages/>留言板</a></li><li><a href=/about/>关于我</a></li><li id=rss-link><a href=/index.xml title=RSS aria-label=RSS target=_blank rel=noreferrer>RSS</a></li></ul></nav></header><div id=mobile-sidebar-backdrop hidden></div><section id=main><aside id=sidebar><div class=mobile-sidebar-header><div style=margin-top:4px;font-size:22px;font-weight:700>站点菜单</div><button class=mobile-sidebar-close type=button aria-label=关闭侧边栏>×</button></div><section id=search-box><form id=search-form action=/ method=get><input id=query type=search name=q placeholder=搜索公开文章>
+<button type=submit aria-label=搜索 title=搜索 data-sidebar-collapsed-action=focus-search>
+<span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M10.5 4a6.5 6.5.0 110 13 6.5 6.5.0 010-13zm0 2a4.5 4.5.0 100 9 4.5 4.5.0 000-9zm5.65 8.24 3.61 3.61-1.41 1.41-3.61-3.61 1.41-1.41z"/></svg></span></button></form><div class=search-hint>支持标题、摘要、正文片段、分类和标签关键词。</div></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-action=expand-sidebar title=最近文章><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7 2h2v3h6V2h2v3h2.5A1.5 1.5.0 0121 6.5v12A1.5 1.5.0 0119.5 20h-15A1.5 1.5.0 013 18.5v-12A1.5 1.5.0 014.5 5H7V2zm12 8H5v8h14v-8zM9 13h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+<span class=sidebar-text>最近文章</span></div><ul><li><a href=/posts/20260323-modern_dev_syntax_and_mermaid_showcase/>现代软件开发语法高亮与 Mermaid 图示例</a></li><li><a href=/posts/20251214-cnh2n_2_cnh2n_aliphatic_hydrocarbons_saturated/>常见的有机化合物的结构与性质</a></li><li><a href=/posts/20251212-post/>常见的化学有机物化合物 甲醇乙醇</a></li><li><a href=/posts/20251210-viii_0_5_6_2n2/>元素的化学性质的周期变化</a></li><li><a href=/posts/20250419-17358390284832/>局域网内启用 mDNS, 以使用 `.local` 域名</a></li><li><a href=/posts/20251018-choh/>产品说明书 空气检测仪CHOH(甲醛)</a></li><li><a href=/posts/20251006-rust_rust_b/>rust 教程</a></li><li><a href=/posts/20250907-macos_nfs/>macos 上 nfs 共享设置</a></li></ul></section><section class=activity-calendar-section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-action=expand-sidebar title=发布日历><span class=activity-calendar-title-text><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7 2h2v3h6V2h2v3h2.5A1.5 1.5.0 0121 6.5v12A1.5 1.5.0 0119.5 20h-15A1.5 1.5.0 013 18.5v-12A1.5 1.5.0 014.5 5H7V2zm12 8H5v8h14v-8zM5 8h14V7H5v1zm3 5h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+<span class=sidebar-text>发布日历</span>
+</span><button type=button class=activity-calendar-toggle data-activity-calendar-toggle aria-expanded=false>展开</button></div><div class=activity-calendar-shell hidden><div class=activity-calendar data-activity-calendar data-activity-calendar-url="/assets/site/activity-calendar-v1.msgpack.gz?v=20260412" data-activity-calendar-archive-pattern="/archive/{month}/?date={date}"><p class=activity-calendar__empty>正在生成发布日历...</p></div></div></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-href=/categories/ title=分类><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M4 6.5A1.5 1.5.0 015.5 5h5.38c.4.0.78.16 1.06.44l1.12 1.12c.28.28.66.44 1.06.44H18.5A1.5 1.5.0 0120 8.5v8A1.5 1.5.0 0118.5 18h-13A1.5 1.5.0 014 16.5v-10zM6 9v7h12V9H6z"/></svg></span>
+<span class=sidebar-text>分类</span></div><ul><li><a href=/categories/ios/>IOS (90)</a></li><li><a href=/categories/server/>Server (66)</a></li><li><a href=/categories/linux/>Linux (59)</a></li><li><a href=/categories/tips/>Tips (59)</a></li><li><a href=/categories/java/>Java (50)</a></li><li><a href=/categories/%E7%BD%91%E7%BB%9C/>网络 (43)</a></li><li><a href=/categories/%E8%AF%BB%E4%B9%A6/>读书 (33)</a></li><li><a href=/categories/homelab/>Homelab (30)</a></li><li><a href=/categories/%E5%8E%9F%E7%90%86/>原理 (26)</a></li><li><a href=/categories/%E7%A7%91%E6%99%AE/>科普 (25)</a></li><li><a href=/categories/%E9%9D%A2%E8%AF%95/>面试 (24)</a></li><li><a href=/categories/%E5%AD%A6%E4%B9%A0/>学习 (20)</a></li></ul></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-href=/tags/ title=标签><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M10.59 3H5A2 2 0 003 5v5.59A2 2 0 003.59 12l8 8a2 2 0 002.82.0l5.18-5.18a2 2 0 000-2.82l-8-8a2 2 0 00-1-1zM7.25 8.5A1.25 1.25.0 118.5 7.25 1.25 1.25.0 017.25 8.5z"/></svg></span>
+<span class=sidebar-text>标签</span></div><ul><li><a href=/tags/swift%E7%AC%94%E8%AE%B0/>Swift笔记 (18)</a></li><li><a href=/tags/ios/>IOS (11)</a></li><li><a href=/tags/article/>Article (7)</a></li><li><a href=/tags/apache/>Apache (5)</a></li><li><a href=/tags/%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/>视频教程 (5)</a></li><li><a href=/tags/java%E5%9F%BA%E7%A1%80/>Java基础 (4)</a></li><li><a href=/tags/java%E7%BB%98%E5%9B%BE/>Java绘图 (4)</a></li><li><a href=/tags/linux%E5%91%BD%E4%BB%A4/>Linux命令 (4)</a></li><li><a href=/tags/mvc/>MVC (4)</a></li><li><a href=/tags/radasm/>RadASM (4)</a></li><li><a href=/tags/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/>算法问题 (4)</a></li><li><a href=/tags/docker/>Docker (3)</a></li><li><a href=/tags/java%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/>Java零碎笔记 (3)</a></li><li><a href=/tags/jekyll/>Jekyll (3)</a></li><li><a href=/tags/linux/>Linux (3)</a></li><li><a href=/tags/pve/>PVE (3)</a></li></ul></section><section><div class=sidebar-title data-sidebar-expand title=相关链接><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7.76 14.83a3 3 0 010-4.24l2.83-2.83A3 3 0 1114.83 12l-.7.71-1.42-1.42.71-.7A1 1 0 1012 9.17L9.17 12a1 1 0 001.42 1.42l.7-.71 1.42 1.42-.7.7a3 3 0 01-4.24.0zm8.48-5.66a3 3 0 010 4.24l-2.83 2.83A3 3 0 119.17 12l.7-.71 1.42 1.42-.71.7A1 1 0 1012 14.83L14.83 12a1 1 0 10-1.42-1.42l-.7.71-1.42-1.42.7-.7a3 3 0 014.24.0z"/></svg></span>
+<span class=sidebar-text>相关链接</span></div><ul><li><a href=https://wodedata.com target=_blank rel=noreferrer>wodedata</a></li><li><a href=http://app.wodedata.com target=_blank rel=noreferrer>作品集</a></li><li><a href=https://luowei.github.io/list target=_blank rel=noreferrer>知不知</a></li></ul></section><div class=theme-switcher><label class=theme-switcher-label for=theme-switcher-select data-sidebar-expand title=切换主题><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M12 3a1 1 0 011 1v1.05a6.98 6.98.0 013.95 2.3l.74-.74a1 1 0 111.41 1.41l-.74.74A6.98 6.98.0 0119 12c0 1.53-.49 2.95-1.31 4.1l.74.74a1 1 0 01-1.41 1.41l-.74-.74A6.98 6.98.0 0113 18.95V20a1 1 0 11-2 0v-1.05a6.98 6.98.0 01-3.1-1.44l-.74.74a1 1 0 01-1.41-1.41l.74-.74A6.98 6.98.0 015 12c0-1.53.49-2.95 1.31-4.1l-.74-.74A1 1 0 016.98 5.7l.74.74A6.98 6.98.0 0111 5.05V4a1 1 0 011-1zm0 4a5 5 0 100 10 5 5 0 000-10zm0 2.2A2.8 2.8.0 119.2 12 2.8 2.8.0 0112 9.2z"/></svg></span>
+<span class=sidebar-text>Theme</span>
+</label><select id=theme-switcher-select><option value=tokyo-night>Tokyo Night</option><option value=classic>Classic</option></select></div><div class=sidebar-desktop-controls><button id=sidebar-collapse-toggle class="sidebar-collapse-toggle muted" type=button aria-label=收起侧栏 aria-expanded=true title=收起侧栏>
+<span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M4 4h5v2H4V4zm0 14h5v2H4v-2zm0-7h5v2H4v-2zm7.59 1 4.7-4.7 1.41 1.4L14.41 12l3.29 3.29-1.41 1.41-4.7-4.7z"/></svg></span>
+<span class=sidebar-text>收起侧栏</span></button></div></aside><div id=main-inner><div id=search-results hidden></div><div id=main-content><section id=content><article class=post><header class=page-header><h1>Java-Java中的基本运算及简单算法</h1><p>Java面向对象基础，Java中常用的位运算如：相加、相减、逻辑右移、算术右移、循环左右移及由原码求补码等，获取当前日期、求两个数的最大公约数与最大公倍数、杨辉三角</p><div class=page-header__meta><span>2011-11-15 16:00</span></div></header><section class=article-markdown><p>**主要内容有：**Java面向对象基础，日期处理、方法的重载和重写、类的属性和方法的访问控制、类与方法的修饰符、集合、反射、内部类、异常、GUI图形编程、多线程、求两个数的最大公约数与最大公倍数、常见的位运算等。</p><h3 id=java面向对象基础>Java面向对象基础</h3><p><strong>面向对象的思想：</strong></p><pre tabindex=0><code>封装、继承、多态
+
+1.封装：隐藏对象的属性和方法 private
+2.继承：对象重用 减少代码冗余 extends，单继承 将父类的属性和方法 继承到子类中
+
+3.多态：同一个类域（存在继承关系的类）的不同对象在调用相同方法的时候表现不同
+
+修饰符 public protected private 无 修饰属性和方法
+public ：其他类可以任意访问 自己类可以访问
+protected：自己访问 子父类之间 相同包下
+无：自己访问 相同的包下
+
+单例模式：在整个虚拟机中只有一个类的实例
+</code></pre><p><strong>专门处理日期</strong></p><pre tabindex=0><code>java.util.Date 濒临灭绝
+java.util.Calendar 不能new
+//指向系统当前时间
+Calendar cal=Calendar.getInstance()
+//获取年份
+cal.get(Calendar.YEAR);
+//获取月份
+cal.get(Calendar.MONTH);
+</code></pre><p><strong>extends</strong> 后只能有一个父类：</p><pre tabindex=0><code>this 表示当前类的实例
+this.属性
+this.方法（参数）
+this（）；调用构造函数
+this（参数）：
+</code></pre><p><strong>方法的重载和重写</strong></p><pre tabindex=0><code>重载：在一个类内有多个相同（名字上）的方法
+参数类型不同。参数个数不同。参数的顺序不同。
+返回值：返回值是否相同对重载不构成影响
+
+Person{
+    public void print(){}
+    public void print(String message){}
+    public void print(int level){}
+}
+</code></pre><p><strong>构造函数也可以重载：</strong></p><pre tabindex=0><code>重写：发生在子类 。重新定义父类中的方法。
+方法签名要跟父类相同
+方法签名：返回值+方法名+方法参数（个数，顺序，类型 都相同）
+super：访问父类中的属性和方法
+super.父类属性
+super.父类方法（参数）
+super()//父类的构造器
+super（参数）//调用父类的重载构造器
+</code></pre><p><strong>方法的参数传递</strong></p><pre tabindex=0><code>1.值传递：对于基本的参数类型 值拷贝（把外围的值拷贝到方法内供方法使用，对方法外的变量不构成影响）
+2.引用传递：地址值
+</code></pre><p><strong>类的初始化：</strong></p><pre tabindex=0><code>静态初始化代码段： static {}
+实例初始化代码段: {}
+</code></pre><p><strong>接口：</strong></p><pre tabindex=0><code>interface 来声明。只允许定义常量 （public static final String str=&#34;abc&#34;）和 空方法（抽象方法,没有实现）
+
+public interface Test {
+    public void test(String test);
+}
+
+接口的作用：用来描述规范，被其他的接口或者类 实现或者继承
+</code></pre><p><strong>具体的类 实现（implements）</strong></p><pre tabindex=0><code>接口（一个或者多个，多个之间用&#34;，&#34;分割），必须实现接口内的所有方法
+接口 继承(extends) 接口
+接口不能被实例化。接口在一定程度上弥补类java的单继承
+</code></pre><p>抽象类：</p><pre tabindex=0><code>如果一个类没有完全的实现接口中的所有的方法，必须把没有实现的方法声明为抽象方法。。（abstract）
+如果一个类中有一个抽象方法，那么该类必须被声明为抽象类（public abstract class）
+功能更普通类是一样，抽象类可以分担子类的一本分功能
+</code></pre><p>方法 实例化 创建引用</p><pre tabindex=0><code>实体类： 全部实现 可以 是
+抽象类： 部分实现 不可以 是
+接口： 全部不实现      不可以 是
+
+Son son=new Son();
+Father son=new Son();
+Son s=(Son)son；如果没有就报错：ClassCastingException
+
+因为 Son 继承 Father
+Father -&gt; Son
+
+抽象类 -&gt; 继承了抽象类的具体类
+接口-&gt; 实现接口的具体类
+
+casting： 类型转换，引用或者类类型
+向上转换：不需要显示的类型转换
+向下转换：要显示的强制类型转换
+上：father
+下：son
+</code></pre><p><strong>例：员工管理：</strong></p><pre tabindex=0><code>对于员工：cr（retravel）ud
+DML insert
+DDL drop
+存放员工的数据结构-》queue
+
+EmppoyeeDate{ Employee [] emArray;
+create();//增加员工
+find（int id）；
+update 更新
+delete
+}
+</code></pre><p><strong>Java中类的属性和方法的访问控制</strong></p><pre tabindex=0><code>类没有protected和private修饰符
+被public 修饰的类，可以被其它包中的类访问
+没有被public 修饰的类，不能被其它包中的类访问
+同一包中，不能访问其它类的private 属性和方法
+同一包中，可以访问其它类的默认 属性和方法
+同一包中，可以访问其它类的protected 属性和方法
+同一包中，可以访问其它类的public 属性和方法
+同一包中，不能访问父类的private 属性和方法
+同一包中，可以访问父类的默认 属性和方法
+同一包中，可以访问父类的protected 属性和方法
+同一包中，可以访问父类的public 属性和方法
+不同包中，无法访问不同包的其它类的private 属性和方法
+不同包中，无法访问不同包的其它类的默认 属性和方法
+不同包中，无法访问不同包的其它类的protected 属性和方法
+不同包中，可以访问不同包的其它类的public 属性和方法
+不同包中，无法访问父类的private 属性和方法
+不同包中，无法访问父类的默认 属性和方法
+不同包中，无法访问父类的protected 属性和方法
+不同包中，可以访问父类的public 属性和方法
+可以看到，类中的默认的属性和方法为protected修饰的
+</code></pre><p><strong>static</strong></p><pre tabindex=0><code>1.修饰属性：所有的类的实习共享同一个属性
+2.修饰方法：类名.方法名（调用方法）
+3.{};用来初始化类的static属性
+
+规则：
+static修饰的方法不能访问非static变量（成员变量）
+static修饰的方法不能访问非static方法（成员方法）
+</code></pre><p><strong>Final修饰符</strong></p><pre tabindex=0><code>final：提高程序的健壮性
+1.修饰类 该类不能被继承 （java.long.String 不能有子类）
+2.修饰属性，改属性为常量 （程序运行期间值不能被改变的叫常量） 常量的赋值：在第一次被赋值之后，永远不能改变。常量的命名：全部大写 用下划线分隔 MAX_SIZE
+3.修饰方法 该方法不能被重写
+</code></pre><p><strong>StringBuffer</strong></p><pre tabindex=0><code>StringBuffer 提高效率
+缓存：提高效率
+String : 做频繁的字符串连接操作，非常浪费系统空间
+String str=&#34;abc&#34;;
+str+=&#34;xyz&#34;;
+str=&#34;abcxyz&#34;;
+StringBuffer str=new StringBuffer(&#34;abc&#34;);
+str.append(&#34;xyz&#34;);
+str.toString()-&gt;StringBuffer-&gt;String;
+
+StringBuilder与StringBuffer
+StringBuilder和StringBuffer 使用方式完全相同
+
+StringBuffer 线程安全
+对象的比较
+对象的比较：== 对于引用来说比较的地址值 。对于基本类型比较的数值
+比较对象的内容：equals方法
+
+Person p1 = new Person(&#34;briup&#34;,13);
+Person p2 = new Person(&#34;briup&#34;,13);
+p1.equals(p2) -&gt; true :内容相同 false -&gt;内容不同
+
+equals的来源：java.long.object ，默认实现相当与== ， 重写该方法完成自定义的内容比较
+
+public boolean equals(Object obj){
+    if(obj=null)
+        return false;
+    if(this=obj)
+        return true;
+    if(this.getClass()!=obj.getClass())
+        return false;
+    Person p1=(Person)obj;
+    return this.getName().equals(p1)&amp;&amp;this.getAge()==p1.getAge();
+}
+
+代码覆盖率:测试用例是否可以覆盖（执行）所有代码
+</code></pre><h3 id=java集合反射内部类异常>Java集合、反射、内部类、异常</h3><p><strong>集合（collection）</strong></p><pre tabindex=0><code>管理若干个对象
+List:管理重复对象
+1.Aarraylist：基于数组的实现
+2.LinkedList:基于链表的实现
+
+Set：管理不可重复的对象
+1.HashSet:检索快
+2.TreeSet:排序（自定义规则）
+
+Map：做检索功能。键值对。key-&gt;value
+</code></pre><p><strong>对集合进行遍历</strong></p><pre tabindex=0><code>迭代器：
+java.util.Iterator{
+    boolean hasNext();//判断是否存在下一个元素
+    Object nest();//取下一个元素
+}
+fot(int i=0;i&lt;3;i++){
+    it.next();
+}
+Object obj=it.next();
+println(obj);
+
+List:放置可重复的对象
+Set :放置不可重复的对象 有对象的equals方法（返回true）和hashCode方法（返回的int值相等）决定。
+HashSet:
+TreeSet：
+
+hashCode来源于object对象
+Object obj=new Object();
+System.out.println(obj);
+
+java.lang.Object@adfasdf123(由hashCode方法返回);
+
+TreeSet:在向集合中添加元素的同时进行排序。对放入treeSet中的对象实现comparable接口并实现compareTo方法
+Person 排序：
+p1.compareTo(p2):p1&gt;p2 return 1;p1=p2 return 0; p1&lt;p2 return -1;
+先排name ：String类型按字母表的数序
+如果相等,再按age
+
+Map：-&gt;HashMap 键值对 key-》value
+key value 可以是任何的object
+一般情况下使用String作为key,value用Object
+&#34;bringup-1&#34; à new Person（&#34;bringup-1&#34;，true，1）；
+存：put (key,value)
+取：get(key)返回value
+
+map遍历的两种方式：
+1.获取map中所有的key值 ：map.keySet();
+2.Map.Entry封装了key 和value
+</code></pre><p><strong>反射：reflection</strong></p><pre tabindex=0><code>使用反射来处理class文件
+java.lang.reflect.*;
+Class{//描述一个类
+Field//描述类中的属性
+Method//描述类中的方法
+Constructor//描述类的构造函数
+}
+
+反射的作用：
+1、修改虚拟机中对象的属性（非常规）可以直接修改private属性,person.setName();
+2、条用对象的方法（非常规）person.toString();
+3、不通过new来创建类的对象的实例new Person();
+
+获取类的class实例：
+1、Class clz=Class.forName(&#34;ch06.Person&#34;);//需要处理异常
+2、类的引用.getClass(); Class clz=p1.getClass();
+3、类名.class Class clz=Person.class;
+4.类名.getSuperClass() Class clazz=p1.getSuperclass();
+5.primitive wraper classes的.TYPE语法,用于得到基本类类型：class clazz=Integer.TYPE;
+</code></pre><p><strong>动态的创建类</strong></p><pre tabindex=0><code>不通过new来创建类的对象的实例：通过字符串形式命名，将类名迁移到配置文件中（通常是文本文件形式），根据横序的运行，动态的创建类得实例
+Constructor constructor =clz.getConstructor(String.class, boolean.class, int.class);
+Object obj=constructor.newInstance(&#34;briup-000&#34;,false,100);
+System.out.println(&#34;Constructor a new instance without new :&#34; +obj);
+
+内部类
+//解耦：数据跟程序解耦
+//高内聚，低耦合
+内部类：类里面的另外的类 。 共享外部类的资源；有效的避免命名冲突
+
+静态内部类：
+不许要创建外部类的实例即可创建内部类实例。可以到达一定程度的封装
+
+局部内部类：
+类可以写在任意的地方
+</code></pre><p><strong>异常(Exception)</strong></p><pre tabindex=0><code>1.异常
+异常：程序无法正常运行 程序当中的错误
+异常处理的机制：遇到异常代码，jvm寻找异常处理，如果找不到异常处理语句，则将该异常抛出至上层代码，如此反复，直至抛给虚拟机，终止程序运行
+
+异常的分为两类：checked 异常(继承java.lang.Exception的异常（在代码中必须处理）)。unchecked异常（java.lang.RuntimeException(不许要在程序编译的时候处理)）
+checked：编译期检查 如果源代码中没有进行处理，则无法通过编译
+unchecked：运行期检查 编译的不会检查
+Class.forName()-&gt;ClassNotFound
+
+对于异常的处理:
+1.try{//一般来说出来checked异常
+    //+可能有问题的代码
+}catch（异常的类型1）{
+    //+处理异常的代码
+}catch（异常的类型1）{
+    //+处理异常的代码
+}finally{
+    //+必须执行的代码段 通常用来回收资源
+}
+
+2.throw 异常类型
+return和finally(无论代码是否异常。都只返回finally的return)
+
+3.自定义的异常：
+一般都是unchecked;阐述系统中的业务逻辑错误
+UersNotFoundException:找不到数据的用户
+if(user==null)
+throw new UserNotFoundException;
+throw new NullPointerException;
+</code></pre><p><strong>断言</strong></p><pre tabindex=0><code>断言：在程序运行过程中进行debug
+偏向于测试
+assert 布尔表达式(返回false的时候抛出AssertionError)；
+assert 布尔表达式：&#34;断言信息&#34;；
+开启断言：java-ea ch07/Test
+当没开启断言的时候，对程序的效率没有任何影响
+判断程序运行过程中变量的值是否符合预期
+
+public class AssertTest{
+    public static void main(String args[]){
+        System.out.println(&#34;Before&#34;);
+        assert 1==1;
+        assert 1!=1:&#34;wrong !!!&#34;;//类似于自定义异常的有参的函数构造
+        System.out.println(&#34;After&#34;);
+    }
+}
+
+判断程序运行的参数是否是&#34;briup&#34;，如果不是则抛出异常
+</code></pre><p><strong>GUI 图形编程</strong></p><pre tabindex=0><code>容器：用来存放组件或者子容器
+顶级容器：只能存放组件或者其它子容器（javax.swing.Jframe）
+子容器：可以被其他容器所包含 也可以包含其他组件或者容器（javax.swing.JPanel）
+组件：按钮。文本框。菜单 在javax.swing.*;包下
+布局：用来表示组件或者容器的相对位置
+
+1.FlowLayout 流式布局 组件顺序拜访
+2.BorderLayout 边框布局 5个部分：south north west east center
+3.GridLayout 表格布局 以行和列的形式将组件组织在一起
+</code></pre><p><strong>多线程</strong></p><pre tabindex=0><code>java优点：跨平台 多线程
+进程：在os运行一个程序 用来完成一个独立完整的任务 至少要有一个线程（主线程）
+线程：将一个完整的任务分解成若干的独立的小任务来完成 （本质）更多的抢占cpu的时间片，达到并怕执行的效果
+
+计算机在同一时刻只能执行一条指令（单核）
+线程由进程衍生出来。地址空间共享。data共享。code共享。是独立运行的分支（程序流）
+
+java中如何实现线程：
+1.继承Thread类
+2.实现Runnable接口 解决单继承
+
+都要实现run()，线程所要做的事情
+public void run(){
+}
+
+如果run方法调用结束，线程结束
+启动线程：线程的引用.start（）；
+
+普通线程和精灵Deamon线程
+Thread.setDeamon(boolean);//设置普通线程为Deamon线程
+Deamon线程：在后台运行的线程。对于Deamon线程始终依赖（生命周期）与另外一个线程
+
+普通线程不存在依赖关系
+setDeamon（）必须在start（）；之前调用
+
+线程的优先级：如果优先级不同，那么线程运行的先后顺序可以不一样（取决于操作系统的调度程序）
+Thread.setPriority(0-10);
+java.lang.Thread
+Thread.sleep();让线程暂时停止运行某一特定的时间
+Thread t=Thread.currentThread();获取当前运行的线程的实例（静态方法）
+
+停止线程：不建议使用stop。可以设置标志位，通过对标志位的读取来终止线程的运行
+boolean flag=true;
+if(!flag)
+return;
+
+线程同步
+
+线程同步：多个线程操作同一个对象的时候
+1.为了保证多个线程操作同一个对象的完整性，可以对需要同步的方法使用synchronized修饰
+2.使用synchronized修饰的方法，在调用的时候必须先获得该对象的锁（一个对象只有一把锁），只有获得了锁之后，同步方法才能被调用，调用之后锁被自动的释放
+
+3.修饰代码块
+synchronized(对象的引用){
+需要同步的代码
+}
+传入的对象的引用被synchronized加锁。降低加锁的粒度。
+
+思索：deadlock 当两个对象相互持有对方所需要的锁的时候，并且都得不到释放，这时候产生死锁。。。。。。
+
+wait（）：释放对象的锁 java.lang.Object
+对象的引用.wait（）；释放引用锁指向的对象的锁，使当前程序停止运行，等待其他线程调用notify（）进行通知后方可运行
+
+sleep（）不会释放对象的锁
+</code></pre><h3 id=java中的常见的基本算法>Java中的常见的基本算法</h3><p><strong>求两个数的最大公约数与最大公倍数</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>MaxDivisor</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>MaxDivisor</span><span class=w> </span><span class=n>opt</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>MaxDivisor</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//System.out.println(Integer.valueOf(args[0])%Integer.valueOf(args[1]));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;最大公约数为：&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>opt</span><span class=p>.</span><span class=na>commonDivisor2</span><span class=p>(</span><span class=n>Integer</span><span class=p>.</span><span class=na>valueOf</span><span class=p>(</span><span class=n>args</span><span class=o>[</span><span class=n>0</span><span class=o>]</span><span class=p>),</span><span class=w> </span><span class=n>Integer</span><span class=p>.</span><span class=na>valueOf</span><span class=p>(</span><span class=n>args</span><span class=o>[</span><span class=n>1</span><span class=o>]</span><span class=p>)));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;最小公倍数为：&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>opt</span><span class=p>.</span><span class=na>commonMultiple</span><span class=p>(</span><span class=n>Integer</span><span class=p>.</span><span class=na>valueOf</span><span class=p>(</span><span class=n>args</span><span class=o>[</span><span class=n>0</span><span class=o>]</span><span class=p>),</span><span class=w> </span><span class=n>Integer</span><span class=p>.</span><span class=na>valueOf</span><span class=p>(</span><span class=n>args</span><span class=o>[</span><span class=n>1</span><span class=o>]</span><span class=p>)));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//问号表达式</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Integer</span><span class=p>.</span><span class=na>valueOf</span><span class=p>(</span><span class=n>args</span><span class=o>[</span><span class=n>0</span><span class=o>]</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>b</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>0</span><span class=w> </span><span class=o>?</span><span class=w> </span><span class=n>b</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=p>(</span><span class=n>b</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>2</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;opt.ret(b): &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>opt</span><span class=p>.</span><span class=na>ret</span><span class=p>(</span><span class=n>b</span><span class=p>)</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34;\na = &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34; b = &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>b</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;Add(a,b) = &#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>opt</span><span class=p>.</span><span class=na>Add</span><span class=p>(</span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=n>b</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;1^1:&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>1</span><span class=p>));</span><span class=w>    </span><span class=c1>//得0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;0^0:&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>0</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>0</span><span class=p>));</span><span class=w>    </span><span class=c1>//得0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//测试问号表达式</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>ret</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>b</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>0</span><span class=w> </span><span class=o>?</span><span class=w> </span><span class=n>b</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=p>(</span><span class=n>b</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=n>2</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//最大公倍数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>commonDivisor1</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=p>(</span><span class=n>num1</span><span class=w> </span><span class=o>%</span><span class=w> </span><span class=n>num2</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>0</span><span class=p>)</span><span class=w> </span><span class=o>?</span><span class=w> </span><span class=n>num2</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=n>commonDivisor1</span><span class=p>(</span><span class=n>num2</span><span class=p>,</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>%</span><span class=w> </span><span class=n>num2</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>commonDivisor2</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>t</span><span class=p>,</span><span class=w> </span><span class=n>a</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>num1</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>//shift1(num1,num2);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>//shift2(num1,num2);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>shift3</span><span class=p>(</span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=n>num2</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>while</span><span class=w> </span><span class=p>((</span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>%</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=n>0</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>num2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>a</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>num1</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//最小公倍数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>commonMultiple</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>num2</span><span class=w> </span><span class=o>/</span><span class=w> </span><span class=n>commonDivisor1</span><span class=p>(</span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=n>num2</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//交换函数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>shift1</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>t</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>t</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>shift2</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>shift3</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>    </span><span class=c1>//异或，相同为0，不同为1，找出不同的位(异或之后，为1的位)，</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>    </span><span class=c1>//再异或得到初始num1的值赋给num2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>    </span><span class=c1>//再异或得到初始num2的值赋给num1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//num2的各位与0异或(两数中相同的位)保持不变，num2的各位与1异或(两数中不相同的位)反转，</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//位运算实现加法</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>Add</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>num2</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>0</span><span class=w> </span><span class=o>?</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=p>:</span><span class=w> </span><span class=n>Add</span><span class=p>(</span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>,</span><span class=w> </span><span class=p>(</span><span class=n>num1</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=n>1</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//先不计进位相加(num1^num2),得出的结果，再与进位相加，随着递归，直至进位变为0，递归结束</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p><strong>杨辉三角</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>YHTest</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=o>[][]</span><span class=w> </span><span class=n>array</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=kt>int</span><span class=o>[</span><span class=n>10</span><span class=o>][</span><span class=n>10</span><span class=o>]</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>0</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>10</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>j</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>0</span><span class=p>;</span><span class=w> </span><span class=n>j</span><span class=w> </span><span class=o>&lt;=</span><span class=w> </span><span class=n>i</span><span class=p>;</span><span class=w> </span><span class=n>j</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>j</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>0</span><span class=w> </span><span class=o>||</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>j</span><span class=p>)</span><span class=w>    </span><span class=c1>//如果是第一列或者对角线</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=n>array</span><span class=o>[</span><span class=n>i</span><span class=o>][</span><span class=n>j</span><span class=o>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                    </span><span class=n>array</span><span class=o>[</span><span class=n>i</span><span class=o>][</span><span class=n>j</span><span class=o>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>array</span><span class=o>[</span><span class=n>i</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>1</span><span class=o>][</span><span class=n>j</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>1</span><span class=o>]</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>array</span><span class=o>[</span><span class=n>i</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>1</span><span class=o>][</span><span class=n>j</span><span class=o>]</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>print</span><span class=p>(</span><span class=n>array</span><span class=o>[</span><span class=n>i</span><span class=o>][</span><span class=n>j</span><span class=o>]</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=s>&#34;\t&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p><strong>获取当前日期</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>CalendarTest</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//获取当前日期</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Calendar</span><span class=w> </span><span class=n>cal</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Calendar</span><span class=p>.</span><span class=na>getInstance</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>cal</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>Calendar</span><span class=p>.</span><span class=na>YEAR</span><span class=p>);</span><span class=w>        </span><span class=c1>//得到当前日期的年份</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>cal</span><span class=p>.</span><span class=na>get</span><span class=p>(</span><span class=n>Calendar</span><span class=p>.</span><span class=na>MONTH</span><span class=p>);</span><span class=w>    </span><span class=c1>//得到当前日期的月份</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>//        cal.set();    //设置日期</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p><strong>常见的位运算</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Test1</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;~2=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=o>~</span><span class=n>2</span><span class=p>));</span><span class=c1>//取反</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;2&amp;3=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>2</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=n>3</span><span class=p>));</span><span class=c1>//与</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;2|3=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>2</span><span class=w> </span><span class=o>|</span><span class=w> </span><span class=n>3</span><span class=p>));</span><span class=c1>//或</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;~-5=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=o>~-</span><span class=n>5</span><span class=p>));</span><span class=c1>//取反</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;-3^3=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=o>-</span><span class=n>3</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>3</span><span class=p>));</span><span class=c1>//异或</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//算术右移：低位溢出，符号位不变，并用符号位补溢出的高位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//算术左移：符号位不变，低位补0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//逻辑右移:低位溢出，高位补零</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;1&gt;&gt;2=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>1</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>2</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;-1&gt;&gt;2=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=o>-</span><span class=n>1</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>2</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;1&lt;&lt;2=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>1</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=n>2</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;-1&lt;&lt;2=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=o>-</span><span class=n>1</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=n>2</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;3&gt;&gt;&gt;2=&#34;</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=p>(</span><span class=n>3</span><span class=w> </span><span class=o>&gt;&gt;&gt;</span><span class=w> </span><span class=n>2</span><span class=p>));</span><span class=c1>//逻辑右移</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>~2=-3
+</span></span></span><span class=line><span class=cl><span class=cm>2&amp;3=2
+</span></span></span><span class=line><span class=cl><span class=cm>2|3=3
+</span></span></span><span class=line><span class=cl><span class=cm>~-5=4
+</span></span></span><span class=line><span class=cl><span class=cm>-3^3=-2
+</span></span></span><span class=line><span class=cl><span class=cm>1&gt;&gt;2=0      //算术右移
+</span></span></span><span class=line><span class=cl><span class=cm>-1&gt;&gt;2=-1
+</span></span></span><span class=line><span class=cl><span class=cm>1&lt;&lt;2=4      //算术左移
+</span></span></span><span class=line><span class=cl><span class=cm>-1&lt;&lt;2=-4
+</span></span></span><span class=line><span class=cl><span class=cm>3&gt;&gt;&gt;2=0     //逻辑右移
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span><span class=w>
+</span></span></span></code></pre></div><p><strong>利用位操作相加、相减、逻辑右移、算术右移、循环左右移及由原码求补码</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>d2binary</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>10</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>31</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&gt;=</span><span class=w> </span><span class=n>0</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>--</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>print</span><span class=p>(</span><span class=n>a</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=n>1</span><span class=p>);</span><span class=w>    </span><span class=c1>//输出二进制</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>print</span><span class=p>(</span><span class=s>&#34;\n\n&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>d2binary</span><span class=w> </span><span class=n>op</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>d2binary</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>15</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>c</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>//        c=op.add(1,1);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>//        System.out.println(&#34;\nAdd(10,15)--&gt;c=&#34;+c);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=cm>/*交换两个变量的值，有三种方法：
+</span></span></span><span class=line><span class=cl><span class=cm>    1.利用位操作(异或 ^)
+</span></span></span><span class=line><span class=cl><span class=cm>    2.两数相加、相减、相减
+</span></span></span><span class=line><span class=cl><span class=cm>    3.使用中间变量
+</span></span></span><span class=line><span class=cl><span class=cm>    */</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//利用位操作交换两变量的值</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>shift3</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>num1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>num2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>    </span><span class=c1>//异或，相同为0，不同为1，找出不同的位(异或之后，为1的位)，</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>    </span><span class=c1>//再异或得到初始num1的值赋给num2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>num1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>num1</span><span class=w> </span><span class=o>^</span><span class=w> </span><span class=n>num2</span><span class=p>;</span><span class=w>    </span><span class=c1>//再异或得到初始num2的值赋给num1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>//num2的各位与0异或(两数中相同的位)保持不变，num2的各位与1异或(两数中不相同的位)反转，</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//从32位的单元中取出某几位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>getMidBits</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>n1</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>n2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>~</span><span class=n>0</span><span class=p>;</span><span class=w>    </span><span class=c1>//将z初始化16位的1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>z</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>n1</span><span class=p>)</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=p>(</span><span class=n>z</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=p>(</span><span class=n>32</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>n2</span><span class=p>));</span><span class=w>    </span><span class=c1>//将两端的化成0,中间的化成1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>val</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=p>(</span><span class=n>32</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>n2</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//对32的二进制数取出它的奇数位(从左边起1，3，5 。。。)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>getOddBits</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>,</span><span class=w> </span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=n>q</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>0</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;=</span><span class=w> </span><span class=n>31</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=n>2</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>q</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>j</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>;</span><span class=w> </span><span class=n>j</span><span class=w> </span><span class=o>&lt;=</span><span class=w> </span><span class=p>(</span><span class=n>32</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>1</span><span class=p>)</span><span class=w> </span><span class=o>/</span><span class=w> </span><span class=n>2</span><span class=p>;</span><span class=w> </span><span class=n>j</span><span class=o>++</span><span class=p>)</span><span class=w>    </span><span class=c1>//要取的数的位数为原来的数的位数的1/2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>q</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>q</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>2</span><span class=p>;</span><span class=w>        </span><span class=c1>//原数进位指针进两位，要取的数的指针进一位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>val</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=p>(</span><span class=n>32</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>i</span><span class=p>);</span><span class=w>    </span><span class=c1>//将第i个位置的数移到最低位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=n>31</span><span class=p>;</span><span class=w>        </span><span class=c1>//通过左移31位，将将最低位移到最高位去，其后的位全都补0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>31</span><span class=p>;</span><span class=w>        </span><span class=c1>//右移31位，将最高位移到最低，其前面的位全都补零，得到第i位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>a</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=n>q</span><span class=p>;</span><span class=w>        </span><span class=c1>//积加取出的数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//算术右移：低位溢出，符号位不变，并用符号位补溢出的高位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//算术左移：符号位不变，低位补0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//逻辑右移:低位溢出，高位补零</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//实现算术右移函数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>shiftRightArithmetic</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>~</span><span class=n>0</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>n</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>~</span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>z</span><span class=w> </span><span class=o>|</span><span class=w> </span><span class=p>(</span><span class=n>val</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>n</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//实现逻辑右移函数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>shiftRightLogical</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=o>~</span><span class=p>(</span><span class=n>1</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>n</span><span class=p>))</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=p>(</span><span class=n>val</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>n</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//实现右在循环移位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>moveRightCircle</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>val</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=n>n</span><span class=p>)</span><span class=w> </span><span class=o>|</span><span class=w> </span><span class=p>(</span><span class=n>val</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=p>(</span><span class=n>32</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>n</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//实现左循环移位</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>moveLeftCircle</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>val</span><span class=w> </span><span class=o>&gt;&gt;</span><span class=w> </span><span class=p>(</span><span class=n>32</span><span class=w> </span><span class=o>-</span><span class=w> </span><span class=n>n</span><span class=p>))</span><span class=w> </span><span class=o>|</span><span class=w> </span><span class=p>(</span><span class=n>val</span><span class=w> </span><span class=o>&lt;&lt;</span><span class=w> </span><span class=n>n</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//根据原码求补码(求二进制数的补码)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=nf>realBits2MaskBit</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>val</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kt>int</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>val</span><span class=w> </span><span class=o>&amp;</span><span class=w> </span><span class=n>10000000</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>z</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>10000000</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>~</span><span class=n>val</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=n>1</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>else</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>z</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>val</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=n>z</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>//一个正数的补码等于该数的原码，一个负数的补码等于该数的反码加1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><section class=nested><ul class="tag-box tag-box--single-row"><li><a href=/categories/java/>Java</a></li><li><a href=/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/>基本算法</a></li></ul></section><section class="nested continue-reading"><header><h2>继续阅读</h2></header><div class=continue-reading__nav><article class="nested continue-reading__card"><header><h3>上一篇</h3></header><p><a href=/posts/20111115-java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/>Java-Java中的基本数据类型</a></p><div class=post-card__meta>2011-11-14</div></article><article class="nested continue-reading__card"><header><h3>下一篇</h3></header><p><a href=/posts/20111117-%E5%87%A0%E4%B8%AA%E5%9F%BA%E7%A1%80%E7%9A%84java%E5%B0%8F%E5%BA%94%E7%94%A8/>Java-几个基础的Java小应用</a></p><div class=post-card__meta>2011-11-16</div></article></div></section><section id=comments class=nested><div id=giscus-container data-comments-root></div></section></section></article></section></div></div></section><footer id=bottom><p>&copy; 2026 luowei. Built with Hugo.</p></footer></div><button id=scroll-top-button class=scroll-top-button type=button aria-label=回到顶部 title=回到顶部><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentcolor" d="M12 5.5l6.25 6.25-1.41 1.41L13 9.32V19h-2V9.32l-3.84 3.84-1.41-1.41L12 5.5z"/></svg></button><div id=image-lightbox class=image-lightbox hidden><div class=image-lightbox__backdrop data-lightbox-close></div><div class=image-lightbox__dialog role=dialog aria-modal=true aria-label=图片预览><div class=image-lightbox__toolbar><button type=button class="button-link muted" data-lightbox-zoom=out>-</button>
+<button type=button class="button-link muted" data-lightbox-zoom=reset>100%</button>
+<button type=button class="button-link muted" data-lightbox-zoom=in>+</button>
+<button type=button class="button-link muted" data-lightbox-close>关闭</button></div><div class=image-lightbox__viewport><img id=image-lightbox-image src alt></div><div id=image-lightbox-caption class=image-lightbox__caption></div></div></div><script>(function(){var o,i,r,c,d,f,b,j,n=document.body,p=document.getElementById("sidebar"),s=document.getElementById("mobile-sidebar-toggle"),g=document.querySelector(".mobile-sidebar-close"),t=document.getElementById("mobile-sidebar-backdrop"),e=document.getElementById("sidebar-collapse-toggle"),m="luowei-public-sidebar-collapsed";function a(t,s){if(window.innerWidth<=999){n.classList.remove("sidebar-collapsed"),e instanceof HTMLButtonElement&&(e.hidden=!0);return}if(n.classList.toggle("sidebar-collapsed",t),e instanceof HTMLButtonElement){var o=e.querySelector(".sidebar-text");o instanceof HTMLElement&&(o.textContent=t?"展开侧栏":"收起侧栏"),e.hidden=!1,e.setAttribute("aria-label",t?"展开侧栏":"收起侧栏"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("title",t?"展开侧栏":"收起侧栏")}if(s)try{window.localStorage.setItem(m,t?"1":"0")}catch{}}function u(){var e=!1;try{e=window.localStorage.getItem(m)==="1"}catch{}a(e,!1)}function y(){n.classList.add("mobile-sidebar-open"),s&&s.setAttribute("aria-expanded","true"),t&&(t.hidden=!1)}function l(){n.classList.remove("mobile-sidebar-open"),s&&s.setAttribute("aria-expanded","false"),t&&(t.hidden=!0)}s&&s.addEventListener("click",y),g&&g.addEventListener("click",l),t&&t.addEventListener("click",l),e instanceof HTMLButtonElement&&e.addEventListener("click",function(){a(!n.classList.contains("sidebar-collapsed"),!0)}),window.addEventListener("resize",u),u(),p&&p.addEventListener("click",function(e){var s,o,i,t=e.target;if(t instanceof HTMLElement&&t.tagName==="A"&&window.innerWidth<=999){l();return}if(window.innerWidth>999&&n.classList.contains("sidebar-collapsed")&&(s=t instanceof Element?t.closest("[data-sidebar-collapsed-action], [data-sidebar-collapsed-href], [data-sidebar-expand]"):null,s instanceof HTMLElement)){if(o=s.getAttribute("data-sidebar-collapsed-action"),o==="focus-search"){e.preventDefault(),a(!1,!0),window.requestAnimationFrame(function(){var e=document.getElementById("query");e instanceof HTMLInputElement&&(e.focus(),e.select())});return}if(o==="expand-sidebar"){e.preventDefault(),a(!1,!0);return}if(i=s.getAttribute("data-sidebar-collapsed-href"),i){e.preventDefault(),window.location.href=i;return}a(!1,!0)}}),i=document.getElementById("scroll-top-button");function h(){if(!i)return;var e=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;i.classList.toggle("is-visible",e>240)}if(i&&(i.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})}),h(),window.addEventListener("scroll",h,{passive:!0})),r=document.getElementById("query"),r instanceof HTMLInputElement)try{f=new URLSearchParams(window.location.search),f.get("focusSearch")==="1"&&window.requestAnimationFrame(function(){r.focus(),r.select()})}catch{}o=document.getElementById("theme-switcher-select"),d=document.getElementById("favicon-svg"),c=document.getElementById("favicon-ico");function v(e){var t=e==="classic"?"light":"dark";d&&d.setAttribute("href","/favicon-"+t+".svg"),c&&c.setAttribute("href","/favicon-"+t+".ico")}v(document.documentElement.getAttribute("data-theme")||"tokyo-night"),o instanceof HTMLSelectElement&&(b=window.__siteThemeStorageKey||"luowei-site-theme",j=document.documentElement.getAttribute("data-theme")||"tokyo-night",o.value=j,o.addEventListener("change",function(){var e=o.value||"tokyo-night",t=e==="classic"?"light":"dark";document.documentElement.setAttribute("data-theme",e),document.documentElement.style.colorScheme=t,v(e);try{window.localStorage.setItem(b,e)}catch{}document.dispatchEvent(new CustomEvent("luowei:themechange",{detail:{theme:e,mode:t}}))}))})()</script><script src="/assets/dist/public-site.js?v=20260412"></script><script src=https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js></script><script>(function(){var i,n=document.getElementById("image-lightbox"),t=document.getElementById("image-lightbox-image"),s=document.getElementById("image-lightbox-caption"),e=1;function o(){if(!t)return;t.style.transform="scale("+e+")"}function a(){if(!n||!t||!s)return;n.hidden=!0,t.setAttribute("src",""),t.setAttribute("alt",""),s.textContent="",e=1,o()}if(document.querySelectorAll(".article-markdown img, .post img").forEach(function(i){i.addEventListener("click",function(){if(!(i instanceof HTMLImageElement)||!n||!t||!s)return;n.hidden=!1,t.setAttribute("src",i.currentSrc||i.src),t.setAttribute("alt",i.alt||""),s.textContent=i.alt||i.currentSrc||i.src,e=1,o()})}),document.querySelectorAll("[data-lightbox-close]").forEach(function(e){e.addEventListener("click",a)}),document.querySelectorAll("[data-lightbox-zoom]").forEach(function(t){t.addEventListener("click",function(){if(!(t instanceof HTMLElement))return;var n=t.getAttribute("data-lightbox-zoom");n==="in"&&(e=Math.min(4,e+.25)),n==="out"&&(e=Math.max(.5,e-.25)),n==="reset"&&(e=1),o()})}),t instanceof HTMLImageElement&&t.addEventListener("wheel",function(t){if(!n||n.hidden)return;t.preventDefault(),e=t.deltaY<0?Math.min(4,e+.2):Math.max(.5,e-.2),o()},{passive:!1}),document.addEventListener("keydown",function(e){e.key==="Escape"&&a()}),i=Array.from(document.querySelectorAll("pre code.language-mermaid, pre code[data-lang='mermaid']")),!i.length)return;i.forEach(function(e){var n,t=e.closest("pre"),s=t&&t.parentElement&&t.parentElement.classList.contains("highlight")?t.parentElement:t;if(!s||!(s instanceof HTMLElement))return;n=document.createElement("div"),n.className="mermaid",n.dataset.mermaidSource=e.textContent||"",n.textContent=e.textContent||"",s.replaceWith(n)});function c(){return document.documentElement.getAttribute("data-theme")==="classic"?"default":"dark"}function r(){if(!window.mermaid)return;window.mermaid.initialize({startOnLoad:!1,theme:c()}),document.querySelectorAll(".mermaid").forEach(function(e){if(!(e instanceof HTMLElement))return;e.removeAttribute("data-processed"),e.innerHTML=e.dataset.mermaidSource||e.textContent||""}),window.mermaid.run({querySelector:".mermaid"})}r(),document.addEventListener("luowei:themechange",function(){r()})})()</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token":"0ae81a65778b49e19a788637c92e5e20"}'></script></body></html>

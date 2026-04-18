@@ -1,0 +1,308 @@
+<!doctype html><html lang=zh-CN data-theme=tokyo-night><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Linux常用的基本命令 - 维唯为为</title>
+<meta name=description content="Linux常用的基本命令"><meta name=theme-color content="#1a1b26"><link rel=canonical href=https://luowei.github.io/posts/20120903-linux%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/><link id=favicon-svg rel=icon type=image/svg+xml href=/favicon-dark.svg><link id=favicon-ico rel="shortcut icon" href=/favicon-dark.ico><link rel=stylesheet href="/assets/dist/public-site.css?v=20260412"><script>window.LUOWEI_SITE_CONFIG={comments:{giscus:{category:"General",categoryId:"DIC_kwDOAXGNgc4C5G6p",emitMetadata:"0",enabled:!0,inputPosition:"top",lang:"zh-CN",mapping:"pathname",reactionsEnabled:"1",repo:"luowei/luowei.github.io",repoId:"MDEwOlJlcG9zaXRvcnkyNDIxOTAwOQ==",strict:"0",theme:"light"},provider:"giscus"}}</script><script>(function(){var t,s,n='"luowei-site-theme"',e="tokyo-night";try{e=window.localStorage.getItem(n)||e}catch{}t=e==="classic"?"classic":"tokyo-night",s=t==="classic"?"light":"dark",document.documentElement.setAttribute("data-theme",t),document.documentElement.style.colorScheme=s,window.__siteThemeStorageKey=n})()</script></head><body><div id=wrap><header id=top><button id=mobile-sidebar-toggle class=mobile-sidebar-toggle type=button aria-label=打开侧边栏 aria-controls=sidebar aria-expanded=false>≡</button>
+<a id=logo href=/ title=回到首页 aria-label=维唯为为><svg class="site-logo" viewBox="0 0 4056 1100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs><linearGradient id="site-logo-accent" x1="0" y1="0" x2="100%" y2="0"><stop offset="0" stop-color="currentcolor" stop-opacity=".18"/><stop offset="50%" stop-color="currentcolor" stop-opacity=".78"/><stop offset="100%" stop-color="currentcolor" stop-opacity=".32"/></linearGradient><filter id="site-logo-soften" x="-3%" y="-10%" width="106%" height="120%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><path id="site-logo-wordmark" d="M635 959q-14 0-22 7-26 23-82 23t-83-14-34-48q-2-10-6-10t-9 1q-181 55-232 55-56 0-86.5-32.5T50 856.5t15.5-75T121 744q9-2 9-4t-10-6q-56-26-56-94 0-63 49-126 3-3 3-6t-7-5q-58-20-58-99 0-74 61-187T203 68.5 269.5 33 355 56.5 416 139q2 8 4 8 3 0 24-42.5t43.5-57 46-14.5 56 9.5T643 73q2 3 5 3t8-4q19-14 47.5-23.5T754 39q76 0 118 124 2 6 21 6 57 0 81.5 24.5T999 286t-30 91q-5 4-5 8t3 8q18 24 18 82t-18 79q-4 5-4 8t5 9q17 18 17 83.5T970 741q-3 3-3 6t5 6q32 21 32 89t-21 92.5T902 959zm267-37q38 0 51.5-16T967 847.5t-14.5-58T902 774H845q-8 0-8-9V735q0-2 2.5-4.5T845 728h38q44 0 54.5-13.5T948 658t-9.5-57.5T883 586H845q-8 0-8-9V551q0-7 8-7h33q41 0 55.5-14T948 475t-13.5-56T878 404H845q-8 0-8-10V367q0-7 8-7h48q38 0 53.5-16.5T962 283t-16-60.5T893 206H858q-12 0-15-10-17-60-40-89T749.5 78 689 95t-30 48q0 14 8 32.5t8 24.5-8 6H625q-7 0-7-3t1-5q12-29 12-54 0-40-29.5-56.5T546.5 71t-40 11.5T475 126t-32.5 63.5T427 230t17 17 36 31 19 67.5T474 426q-20 31-20 47 0 26 6 29 13 10 21.5 31t8.5 51-7.5 51T451 676q-9 8-9 11.5t7 8.5q24 14 33.5 44t9.5 56q0 52-36 85-7 9-7 29t17 31 67 11 64-21q5-9 14-9zM674 394q0 10-9 10H613q-7 0-7-10V367q0-7 7-7h52q9 0 9 7zm0 183q0 9-9 9H613q-7 0-7-9V551q0-7 7-7h52q9 0 9 7zm0 188q0 9-8 9H613q-7 0-7-9V735q0-2 2.5-4.5T613 728h52q9 0 9 7zM185 472q7 0 7 3t-2 6q-57 61-72.5 95T102 640t20 49 51.5 19 70.5-4 79.5-13.5 65-18 41-21 23-29T459 578t-15.5-45.5T401 515q-9 0-22.5 3T360 521t-5-2q0-3 18-20t50.5-57.5 39-60T469 345q0-44-29.5-64T381 261t-63 54q-7 12-11 15t-11.5 3-7.5-3q0-6 79-128 13-20 13-44 0-42-36-64T281.5 72t-44 16.5-55 78.5T116 295 87 406q0 66 57 66zM461 794q0-32-14.5-56T398 714t-82 18q-69 23-153 39-45 10-60.5 27.5T87 853.5 109 913t59.5 22T283 913.5 394.5 881 445 847t16-53zm858-693q70 0 103 25 5 4 8.5 4t7.5-11q15-41 46.5-63t66-22T1625 44.5t51.5 22T1691 78t18-8 44-15 50-7q82 0 105 113 1 7 4 9t12 3q46 5 62.5 31t16.5 90-28 92q-5 5-5 8t3 6q17 23 17 77t-19 78q-6 7-6 9.5t3 5.5q17 24 17 73.5T1972 716q-3 5-3 8.5t5 7.5q31 27 31 93t-24 91-83 25H1642q-12 0-21 9-37 39-102 39-118 0-118-111V818q0-7-3.5-7t-8.5 2q-23 12-62 12H1164q-58 0-86-32t-28-1e2V232q0-60 39-95.5T1191 101zm579 803q38 0 54-16.5t16-59.5-15-60.5-55-17.5h-48q-6 0-8.5-3t-2.5-15 2-15.5 9-3.5h43q31 0 43-15t12-51.5-12-51.5-43-15h-44q-6 0-8.5-3t-2.5-14 2-15.5 10-4.5h48q32 0 43.5-16t11.5-50-11-50.5-44-16.5h-49q-7 0-9-4.5t-2-14.5 2-14 11-4h49q35 0 50.5-19.5t15.5-65-14.5-62.5-58.5-17q-14 0-17-17-8-54-27.5-80T1796 86t-69.5 17.5T1690 157q0 14 3.5 24.5T1697 195q0 13-23.5 13t-23.5-6 5.5-28 5.5-41q0-39-37.5-50.5t-66-11.5T1506 86.5 1473 131q-38 112-105 256-8 18-8 37 0 52 60 79 10 3 14 7.5t4 14.5V878q0 74 81 74 35 0 58-10t23-21.5 3.5-14T1616 904zM1667 373q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm0 170q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm0 170q8 0 10 4t2 16.5-2.5 14.5-9.5 2h-54q-9 0-11-3t-2-15 2-15.5 11-3.5zm-256-7V558q0-14-4-20.5T1387 522q-61-39-61-98 0-22 13-50 32-66 50-111t18-68q0-57-88-57H1191q-47 0-75.5 25.5T1087 232V693q0 50 19 72.5t58 22.5h163q84 0 84-82zM1281 599q0 15-15.5 15t-20-3-4.5-12V333q0-12 4.5-13.5T1261 318t15.5 2.5T1281 333zM2817 217q95 0 133 27t38 118q0 194-7 301.5t-22.5 175-36.5 97-51.5 39.5-112 10T2628 973t-68.5-39-19.5-86q0-104 47-127 6-3 6-5t-5.5-6-12.5-12.5-10-8.5-6 5q-48 77-92 123.5t-101.5 92-92.5 61-63 15.5q-52 0-89-50t-37-88q0-59 90-132 99-80 144.5-154.5T2364 476q0-4-8-4H2241q-48 0-71-8.5t-32.5-35T2128 345q0-86 49-113 7-3 7-7t-3-9q-12-20-12-40 0-37 35.5-79.5T2290 54q14 0 31 4.5t50 30 46 40 15.5 14.5 3.5-9q7-49 41-72t104.5-23T2686 67.5t34 89.5v52q0 8 11 8zm-66 210q10 0 12.5 3.5T2766 446q0 79-4 147t-11.5 107.5-16 52T2711 765t-36.5-6-38.5-6q-31 0-45 23t-14 78.5 35 74.5 156 19q69 0 93.5-10.5t40-42 28-106.5 17-171.5T2951 362q0-67-29-87.5T2817 254H2692q-9 0-9-8V157q0-42-24.5-61.5T2578 76t-81 19.5-25 61.5V263q0 17-5 30t-21.5 32-38.5 29-45 10q-44 0-72-34-13-17-33.5-38.5t-28-25T2213 263q-20 0-34 22t-14 66.5 11 64 65 19.5h172q10 0 10 4 0 10-53 109T2197 745q-74 60-74 105 0 28 26.5 62.5T2212 947q25 0 56-16t76.5-52.5 76-66 62-70.5 43.5-63 12-36-19-43q-32-48-39-62t-7-32q0-35 31.5-69t80.5-34q35 0 61 16 15 8 32 8zM2446 248q0-24-17-48t-43-49.5-50.5-42T2290 92q-33 0-57.5 29T2208 174t26.5 51 79.5 85q19 24 48.5 24t56.5-27 27-59zm289 362q0-26-33-78.5t-57-76-59-23.5-58 26-23 48 16 44q36 53 62.5 97t62.5 44q26 0 57.5-28t31.5-53zm-31-149q-7 0-7 2t8.5 12.5T2725 505q3 4 4.5 4t1.5-7l1-35q0-6-7-6zm-5 268q10 0 13.5-12.5T2716 701t-1.5-3-10.5 7-18.5 11.5-9.5 5.5q0 2 9 4.5t14 2.5zM3817 217q95 0 133 27t38 118q0 194-7 301.5t-22.5 175-36.5 97-51.5 39.5-112 10T3628 973t-68.5-39-19.5-86q0-104 47-127 6-3 6-5t-5.5-6-12.5-12.5-10-8.5-6 5q-48 77-92 123.5t-101.5 92-92.5 61-63 15.5q-52 0-89-50t-37-88q0-59 90-132 99-80 144.5-154.5T3364 476q0-4-8-4H3241q-48 0-71-8.5t-32.5-35T3128 345q0-86 49-113 7-3 7-7t-3-9q-12-20-12-40 0-37 35.5-79.5T3290 54q14 0 31 4.5t50 30 46 40 15.5 14.5 3.5-9q7-49 41-72t104.5-23T3686 67.5t34 89.5v52q0 8 11 8zm-66 210q10 0 12.5 3.5T3766 446q0 79-4 147t-11.5 107.5-16 52T3711 765t-36.5-6-38.5-6q-31 0-45 23t-14 78.5 35 74.5 156 19q69 0 93.5-10.5t40-42 28-106.5 17-171.5T3951 362q0-67-29-87.5T3817 254H3692q-9 0-9-8V157q0-42-24.5-61.5T3578 76t-81 19.5-25 61.5V263q0 17-5 30t-21.5 32-38.5 29-45 10q-44 0-72-34-13-17-33.5-38.5t-28-25T3213 263q-20 0-34 22t-14 66.5 11 64 65 19.5h172q10 0 10 4 0 10-53 109T3197 745q-74 60-74 105 0 28 26.5 62.5T3212 947q25 0 56-16t76.5-52.5 76-66 62-70.5 43.5-63 12-36-19-43q-32-48-39-62t-7-32q0-35 31.5-69t80.5-34q35 0 61 16 15 8 32 8zM3446 248q0-24-17-48t-43-49.5-50.5-42T3290 92q-33 0-57.5 29T3208 174t26.5 51 79.5 85q19 24 48.5 24t56.5-27 27-59zm289 362q0-26-33-78.5t-57-76-59-23.5-58 26-23 48 16 44q36 53 62.5 97t62.5 44q26 0 57.5-28t31.5-53zm-31-149q-7 0-7 2t8.5 12.5T3725 505q3 4 4.5 4t1.5-7l1-35q0-6-7-6zm-5 268q10 0 13.5-12.5T3716 701t-1.5-3-10.5 7-18.5 11.5-9.5 5.5q0 2 9 4.5t14 2.5z"/></defs><rect class="site-logo__underline" x="50" y="1018" width="3938" height="54" rx="27"/><use class="site-logo__shadow" href="#site-logo-wordmark"/><use class="site-logo__wordmark" href="#site-logo-wordmark" filter="url(#site-logo-soften)"/></svg></a><nav id=navbar><ul><li><a href=/>首页</a></li><li><a href=/archive/>存档</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/messages/>留言板</a></li><li><a href=/about/>关于我</a></li><li id=rss-link><a href=/index.xml title=RSS aria-label=RSS target=_blank rel=noreferrer>RSS</a></li></ul></nav></header><div id=mobile-sidebar-backdrop hidden></div><section id=main><aside id=sidebar><div class=mobile-sidebar-header><div style=margin-top:4px;font-size:22px;font-weight:700>站点菜单</div><button class=mobile-sidebar-close type=button aria-label=关闭侧边栏>×</button></div><section id=search-box><form id=search-form action=/ method=get><input id=query type=search name=q placeholder=搜索公开文章>
+<button type=submit aria-label=搜索 title=搜索 data-sidebar-collapsed-action=focus-search>
+<span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M10.5 4a6.5 6.5.0 110 13 6.5 6.5.0 010-13zm0 2a4.5 4.5.0 100 9 4.5 4.5.0 000-9zm5.65 8.24 3.61 3.61-1.41 1.41-3.61-3.61 1.41-1.41z"/></svg></span></button></form><div class=search-hint>支持标题、摘要、正文片段、分类和标签关键词。</div></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-action=expand-sidebar title=最近文章><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7 2h2v3h6V2h2v3h2.5A1.5 1.5.0 0121 6.5v12A1.5 1.5.0 0119.5 20h-15A1.5 1.5.0 013 18.5v-12A1.5 1.5.0 014.5 5H7V2zm12 8H5v8h14v-8zM9 13h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+<span class=sidebar-text>最近文章</span></div><ul><li><a href=/posts/20260323-modern_dev_syntax_and_mermaid_showcase/>现代软件开发语法高亮与 Mermaid 图示例</a></li><li><a href=/posts/20251214-cnh2n_2_cnh2n_aliphatic_hydrocarbons_saturated/>常见的有机化合物的结构与性质</a></li><li><a href=/posts/20251212-post/>常见的化学有机物化合物 甲醇乙醇</a></li><li><a href=/posts/20251210-viii_0_5_6_2n2/>元素的化学性质的周期变化</a></li><li><a href=/posts/20250419-17358390284832/>局域网内启用 mDNS, 以使用 `.local` 域名</a></li><li><a href=/posts/20251018-choh/>产品说明书 空气检测仪CHOH(甲醛)</a></li><li><a href=/posts/20251006-rust_rust_b/>rust 教程</a></li><li><a href=/posts/20250907-macos_nfs/>macos 上 nfs 共享设置</a></li></ul></section><section class=activity-calendar-section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-action=expand-sidebar title=发布日历><span class=activity-calendar-title-text><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7 2h2v3h6V2h2v3h2.5A1.5 1.5.0 0121 6.5v12A1.5 1.5.0 0119.5 20h-15A1.5 1.5.0 013 18.5v-12A1.5 1.5.0 014.5 5H7V2zm12 8H5v8h14v-8zM5 8h14V7H5v1zm3 5h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg></span>
+<span class=sidebar-text>发布日历</span>
+</span><button type=button class=activity-calendar-toggle data-activity-calendar-toggle aria-expanded=false>展开</button></div><div class=activity-calendar-shell hidden><div class=activity-calendar data-activity-calendar data-activity-calendar-url="/assets/site/activity-calendar-v1.msgpack.gz?v=20260412" data-activity-calendar-archive-pattern="/archive/{month}/?date={date}"><p class=activity-calendar__empty>正在生成发布日历...</p></div></div></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-href=/categories/ title=分类><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M4 6.5A1.5 1.5.0 015.5 5h5.38c.4.0.78.16 1.06.44l1.12 1.12c.28.28.66.44 1.06.44H18.5A1.5 1.5.0 0120 8.5v8A1.5 1.5.0 0118.5 18h-13A1.5 1.5.0 014 16.5v-10zM6 9v7h12V9H6z"/></svg></span>
+<span class=sidebar-text>分类</span></div><ul><li><a href=/categories/ios/>IOS (90)</a></li><li><a href=/categories/server/>Server (66)</a></li><li><a href=/categories/linux/>Linux (59)</a></li><li><a href=/categories/tips/>Tips (59)</a></li><li><a href=/categories/java/>Java (50)</a></li><li><a href=/categories/%E7%BD%91%E7%BB%9C/>网络 (43)</a></li><li><a href=/categories/%E8%AF%BB%E4%B9%A6/>读书 (33)</a></li><li><a href=/categories/homelab/>Homelab (30)</a></li><li><a href=/categories/%E5%8E%9F%E7%90%86/>原理 (26)</a></li><li><a href=/categories/%E7%A7%91%E6%99%AE/>科普 (25)</a></li><li><a href=/categories/%E9%9D%A2%E8%AF%95/>面试 (24)</a></li><li><a href=/categories/%E5%AD%A6%E4%B9%A0/>学习 (20)</a></li></ul></section><section><div class=sidebar-title data-sidebar-expand data-sidebar-collapsed-href=/tags/ title=标签><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M10.59 3H5A2 2 0 003 5v5.59A2 2 0 003.59 12l8 8a2 2 0 002.82.0l5.18-5.18a2 2 0 000-2.82l-8-8a2 2 0 00-1-1zM7.25 8.5A1.25 1.25.0 118.5 7.25 1.25 1.25.0 017.25 8.5z"/></svg></span>
+<span class=sidebar-text>标签</span></div><ul><li><a href=/tags/swift%E7%AC%94%E8%AE%B0/>Swift笔记 (18)</a></li><li><a href=/tags/ios/>IOS (11)</a></li><li><a href=/tags/article/>Article (7)</a></li><li><a href=/tags/apache/>Apache (5)</a></li><li><a href=/tags/%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/>视频教程 (5)</a></li><li><a href=/tags/java%E5%9F%BA%E7%A1%80/>Java基础 (4)</a></li><li><a href=/tags/java%E7%BB%98%E5%9B%BE/>Java绘图 (4)</a></li><li><a href=/tags/linux%E5%91%BD%E4%BB%A4/>Linux命令 (4)</a></li><li><a href=/tags/mvc/>MVC (4)</a></li><li><a href=/tags/radasm/>RadASM (4)</a></li><li><a href=/tags/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/>算法问题 (4)</a></li><li><a href=/tags/docker/>Docker (3)</a></li><li><a href=/tags/java%E9%9B%B6%E7%A2%8E%E7%AC%94%E8%AE%B0/>Java零碎笔记 (3)</a></li><li><a href=/tags/jekyll/>Jekyll (3)</a></li><li><a href=/tags/linux/>Linux (3)</a></li><li><a href=/tags/pve/>PVE (3)</a></li></ul></section><section><div class=sidebar-title data-sidebar-expand title=相关链接><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M7.76 14.83a3 3 0 010-4.24l2.83-2.83A3 3 0 1114.83 12l-.7.71-1.42-1.42.71-.7A1 1 0 1012 9.17L9.17 12a1 1 0 001.42 1.42l.7-.71 1.42 1.42-.7.7a3 3 0 01-4.24.0zm8.48-5.66a3 3 0 010 4.24l-2.83 2.83A3 3 0 119.17 12l.7-.71 1.42 1.42-.71.7A1 1 0 1012 14.83L14.83 12a1 1 0 10-1.42-1.42l-.7.71-1.42-1.42.7-.7a3 3 0 014.24.0z"/></svg></span>
+<span class=sidebar-text>相关链接</span></div><ul><li><a href=https://wodedata.com target=_blank rel=noreferrer>wodedata</a></li><li><a href=http://app.wodedata.com target=_blank rel=noreferrer>作品集</a></li><li><a href=https://luowei.github.io/list target=_blank rel=noreferrer>知不知</a></li></ul></section><div class=theme-switcher><label class=theme-switcher-label for=theme-switcher-select data-sidebar-expand title=切换主题><span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M12 3a1 1 0 011 1v1.05a6.98 6.98.0 013.95 2.3l.74-.74a1 1 0 111.41 1.41l-.74.74A6.98 6.98.0 0119 12c0 1.53-.49 2.95-1.31 4.1l.74.74a1 1 0 01-1.41 1.41l-.74-.74A6.98 6.98.0 0113 18.95V20a1 1 0 11-2 0v-1.05a6.98 6.98.0 01-3.1-1.44l-.74.74a1 1 0 01-1.41-1.41l.74-.74A6.98 6.98.0 015 12c0-1.53.49-2.95 1.31-4.1l-.74-.74A1 1 0 016.98 5.7l.74.74A6.98 6.98.0 0111 5.05V4a1 1 0 011-1zm0 4a5 5 0 100 10 5 5 0 000-10zm0 2.2A2.8 2.8.0 119.2 12 2.8 2.8.0 0112 9.2z"/></svg></span>
+<span class=sidebar-text>Theme</span>
+</label><select id=theme-switcher-select><option value=tokyo-night>Tokyo Night</option><option value=classic>Classic</option></select></div><div class=sidebar-desktop-controls><button id=sidebar-collapse-toggle class="sidebar-collapse-toggle muted" type=button aria-label=收起侧栏 aria-expanded=true title=收起侧栏>
+<span class=sidebar-icon aria-hidden=true><svg viewBox="0 0 24 24" focusable="false"><path fill="currentcolor" d="M4 4h5v2H4V4zm0 14h5v2H4v-2zm0-7h5v2H4v-2zm7.59 1 4.7-4.7 1.41 1.4L14.41 12l3.29 3.29-1.41 1.41-4.7-4.7z"/></svg></span>
+<span class=sidebar-text>收起侧栏</span></button></div></aside><div id=main-inner><div id=search-results hidden></div><div id=main-content><section id=content><article class=post><header class=page-header><h1>Linux常用的基本命令</h1><p>Linux常用的基本命令</p><div class=page-header__meta><span>2012-09-02 16:00</span></div></header><section class=article-markdown><h2 id=curl防火墙文件传输用户用户组及权限>CURL/防火墙/文件传输/用户、用户组及权限</h2><h3 id=curl-命令行浏览器的使用>CURL 命令行浏览器的使用</h3><pre tabindex=0><code>1)访问指定的网页
+curl http://www.yahoo.com
+
+2)保存指定网页到文件
+curl http://www.yahoo.com &gt; page.html
+用curl的内置option就好，用option: -o
+curl -o page.html http://www.yahoo.com
+
+3)使用代理访问
+使用curl的时候，用这个option可以指定http访问所使用的proxy服务器及其端口： -x
+curl -x 123.45.67.89:1080 -o page.html http://www.yahoo.com
+
+4)处理cookie
+curl -x 123.45.67.89:1080 -o page.html -D cookie0001.txt http://www.yahoo.com
+option: -D &lt;-- 这个是把http的response里面的cookie信息存到一个特别的文件中去,当页面被存到page.html的同时，cookie信息也被存到了cookie0001.txt里面了
+
+5)带cookie访问
+使用这个option来把上次的cookie信息追加到http request里面去： -b
+curl -x 123.45.67.89:1080 -o page1.html -D cookie0002.txt -b cookie0001.txt http://www.yahoo.com
+
+6）模拟浏览器信息
+curl给我们提供了一个有用的option，可以让我们随意指定自己这次访问所宣称的自己的浏览器信息： -A
+curl -A &#34;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)&#34; -x 123.45.67.89:1080 -o page.html -D cookie0001.txt http://www.yahoo.com
+
+7）盗链访问
+curl给我们提供了设定referer的option： -e
+curl -A &#34;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)&#34; -x 123.45.67.89:1080 -e &#34;mail.yahoo.com&#34; -o page.html -D cookie0001.txt http://www.yahoo.com
+这样，就可以骗对方的服务器，以上是模拟一个从mail.yahoo.com点击某个链接过来的了
+
+8）利用curl 下载文件
+下载页面到一个文件里，可以使用 -o ，下载文件也是一样。
+比如， curl -o 1.jpg http://cgi2.tky.3web.ne.jp/~zzh/screen1.JPG
+
+使用大写的O下载服务器上的文件(默认下载到当前目录下)
+curl -O http://www.baidu.com/img/baidu_sylogo1.gif
+
+批量下载
+在curl里面，这么写就可以了：
+curl -O http://cgi2.tky.3web.ne.jp/~zzh/screen[1-10].JPG
+curl -O http://cgi2.tky.3web.ne.jp/~{zzh,nick}/[001-201].JPG
+这样产生的下载，如下
+~zzh/001.JPG
+~zzh/002.JPG
+...
+~zzh/201.JPG
+~nick/001.JPG
+~nick/002.JPG
+...
+~nick/201.JPG
+由于zzh/nick下的文件名都是001，002...，201，下载下来的文件重名，后面的把前面的文件都给覆盖掉了~~~
+
+自定义文件名的下载
+curl -o #2_#1.jpg http://cgi2.tky.3web.ne.jp/~{zzh,nick}/[001-201].JPG
+#1是变量，指的是{zzh,nick}这部分，第一次取值zzh，第二次取值nick
+#2代表的变量，则是第二段可变部分---[001-201]，取值从001逐一加到201
+这样，自定义出来下载下来的文件名，就变成了这样：
+原来： ~zzh/001.JPG ---&gt; 下载后： 001-zzh.JPG
+原来： ~nick/001.JPG ---&gt; 下载后： 001-nick.JPG
+
+9）分块下载
+分块下载，我们使用这个option就可以了： -r
+举例说明，比如我们有一个http://cgi2.tky.3web.ne.jp/~zzh/zhao1.mp3 要下载
+我们就可以用这样的命令：
+curl -r 0-10240 -o &#34;zhao.part1&#34; http:/cgi2.tky.3web.ne.jp/~zzh/zhao1.mp3 &amp;\
+curl -r 10241-20480 -o &#34;zhao.part1&#34; http:/cgi2.tky.3web.ne.jp/~zzh/zhao1.mp3 &amp;\
+curl -r 20481-40960 -o &#34;zhao.part1&#34; http:/cgi2.tky.3web.ne.jp/~zzh/zhao1.mp3 &amp;\
+curl -r 40961- -o &#34;zhao.part1&#34; http:/cgi2.tky.3web.ne.jp/~zzh/zhao1.mp3
+
+合并文件
+不过下载完后，需要自己把这些破碎的文件合并起来
+如果是UNIX或苹果，用 cat zhao.part* &gt; zhao.mp3就可以
+如果是Windows，用copy /b 来解决吧
+
+使用ftp协议下载
+curl -u name:passwd ftp://ip:port/path/file
+或者
+curl ftp://name:passwd@ip:port/path/file
+
+10)上传
+上传的option是 -T
+比如要向ftp传一个文件： curl -T localfile -u name:passwd ftp://upload_site:port/path/
+当然，向http服务器上传文件也可以
+比如 curl -T localfile http://cgi2.tky.3web.ne.jp/~zzh/abc.cgi
+注意，这时候，使用的协议是HTTP的PUT method
+
+GET模式访问
+只需要把变量写在url里面就可以了
+比如：
+curl http://www.yahoo.com/login.cgi?user=nickwolfe&amp;password=12345
+
+POST模式访问
+使用option  -d
+比如，curl -d &#34;user=nickwolfe&amp;password=12345&#34; http://www.yahoo.com/login.cgi
+就相当于向这个站点发出一次登陆申请
+到底该用GET模式还是POST模式，要看对面服务器的程序设定。
+
+POST模式下的文件上传
+比如
+&lt;form method=&#34;POST&#34; enctype=&#34;multipar/form-data&#34; action=&#34;http://cgi2.tky.3web.ne.jp/~zzh/up_file.cgi&#34;&gt;
+&lt;input type=file name=upload&gt;
+&lt;input type=submit name=nick value=&#34;go&#34;&gt;
+&lt;/form&gt;
+这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：
+curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zzh/up_file.cgi
+
+访问https 使用本地证书
+curl -E localcert.pem https://remote_server
+再比如，你还可以用curl通过dict协议去查字典~~~~~
+curl dict://dict.org/d:computer 
+</code></pre><h3 id=linux防火墙的关闭和开启>Linux防火墙的关闭和开启</h3><pre tabindex=0><code>1) 重启后生效
+开启： chkconfig iptables on
+关闭： chkconfig iptables off
+
+2) 即时生效，重启后失效
+开启： service iptables start
+关闭： service iptables stop
+需要说明的是对于Linux下的其它服务都可以用以上命令执行开启和关闭操作。
+
+在开启了防火墙时，做如下设置，开启相关端口，
+修改/etc/sysconfig/iptables 文件，添加以下内容：
+-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+
+使用/etc/init.d/iptables status 查看防火墙信息，可以看到打开的端口。
+
+那么我们把需要使用的端口打开应该是一个比较可行的办法了，命令如下：
+/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT #8080为指定端口
+/etc/init.d/iptables restart #重启防火墙以便改动生效，当然如果不觉得麻烦也可重启系统(命令：reboot)
+/etc/rc.d/init.d/iptables save #将更改进行保存
+
+当然了，还有另外直接在/etc/sysconfig/iptables中增加一行：
+-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT
+永久关闭防火墙
+</code></pre><h3 id=传输文件>传输文件</h3><pre tabindex=0><code>不同的Linux之间copy文件常用有3种方法:  
+第一种就是ftp，也就是其中一台Linux安装ftp Server，这样可以另外一台使用ftp的client程序来进行文件的copy。
+第二种方法就是采用samba服务，类似Windows文件copy的方式来操作，比较简洁方便。
+第三种就是利用scp命令来进行文件复制。scp是有Security的文件copy，基于ssh登录。
+操作起来比较方便，比如要把当前一个文件copy到远程另外一台主机上，可以如下命令。
+
+ftp
+%ftp 主机名/IP  /*登录ftp服务器，会提示输入用户名和密码*/
+匿名登录：用户名输入：anonymous  密码输入：一个邮箱格式的任意字符串
+
+FTP&gt;ascii: 设定以ASCII方式传送文件(缺省值) 
+FTP&gt;bell: 每完成一次文件传送,报警提示. 
+FTP&gt;binary: 设定以二进制方式传送文件. 
+FTP&gt;bye: 终止主机FTP进程,并退出FTP管理方式. 
+FTP&gt;case: 当为ON时,用MGET命令拷贝的文件名到本地机器中,全部转换为小写字母. 
+FTP&gt;cd: 同UNIX的CD命令. 
+FTP&gt;cdup: 返回上一级目录. 
+FTP&gt;chmod: 改变远端主机的文件权限. 
+FTP&gt;close: 终止远端的FTP进程,返回到FTP命令状态, 所有的宏定义都被删除. 
+FTP&gt;delete: 删除远端主机中的文件. 
+FTP&gt;dir [remote-directory] [local-file] 列出当前远端主机目录中的文件.如果有本地文件,就将结果写至本地文件. 
+FTP&gt;get [remote-file] [local-file] 从远端主机中传送至本地主机中. 
+FTP&gt;help [command] 输出命令的解释. 
+FTP&gt;lcd: 改变当前本地主机的工作目录,如果缺省,就转到当前用户的HOME目录. 
+FTP&gt;ls [remote-directory] [local-file] 同DIR. 
+FTP&gt;macdef: 定义宏命令. 
+FTP&gt;mdelete [remote-files] 删除一批文件. 
+FTP&gt;mget [remote-files] 从远端主机接收一批文件至本地主机. 
+FTP&gt;mkdir directory-name 在远端主机中建立目录. 
+FTP&gt;mput local-files 将本地主机中一批文件传送至远端主机. 
+FTP&gt;open host [port] 重新建立一个新的连接. 
+FTP&gt;prompt: 交互提示模式. 
+FTP&gt;put local-file [remote-file] 将本地一个文件传送至远端主机中. 
+FTP&gt;pwd: 列出当前远端主机目录. 
+FTP&gt;quit: 同BYE. 
+FTP&gt;recv remote-file [local-file] 同GET. 
+FTP&gt;rename [from] [to] 改变远端主机中的文件名. 
+FTP&gt;rmdir directory-name 删除远端主机中的目录. 
+FTP&gt;send local-file [remote-file] 同PUT. 
+FTP&gt;status: 显示当前FTP的状态. 
+FTP&gt;system: 显示远端主机系统类型. 
+FTP&gt;user user-name [password] [account] 重新以别的用户名登录远端主机. 
+FTP&gt;? [command]: 同HELP. [command]指定需要帮助的命令名称。如果没有指定 command，ftp 将显示全部命令的列表。
+FTP&gt;! 从 ftp 子系统退出到外壳。
+
+scp
+scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root
+然后会提示你输入另外那台172.19.2.75主机的root用户的登录密码，接着就开始copy了。
+如果想反过来操作，把文件从远程主机copy到当前系统，也很简单。
+scp root@172.19.2.75:/home/root /home/daisy/full.tar.gz 
+</code></pre><h3 id=用户及用户组>用户及用户组</h3><blockquote><p>id 查看当前用户信息<br>id someone 查看某个用户信息<br>groups 查看当前登录用户的组内成员<br>groups gliethttp 查看gliethttp用户所在的组,以及组内成员<br>whoami 查看当前登录用户名<br>/etc/group文件包含所有组<br>/etc/shadow和/etc/passwd系统存在的所有用户名</p></blockquote><p><strong>1、/etc/group 解说</strong></p><blockquote><p>/etc/group 文件是用户组的配置文件，内容包括用户和用户组，并且能显示出用户是归属哪个用户组或哪几个用户组，因为一个用户可以归属一个或多个不同的用户组；同一用户组的用户之间具有相似的特征。比如我们把某一用户加入到root用户组，那么这个用户就可以浏览root用户家目录的文件，如果root用户把某个文件的读写执行权限开放，root用户组的所有用户都可以修改此文件，如果是可执行的文件（比如脚本），root用户组的用户也是可以执行的；</p></blockquote><p><strong>2、/etc/group 内容具体分析</strong></p><blockquote><p>/etc/group 的内容包括用户组（Group）、用户组口令、GID及该用户组所包含的用户（User），每个用户组一条记录；格式如下：<br><code>group_name:passwd:GID:user_list</code><br>在/etc/group 中的每条记录分四个字段：<br>第一字段：用户组名称；<br>第二字段：用户组密码；<br>第三字段：GID<br>第四字段：用户列表，每个用户之间用,号分割；本字段可以为空；如果字段为空表示用户组为GID的用户名；</p></blockquote><h3 id=删除目录下的多个文件>删除目录下的多个文件</h3><p>删除当前目录下的所有文件：<code>find . -name '*' -exec rm {} \;</code></p><h3 id=redhat使用sudo提示说用户不在sudoers文件内>redhat使用sudo提示说用户不在sudoers文件内</h3><pre tabindex=0><code>su -
+echo &#39;username  ALL=(ALL)    ALL&#39; &gt;&gt; /etc/sudoers
+</code></pre><p>username为你的用户名。</p><p><strong>简单来说</strong><br>首先如果出现无法找到用户的名字,则先切换到root (<code>su -</code>)
+root权限下输入<code>Visudo</code> 或者 <code>vim /etc/sudoers</code>,
+找到　<code>root ALL=(ALL) ALL</code> 的字段,在下一行追加:</p><pre tabindex=0><code>        　　　　你要追加的名字  ALL=(ALL)     ALL
+</code></pre><p>因为5分钟之后密码过期,下次需要重新输入,可以用以下方法:</p><pre tabindex=0><code>            你要追加的名字 ALL=(ALL)     NOPASSWD: ALL
+</code></pre><h2 id=让进程在后台可靠运行的几种方法>让进程在后台可靠运行的几种方法</h2><p><strong>nohup/setsid/&</strong></p><blockquote><p><strong>场景：</strong><br>如果只是临时有一个命令需要长时间运行，什么方法能最简便的保证它在后台稳定运行呢？</p><p><strong>hangup 名称的来由</strong><br>在 Unix 的早期版本中，每个终端都会通过 modem 和系统通讯。当用户 logout 时，modem 就会挂断（hang up）电话。 同理，当 modem 断开连接时，就会给终端发送 hangup 信号来通知其关闭所有子进程。<br><strong>解决方法：</strong><br>我们知道，当用户注销（logout）或者网络断开时，终端会收到 HUP（hangup）信号从而关闭其所有子进程。因此，我们的解决办法就有两种途径：要么让进程忽略 HUP 信号，要么让进程运行在新的会话里从而成为不属于此终端的子进程。</p></blockquote><h3 id=1nohup>1.nohup</h3><p>nohup 无疑是我们首先想到的办法。顾名思义，nohup 的用途就是让提交的命令忽略 hangup 信号。让我们先来看一下 nohup 的帮助信息：</p><pre tabindex=0><code>NOHUP(1)                        User Commands                        NOHUP(1)  
+NAME
+       nohup - run a command immune to hangups, with output to a non-tty
+SYNOPSIS
+       nohup COMMAND [ARG]...
+       nohup OPTION
+DESCRIPTION
+       Run COMMAND, ignoring hangup signals.
+       --help display this help and exit
+       --version output version information and exit
+可见，nohup 的使用是十分方便的，只需在要处理的命令前加上 nohup  即可，标准输出和标准错误缺省会被重定向到 nohup.out 文件中。一般我们可在结尾加上&#34;&amp;&#34;来将命令同时放入后台运行，也可用&#34;&gt;filename 2&gt;&amp;1&#34;来更改缺省的重定向文件名。
+</code></pre><p><strong>nohup 示例</strong></p><pre tabindex=0><code>[root@pvcent107 ~]# nohup ping www.ibm.com &amp;
+[1] 3059
+nohup: appending output to `nohup.out&#39;
+[root@pvcent107 ~]# ps -ef |grep 3059
+root      3059 984 0 21:06 pts/3    00:00:00 ping www.ibm.com
+root      3067   984  0 21:06 pts/3    00:00:00 grep 3059
+[root@pvcent107 ~]#  
+</code></pre><h3 id=2setsid>2.setsid</h3><p>nohup 无疑能通过忽略 HUP 信号来使我们的进程避免中途被中断，但如果我们换个角度思考，如果我们的进程不属于接受 HUP 信号的终端的子进程，那么自然也就不会受到 HUP 信号的影响了。</p><p>setsid 就能帮助我们做到这一点。让我们先来看一下 setsid 的帮助信息：</p><pre tabindex=0><code>SETSID(8)                 Linux Programmer’s Manual                 SETSID(8)
+NAME
+       setsid - run a program in a new session
+SYNOPSIS
+       setsid program [ arg ... ]
+DESCRIPTION
+       setsid runs a program in a new session. 
+</code></pre><p>可见 setsid 的使用也是非常方便的，也只需在要处理的命令前加上 setsid 即可。</p><p><strong>setsid 示例</strong>.</p><pre tabindex=0><code>[root@pvcent107 ~]# setsid ping www.ibm.com
+[root@pvcent107 ~]# ps -ef |grep www.ibm.com
+root     31094 1 0 07:28 ?        00:00:00 ping www.ibm.com
+root     31102 29217  0 07:29 pts/4    00:00:00 grep www.ibm.com
+[root@pvcent107 ~]#   
+</code></pre><p>值得注意的是，上例中我们的进程 ID(PID)为31094，而它的父 ID（PPID）为1（即为 init 进程 ID），并不是当前终端的进程 ID。请将此例与nohup 例中的父 ID 做比较。</p><h3 id=3->3. &</h3><p>这里还有一个关于 subshell 的小技巧。将一个或多个命名包含在“()”中就能让这些命令在子 shell 中运行中，从而扩展出很多有趣的功能，我们现在要讨论的就是其中之一。</p><p>当将"&&ldquo;也放入“()”内之后，我们就会发现所提交的作业并不在作业列表中，也就是说，是无法通过jobs来查看的。让我们来看看为什么这样就能躲过 HUP 信号的影响吧。</p><p><strong>subshell 示例</strong></p><pre tabindex=0><code>[root@pvcent107 ~]# (ping www.ibm.com &amp;)
+[root@pvcent107 ~]# ps -ef |grep www.ibm.com
+root     16270 1 0 14:13 pts/4    00:00:00 ping www.ibm.com
+root     16278 15362  0 14:13 pts/4    00:00:00 grep www.ibm.com
+[root@pvcent107 ~]#   
+</code></pre><p>从上例中可以看出，新提交的进程的父 ID（PPID）为1（init 进程的 PID），并不是当前终端的进程 ID。因此并不属于当前终端的子进程，从而也就不会受到当前终端的 HUP 信号的影响了。</p><h3 id=disown>disown</h3><p><strong>场景：</strong><br>如果事先在命令前加上 nohup 或者 setsid 就可以避免 HUP 信号的影响。但是如果我们未加任何处理就已经提交了命令，该如何补救才能让它避免 HUP 信号的影响呢？</p><p><strong>解决方法：</strong><br>这时想加 nohup 或者 setsid 已经为时已晚，只能通过作业调度和 disown 来解决这个问题了。下面看一下 disown 的帮助信息：</p><blockquote><p>disown [-ar] [-h] [jobspec &mldr;]
+Without options, each jobspec is removed from the table of
+active jobs. If the -h option is given, each jobspec is not
+removed from the table, but is marked so that SIGHUP is not
+sent to the job if the shell receives a SIGHUP. If no jobspec
+is present, and neither the -a nor the -r option is supplied,
+the current job is used. If no jobspec is supplied, the -a
+option means to remove or mark all jobs; the -r option without
+a jobspec argument restricts operation to running jobs. The
+return value is 0 unless a jobspec does not specify a valid
+job.</p></blockquote><p>可以看出，我们可以用如下方式来达成我们的目的。</p><p><strong>灵活运用 CTRL-z</strong></p><blockquote><p>在我们的日常工作中，我们可以用 CTRL-z 来将当前进程挂起到后台暂停运行，执行一些别的操作，然后再用 fg 来将挂起的进程重新放回前台（也可用 bg 来将挂起的进程放在后台）继续运行。这样我们就可以在一个终端内灵活切换运行多个任务，这一点在调试代码时尤为有用。因为将代码编辑器挂起到后台再重新放回时，光标定位仍然停留在上次挂起时的位置，避免了重新定位的麻烦。</p><p>用disown -h jobspec 来使某个作业忽略HUP信号。</p><p>用disown -ah 来使所有的作业都忽略HUP信号。</p><p>用disown -rh 来使正在运行的作业忽略HUP信号。</p><p>需要注意的是，当使用过 disown 之后，会将把目标作业从作业列表中移除，我们将不能再使用jobs来查看它，但是依然能够用ps -ef查找到它。</p><p>但是还有一个问题，这种方法的操作对象是作业，如果我们在运行命令时在结尾加了&rdquo;&&ldquo;来使它成为一个作业并在后台运行，那么就万事大吉了，我们可以通过jobs命令来得到所有作业的列表。但是如果并没有把当前命令作为作业来运行，如何才能得到它的作业号呢？答案就是用 CTRL-z（按住Ctrl键的同时按住z键）了！</p><p>CTRL-z 的用途就是将当前进程挂起（Suspend），然后我们就可以用jobs命令来查询它的作业号，再用bg jobspec 来将它放入后台并继续运行。需要注意的是，如果挂起会影响当前进程的运行结果，请慎用此方法。</p></blockquote><p><strong>disown 示例1</strong><br>（如果提交命令时已经用“&”将命令放入后台运行，则可以直接使用“disown”）</p><pre tabindex=0><code>[root@pvcent107 build]# cp -r testLargeFile largeFile &amp;
+[1] 4825
+[root@pvcent107 build]# jobs
+[1]+  Running                 cp -i -r testLargeFile largeFile &amp;
+[root@pvcent107 build]# disown -h %1
+[root@pvcent107 build]# ps -ef |grep largeFile
+root      4825   968  1 09:46 pts/4    00:00:00 cp -i -r testLargeFile largeFile
+root      4853   968  0 09:46 pts/4    00:00:00 grep largeFile
+[root@pvcent107 build]# logout 
+</code></pre><p><strong>disown 示例2</strong><br>（如果提交命令时未使用“&”将命令放入后台运行，可使用 CTRL-z 和“bg”将其放入后台，再使用“disown”）</p><pre tabindex=0><code>[root@pvcent107 build]# cp -r testLargeFile largeFile2
+[1]+  Stopped                 cp -i -r testLargeFile largeFile2
+[root@pvcent107 build]# bg %1
+[1]+ cp -i -r testLargeFile largeFile2 &amp;
+[root@pvcent107 build]# jobs
+[1]+  Running                 cp -i -r testLargeFile largeFile2 &amp;
+[root@pvcent107 build]# disown -h %1
+[root@pvcent107 build]# ps -ef |grep largeFile2
+root      5790  5577  1 10:04 pts/3    00:00:00 cp -i -r testLargeFile largeFile2
+root      5824  5577  0 10:05 pts/3    00:00:00 grep largeFile2
+[root@pvcent107 build]#   
+</code></pre><h3 id=screen>screen</h3><p><strong>场景：</strong><br>我们已经知道了如何让进程免受 HUP 信号的影响，但是如果有大量这种命令需要在稳定的后台里运行，如何避免对每条命令都做这样的操作呢？</p><p><strong>解决方法：</strong><br>此时最方便的方法就是 screen 了。简单的说，screen 提供了 ANSI/VT100 的终端模拟器，使它能够在一个真实终端下运行多个全屏的伪终端。screen 的参数很多，具有很强大的功能，我们在此仅介绍其常用功能以及简要分析一下为什么使用 screen 能够避免 HUP 信号的影响。我们先看一下 screen 的帮助信息：</p><pre tabindex=0><code>SCREEN(1)                                                           SCREEN(1)
+NAME
+       screen - screen manager with VT100/ANSI terminal emulation
+SYNOPSIS
+       screen [ -options ] [ cmd [ args ] ]
+       screen -r [[pid.]tty[.host]]
+       screen -r sessionowner/[[pid.]tty[.host]]
+DESCRIPTION
+       Screen  is  a  full-screen  window manager that multiplexes a physical
+       terminal between several  processes  (typically  interactive  shells).
+       Each  virtual  terminal provides the functions of a DEC VT100 terminal
+       and, in addition, several control functions from the  ISO  6429  (ECMA
+       48,  ANSI  X3.64)  and ISO 2022 standards (e.g. insert/delete line and
+       support for multiple character sets).  There is a  scrollback  history
+       buffer  for  each virtual terminal and a copy-and-paste mechanism that
+       allows moving text regions between windows. 
+</code></pre><p>使用 screen 很方便，有以下几个常用选项：</p><blockquote><p>用screen -dmS session name 来建立一个处于断开模式下的会话（并指定其会话名）。<br>用screen -list 来列出所有会话。<br>用screen -r session name 来重新连接指定会话。<br>用快捷键CTRL-a d 来暂时断开当前会话。</p></blockquote><p><strong>screen 示例</strong></p><pre tabindex=0><code>[root@pvcent107 ~]# screen -dmS Urumchi
+[root@pvcent107 ~]# screen -list
+There is a screen on:
+        12842.Urumchi   (Detached)
+1 Socket in /tmp/screens/S-root.
+[root@pvcent107 ~]# screen -r Urumchi  
+</code></pre><p>当我们用“-r”连接到 screen 会话后，我们就可以在这个伪终端里面为所欲为，再也不用担心 HUP 信号会对我们的进程造成影响，也不用给每个命令前都加上“nohup”或者“setsid”了。这是为什么呢？下面来看一下下面两个例子。</p><p><strong>1. 未使用 screen 时新进程的进程树</strong></p><pre tabindex=0><code>[root@pvcent107 ~]# ping www.google.com &amp;
+[1] 9499
+[root@pvcent107 ~]# pstree -H 9499
+init─┬─Xvnc
+     ├─acpid
+     ├─atd
+     ├─2*[sendmail] ├─sshd─┬─sshd───bash───pstree
+     │  └─sshd───bash───ping 
+</code></pre><p>我们可以看出，未使用 screen 时我们所处的 bash 是 sshd 的子进程，当 ssh 断开连接时，HUP 信号自然会影响到它下面的所有子进程（包括我们新建立的 ping 进程）。</p><p><strong>2. 使用了 screen 后新进程的进程树</strong></p><pre tabindex=0><code>[root@pvcent107 ~]# screen -r Urumchi
+[root@pvcent107 ~]# ping www.ibm.com &amp;
+[1] 9488
+[root@pvcent107 ~]# pstree -H 9488
+init─┬─Xvnc
+     ├─acpid
+     ├─atd ├─screen───bash───ping ├─2*[sendmail] 
+</code></pre><p>而使用了 screen 后就不同了，此时 bash 是 screen 的子进程，而 screen 是 init（PID为1）的子进程。那么当 ssh 断开连接时，HUP 信号自然不会影响到 screen 下面的子进程了。</p><h3 id=总结>总结</h3><p>nohup/setsid 无疑是临时需要时最方便的方法，disown 能帮助我们来事后补救当前已经在运行了的作业，而 screen 则是在大批量操作时不二的选择了。</p><p><strong>进程管理部分参考资料</strong><br>“<a href=http://www.ibm.com/developerworks/cn/aix/library/es-unix-sysadmin1.html>系统管理员工具包：进程管理技巧</a>”（developerWorks 中国，2006 年 5 月）介绍了 Linux 进程管理的更多技巧。<br>“<a href=http://www.ibm.com/developerworks/cn/linux/l-cn-screen/>Linux 技巧：使用 screen 管理你的远程会话</a>”（developerWorks 中国，2007 年 7 月）介绍了 screen 的更多技巧。<br>在 <a href=http://www.ibm.com/developerworks/cn/linux/>developerWorks 中国网站 Linux 专区</a>中学习更多 Linux 方面的知识。<br>此章节参考转摘自：<a href=https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/>Linux 技巧：让进程在后台运行更可靠的几种方法</a></p><h3 id=查看当前shell>查看当前shell</h3><ol><li><code>echo $0</code> - will print the program name.</li><li><code>ps -ef | grep $$ | grep -v grep</code> - This will look for the current process ID in the list of running processes.</li><li><code>echo $SHELL</code> - The path to the current shell is stored as the SHELL variable for any shell.</li></ol><section class=nested><ul class="tag-box tag-box--single-row"><li><a href=/categories/linux/>linux</a></li><li><a href=/tags/linux%E5%91%BD%E4%BB%A4/>Linux命令</a></li></ul></section><section class="nested continue-reading"><header><h2>继续阅读</h2></header><div class=continue-reading__nav><article class="nested continue-reading__card"><header><h3>上一篇</h3></header><p><a href=/posts/20120316-sonar%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/>Sonar环境的搭建与配置</a></p><div class=post-card__meta>2012-03-15</div></article><article class="nested continue-reading__card"><header><h3>下一篇</h3></header><p><a href=/posts/20120906-memcached%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%B6%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%9C%BA%E5%88%B6%E4%B8%8E%E7%90%86%E5%BF%B5/>Memcached的安装配置及其内存管理的机制与理念</a></p><div class=post-card__meta>2012-09-05</div></article></div></section><section id=comments class=nested><div id=giscus-container data-comments-root></div></section></section></article></section></div></div></section><footer id=bottom><p>&copy; 2026 luowei. Built with Hugo.</p></footer></div><button id=scroll-top-button class=scroll-top-button type=button aria-label=回到顶部 title=回到顶部><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentcolor" d="M12 5.5l6.25 6.25-1.41 1.41L13 9.32V19h-2V9.32l-3.84 3.84-1.41-1.41L12 5.5z"/></svg></button><div id=image-lightbox class=image-lightbox hidden><div class=image-lightbox__backdrop data-lightbox-close></div><div class=image-lightbox__dialog role=dialog aria-modal=true aria-label=图片预览><div class=image-lightbox__toolbar><button type=button class="button-link muted" data-lightbox-zoom=out>-</button>
+<button type=button class="button-link muted" data-lightbox-zoom=reset>100%</button>
+<button type=button class="button-link muted" data-lightbox-zoom=in>+</button>
+<button type=button class="button-link muted" data-lightbox-close>关闭</button></div><div class=image-lightbox__viewport><img id=image-lightbox-image src alt></div><div id=image-lightbox-caption class=image-lightbox__caption></div></div></div><script>(function(){var o,i,r,c,d,f,b,j,n=document.body,p=document.getElementById("sidebar"),s=document.getElementById("mobile-sidebar-toggle"),g=document.querySelector(".mobile-sidebar-close"),t=document.getElementById("mobile-sidebar-backdrop"),e=document.getElementById("sidebar-collapse-toggle"),m="luowei-public-sidebar-collapsed";function a(t,s){if(window.innerWidth<=999){n.classList.remove("sidebar-collapsed"),e instanceof HTMLButtonElement&&(e.hidden=!0);return}if(n.classList.toggle("sidebar-collapsed",t),e instanceof HTMLButtonElement){var o=e.querySelector(".sidebar-text");o instanceof HTMLElement&&(o.textContent=t?"展开侧栏":"收起侧栏"),e.hidden=!1,e.setAttribute("aria-label",t?"展开侧栏":"收起侧栏"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("title",t?"展开侧栏":"收起侧栏")}if(s)try{window.localStorage.setItem(m,t?"1":"0")}catch{}}function u(){var e=!1;try{e=window.localStorage.getItem(m)==="1"}catch{}a(e,!1)}function y(){n.classList.add("mobile-sidebar-open"),s&&s.setAttribute("aria-expanded","true"),t&&(t.hidden=!1)}function l(){n.classList.remove("mobile-sidebar-open"),s&&s.setAttribute("aria-expanded","false"),t&&(t.hidden=!0)}s&&s.addEventListener("click",y),g&&g.addEventListener("click",l),t&&t.addEventListener("click",l),e instanceof HTMLButtonElement&&e.addEventListener("click",function(){a(!n.classList.contains("sidebar-collapsed"),!0)}),window.addEventListener("resize",u),u(),p&&p.addEventListener("click",function(e){var s,o,i,t=e.target;if(t instanceof HTMLElement&&t.tagName==="A"&&window.innerWidth<=999){l();return}if(window.innerWidth>999&&n.classList.contains("sidebar-collapsed")&&(s=t instanceof Element?t.closest("[data-sidebar-collapsed-action], [data-sidebar-collapsed-href], [data-sidebar-expand]"):null,s instanceof HTMLElement)){if(o=s.getAttribute("data-sidebar-collapsed-action"),o==="focus-search"){e.preventDefault(),a(!1,!0),window.requestAnimationFrame(function(){var e=document.getElementById("query");e instanceof HTMLInputElement&&(e.focus(),e.select())});return}if(o==="expand-sidebar"){e.preventDefault(),a(!1,!0);return}if(i=s.getAttribute("data-sidebar-collapsed-href"),i){e.preventDefault(),window.location.href=i;return}a(!1,!0)}}),i=document.getElementById("scroll-top-button");function h(){if(!i)return;var e=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;i.classList.toggle("is-visible",e>240)}if(i&&(i.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})}),h(),window.addEventListener("scroll",h,{passive:!0})),r=document.getElementById("query"),r instanceof HTMLInputElement)try{f=new URLSearchParams(window.location.search),f.get("focusSearch")==="1"&&window.requestAnimationFrame(function(){r.focus(),r.select()})}catch{}o=document.getElementById("theme-switcher-select"),d=document.getElementById("favicon-svg"),c=document.getElementById("favicon-ico");function v(e){var t=e==="classic"?"light":"dark";d&&d.setAttribute("href","/favicon-"+t+".svg"),c&&c.setAttribute("href","/favicon-"+t+".ico")}v(document.documentElement.getAttribute("data-theme")||"tokyo-night"),o instanceof HTMLSelectElement&&(b=window.__siteThemeStorageKey||"luowei-site-theme",j=document.documentElement.getAttribute("data-theme")||"tokyo-night",o.value=j,o.addEventListener("change",function(){var e=o.value||"tokyo-night",t=e==="classic"?"light":"dark";document.documentElement.setAttribute("data-theme",e),document.documentElement.style.colorScheme=t,v(e);try{window.localStorage.setItem(b,e)}catch{}document.dispatchEvent(new CustomEvent("luowei:themechange",{detail:{theme:e,mode:t}}))}))})()</script><script src="/assets/dist/public-site.js?v=20260412"></script><script src=https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js></script><script>(function(){var i,n=document.getElementById("image-lightbox"),t=document.getElementById("image-lightbox-image"),s=document.getElementById("image-lightbox-caption"),e=1;function o(){if(!t)return;t.style.transform="scale("+e+")"}function a(){if(!n||!t||!s)return;n.hidden=!0,t.setAttribute("src",""),t.setAttribute("alt",""),s.textContent="",e=1,o()}if(document.querySelectorAll(".article-markdown img, .post img").forEach(function(i){i.addEventListener("click",function(){if(!(i instanceof HTMLImageElement)||!n||!t||!s)return;n.hidden=!1,t.setAttribute("src",i.currentSrc||i.src),t.setAttribute("alt",i.alt||""),s.textContent=i.alt||i.currentSrc||i.src,e=1,o()})}),document.querySelectorAll("[data-lightbox-close]").forEach(function(e){e.addEventListener("click",a)}),document.querySelectorAll("[data-lightbox-zoom]").forEach(function(t){t.addEventListener("click",function(){if(!(t instanceof HTMLElement))return;var n=t.getAttribute("data-lightbox-zoom");n==="in"&&(e=Math.min(4,e+.25)),n==="out"&&(e=Math.max(.5,e-.25)),n==="reset"&&(e=1),o()})}),t instanceof HTMLImageElement&&t.addEventListener("wheel",function(t){if(!n||n.hidden)return;t.preventDefault(),e=t.deltaY<0?Math.min(4,e+.2):Math.max(.5,e-.2),o()},{passive:!1}),document.addEventListener("keydown",function(e){e.key==="Escape"&&a()}),i=Array.from(document.querySelectorAll("pre code.language-mermaid, pre code[data-lang='mermaid']")),!i.length)return;i.forEach(function(e){var n,t=e.closest("pre"),s=t&&t.parentElement&&t.parentElement.classList.contains("highlight")?t.parentElement:t;if(!s||!(s instanceof HTMLElement))return;n=document.createElement("div"),n.className="mermaid",n.dataset.mermaidSource=e.textContent||"",n.textContent=e.textContent||"",s.replaceWith(n)});function c(){return document.documentElement.getAttribute("data-theme")==="classic"?"default":"dark"}function r(){if(!window.mermaid)return;window.mermaid.initialize({startOnLoad:!1,theme:c()}),document.querySelectorAll(".mermaid").forEach(function(e){if(!(e instanceof HTMLElement))return;e.removeAttribute("data-processed"),e.innerHTML=e.dataset.mermaidSource||e.textContent||""}),window.mermaid.run({querySelector:".mermaid"})}r(),document.addEventListener("luowei:themechange",function(){r()})})()</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token":"0ae81a65778b49e19a788637c92e5e20"}'></script></body></html>

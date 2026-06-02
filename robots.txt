@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /assets/site/*.msgpack.gz
+Disallow: /assets/site/search-*
+Disallow: /assets/site/activity-calendar-*
+
+Sitemap: https://luowei.github.io/sitemap.xml
